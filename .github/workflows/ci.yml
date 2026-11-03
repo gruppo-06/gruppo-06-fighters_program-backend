@@ -1,0 +1,86 @@
+name: Backend CI
+
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main, develop]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PROJECT_DIR: fighters-program
+
+jobs:
+  backend-build:
+    name: backend-build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_DB: fighters
+          POSTGRES_USER: fighters
+          POSTGRES_PASSWORD: fighters
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U fighters"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+      redis:
+        image: redis:7
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+
+    env:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/fighters
+      SPRING_DATASOURCE_USERNAME: fighters
+      SPRING_DATASOURCE_PASSWORD: fighters
+      SPRING_DATA_REDIS_HOST: localhost
+      SPRING_DATA_REDIS_PORT: 6379
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Detect Maven project
+        id: detect
+        run: |
+          if [[ -f "$PROJECT_DIR/pom.xml" ]]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::No $PROJECT_DIR/pom.xml yet, skipping build"
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-java@v5
+        if: steps.detect.outputs.present == 'true'
+        with:
+          distribution: temurin
+          java-version: 21
+          cache: maven
+          cache-dependency-path: ${{ env.PROJECT_DIR }}/pom.xml
+
+      - name: Build and run tests
+        if: steps.detect.outputs.present == 'true'
+        working-directory: ${{ env.PROJECT_DIR }}
+        run: sh ./mvnw -B -ntp verify
+
+      - name: Upload test reports
+        if: failure() && steps.detect.outputs.present == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: ${{ env.PROJECT_DIR }}/target/surefire-reports/
+          retention-days: 7
