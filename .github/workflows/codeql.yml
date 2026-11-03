@@ -1,0 +1,44 @@
+name: CodeQL
+
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main, develop]
+  schedule:
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  codeql:
+    name: codeql
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Detect source code
+        id: detect
+        run: |
+          if git ls-files '*.java' '*.kt' | grep -q .; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::No Java/Kotlin sources yet, skipping analysis"
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: github/codeql-action/init@v4
+        if: steps.detect.outputs.present == 'true'
+        with:
+          languages: java-kotlin
+          build-mode: none
+          queries: security-and-quality
+
+      - uses: github/codeql-action/analyze@v4
+        if: steps.detect.outputs.present == 'true'
