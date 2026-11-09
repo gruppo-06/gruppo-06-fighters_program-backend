@@ -1,4 +1,4 @@
-package com.nardo.fightersprogram;
+package it.fightersprogram;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
