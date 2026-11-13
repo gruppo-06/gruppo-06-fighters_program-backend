@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>it.fightersprogram</groupId>
+        <artifactId>fighters-program</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>fighters-program-matches</artifactId>
+    <name>fighters-program-matches</name>
+    <description>Challenges, simulation, replay and history.</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>it.fightersprogram</groupId>
+            <artifactId>fighters-program-common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.fightersprogram</groupId>
+            <artifactId>fighters-program-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webmvc</artifactId>
+        </dependency>
+    </dependencies>
+</project>
