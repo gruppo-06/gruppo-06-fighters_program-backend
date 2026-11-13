@@ -1,33 +1,45 @@
 # Fighters Program — Backend
 
-Spring Boot 4, Java 21, Postgres 17, Redis 7. Monolite modulare: un solo progetto, diviso in moduli con confini controllati dai test.
+Spring Boot 4, Java 21, Postgres 17, Redis 7. Build Maven multi-modulo: un `core` in Java puro (niente Spring) e i moduli di dominio Spring Boot, con i confini imposti dal build e controllati dai test.
+
+## Moduli Maven
+
+| Modulo | Artifact | Cosa contiene |
+|---|---|---|
+| `core` | `fighters-program-core` | Motore di gioco in Java puro. Nessuna dipendenza Spring, JPA, Jackson o Lombok |
+| `common` | `fighters-program-common` | Errori (formato unico) e paginazione. Non dipende dagli altri moduli |
+| `catalog` | `fighters-program-catalog` | Carte, fazioni, classi, rarità |
+| `collection` | `fighters-program-collection` | Carte possedute e mazzi, validazione dei mazzi |
+| `identity` | `fighters-program-identity` | Utenti, registrazione, login, JWT |
+| `economy` | `fighters-program-economy` | Crediti e pacchetti |
+| `trading` | `fighters-program-trading` | Scambi tra utenti |
+| `matches` | `fighters-program-matches` | Sfide, simulazione, replay, storico |
+| `application` | `fighters-program-application` | Unico modulo avviabile: main, configurazione, migrazioni |
+
+Il package Java dei moduli resta `it.fightersprogram.<modulo>`; il core usa `it.fightersprogram.engine`. La configurazione di sicurezza Spring è in `application` (`it.fightersprogram.config`).
 
 ## Avvio in locale
 
 ```bash
 cd fighters-program
 docker compose up -d
-sh ./mvnw spring-boot:run
+sh ./mvnw -pl application -am spring-boot:run
 ```
 
 Swagger: http://localhost:8080/swagger-ui.html
 
-## Moduli
+## Build
 
-| Modulo | Cosa contiene |
-|---|---|
-| `engine` | Motore di gioco in Java puro (niente Spring) |
-| `catalog` | Carte, fazioni, classi, rarità |
-| `collection` | Carte possedute e mazzi, validazione dei mazzi |
-| `identity` | Utenti, registrazione, login, JWT |
-| `economy` | Crediti e pacchetti |
-| `trading` | Scambi tra utenti |
-| `matches` | Sfide, simulazione, replay, storico |
-| `common` | Errori, paginazione, sicurezza di base. Non dipende dai moduli |
+```bash
+cd fighters-program
+sh ./mvnw verify              # compila e testa tutti i moduli
+sh ./mvnw -pl core test       # solo il core in Java puro
+sh ./mvnw -pl application -am test
+```
 
 ## Come è fatto un modulo (copia `catalog`)
 
-Il modulo `catalog` è l'esempio completo. Un modulo nuovo deve avere la stessa forma:
+Il modulo `catalog` è l'esempio completo. Un modulo di dominio deve avere la stessa forma:
 
 ```
 it.fightersprogram.<modulo>
@@ -37,20 +49,22 @@ it.fightersprogram.<modulo>
 └── web/                      controller REST. Privato del modulo
 ```
 
-Regole, controllate dal test `ArchitectureTest`:
+Regole, controllate dal build e dai test:
 
-1. Il **controller** (`web`) parla solo con il **servizio**, mai con un repository.
-2. Il **servizio** restituisce `record`, mai entità JPA.
-3. Un modulo **non importa** `web` o `domain` di un altro modulo. Se ti serve qualcosa di un altro modulo, usa il suo servizio pubblico o un evento.
-4. `engine` non usa Spring, JPA, Jackson né altri moduli.
+1. Il `core` è un modulo Maven senza dipendenze Spring: il confine è imposto dal `pom.xml`, e `EngineIsolationTest` fallisce se in `engine` compare un import di un framework.
+2. Il **controller** (`web`) parla solo con il **servizio**, mai con un repository.
+3. Il **servizio** restituisce `record`, mai entità JPA.
+4. Un modulo **non importa** `web` o `domain` di un altro modulo. Se ti serve qualcosa di un altro modulo, usa il suo servizio pubblico o un evento.
 5. Niente cicli tra moduli.
 
-Se `./mvnw verify` fallisce su `ArchitectureTest`, hai violato una di queste regole: correggi il codice, non il test.
+I controlli ArchUnit (`ArchitectureTest`) stanno in `application`: è l'unico modulo con tutti gli altri sul classpath.
+
+Se `sh ./mvnw verify` fallisce su `ArchitectureTest`, hai violato una di queste regole: correggi il codice, non il test.
 
 ## Aggiungere una funzionalità, passo per passo
 
 1. Crea il branch da `develop`: `feature/<descrizione-con-trattini>`.
-2. Se serve una tabella: nuova migrazione in `src/main/resources/db/migration`, nome `V<numero>__<descrizione>.sql`. Non modificare mai una migrazione già pushata.
+2. Se serve una tabella: nuova migrazione in `application/src/main/resources/db/migration`, nome `V<numero>__<descrizione>.sql`. Non modificare mai una migrazione già pushata.
 3. Entità e repository in `domain/` (guarda `catalog/domain/Card.java`).
 4. Record di risposta e richiesta (guarda `CardResponse`).
 5. Servizio con la logica, `@Transactional` (guarda `CatalogService`).
