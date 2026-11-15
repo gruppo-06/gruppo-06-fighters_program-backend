@@ -5,5 +5,6 @@ public record MatchResult(
         MatchEndReason endReason,
         int turnsPlayed,
         int healthOne,
-        int healthTwo) {
+        int healthTwo,
+        MatchLog log) {
 }
