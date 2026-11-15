@@ -43,14 +43,14 @@ class CatalogReaderTest {
 
     @Test
     void readsEveryFileMatchingALocationPattern() {
-        List<CatalogFile> files = reader.readAll("classpath:catalog-fixtures/*.json");
+        List<CatalogFile> files = reader.readAll("classpath*:catalog-fixtures/*.json");
 
         assertEquals(1, files.size());
     }
 
     @Test
     void findsNoFileWhenTheLocationIsEmpty() {
-        assertTrue(reader.readAll("classpath:missing-catalog/*.json").isEmpty());
+        assertTrue(reader.readAll("classpath*:missing-catalog/*.json").isEmpty());
     }
 
     @Test
