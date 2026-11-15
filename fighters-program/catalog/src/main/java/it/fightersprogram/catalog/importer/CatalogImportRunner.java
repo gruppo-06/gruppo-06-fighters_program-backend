@@ -17,12 +17,14 @@ public class CatalogImportRunner implements ApplicationRunner {
     private static final Logger LOGGER = LoggerFactory.getLogger(CatalogImportRunner.class);
 
     private final CatalogReader reader;
+    private final CatalogValidator validator;
     private final CatalogImporter importer;
     private final String location;
 
-    public CatalogImportRunner(CatalogReader reader, CatalogImporter importer,
+    public CatalogImportRunner(CatalogReader reader, CatalogValidator validator, CatalogImporter importer,
             @Value("${catalog.import.location}") String location) {
         this.reader = reader;
+        this.validator = validator;
         this.importer = importer;
         this.location = location;
     }
@@ -34,6 +36,7 @@ public class CatalogImportRunner implements ApplicationRunner {
             LOGGER.warn("No catalog file found at {}: the card catalog was not imported", location);
             return;
         }
+        validator.validate(files);
         ImportSummary summary = importer.importAll(files);
         LOGGER.info("Imported {} catalog files from {}: {} cards created, {} updated",
                 files.size(), location, summary.created(), summary.updated());
