@@ -14,8 +14,8 @@ class RoundResolverTest {
 
     @Test
     void bothCardsSurviveWhenNeitherAttackBreaksTheDefense() {
-        FighterInPlay hana = fresh(card("EA16", Faction.EURO_ATLANTIC, 281, 540));
-        FighterInPlay darius = fresh(card("EA10", Faction.EURO_ATLANTIC, 300, 680));
+        FighterInPlay hana = FighterInPlay.enter(card("EA16", Faction.EURO_ATLANTIC, 281, 540));
+        FighterInPlay darius = FighterInPlay.enter(card("EA10", Faction.EURO_ATLANTIC, 300, 680));
 
         RoundResult result = resolver.resolve(hana, darius);
 
@@ -28,8 +28,8 @@ class RoundResolverTest {
 
     @Test
     void onlyTheCardWhoseDefenseDropsToZeroIsKnockedOut() {
-        FighterInPlay strong = fresh(card("AA01", Faction.AFRICAN, 500, 600));
-        FighterInPlay weak = fresh(card("AA02", Faction.AFRICAN, 100, 400));
+        FighterInPlay strong = FighterInPlay.enter(card("AA01", Faction.AFRICAN, 500, 600));
+        FighterInPlay weak = FighterInPlay.enter(card("AA02", Faction.AFRICAN, 100, 400));
 
         RoundResult result = resolver.resolve(strong, weak);
 
@@ -42,8 +42,8 @@ class RoundResolverTest {
 
     @Test
     void bothCardsAreKnockedOutWhenBothDefensesDropToZero() {
-        FighterInPlay first = fresh(card("AA01", Faction.AFRICAN, 500, 300));
-        FighterInPlay second = fresh(card("AA02", Faction.AFRICAN, 400, 450));
+        FighterInPlay first = FighterInPlay.enter(card("AA01", Faction.AFRICAN, 500, 300));
+        FighterInPlay second = FighterInPlay.enter(card("AA02", Faction.AFRICAN, 400, 450));
 
         RoundResult result = resolver.resolve(first, second);
 
@@ -64,8 +64,8 @@ class RoundResolverTest {
 
     @Test
     void factionAdvantageRaisesAttackRoundedHalfUpOnEveryHit() {
-        FighterInPlay arjun = fresh(card("IP16", Faction.INDO_PACIFIC, 211, 900));
-        FighterInPlay noah = fresh(card("EA02", Faction.EURO_ATLANTIC, 200, 900));
+        FighterInPlay arjun = FighterInPlay.enter(card("IP16", Faction.INDO_PACIFIC, 211, 900));
+        FighterInPlay noah = FighterInPlay.enter(card("EA02", Faction.EURO_ATLANTIC, 200, 900));
 
         RoundResult result = resolver.resolve(arjun, noah);
 
@@ -86,10 +86,6 @@ class RoundResolverTest {
 
         assertEquals(forward.first(), backward.second());
         assertEquals(forward.second(), backward.first());
-    }
-
-    private static FighterInPlay fresh(FighterCard card) {
-        return new FighterInPlay(card, card.defense());
     }
 
     private static FighterCard card(String code, Faction faction, int attack, int defense) {
