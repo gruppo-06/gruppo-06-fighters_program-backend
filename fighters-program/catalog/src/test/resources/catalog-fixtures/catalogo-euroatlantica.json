@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "faction": "Euroatlantica",
+  "cards": [
+    {
+      "id": "EA01",
+      "name": "Fixture Fighter 1",
+      "country": "Italia",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 110,
+        "def": 310,
+        "vel": 201,
+        "crt": 101
+      },
+      "copy": "Fixture flavor text 1.",
+      "image": "EA01.png"
+    },
+    {
+      "id": "EA02",
+      "name": "Fixture Fighter 2",
+      "country": "Italia",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 120,
+        "def": 320,
+        "vel": 202,
+        "crt": 102
+      },
+      "copy": "Fixture flavor text 2.",
+      "image": "EA02.png"
+    },
+    {
+      "id": "EA03",
+      "name": "Fixture Fighter 3",
+      "country": "Italia",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 130,
+        "def": 330,
+        "vel": 203,
+        "crt": 103
+      },
+      "copy": "Fixture flavor text 3.",
+      "image": "EA03.png"
+    },
+    {
+      "id": "EA04",
+      "name": "Fixture Fighter 4",
+      "country": "Italia",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 140,
+        "def": 340,
+        "vel": 204,
+        "crt": 104
+      },
+      "copy": "Fixture flavor text 4.",
+      "image": "EA04.png"
+    },
+    {
+      "id": "EA05",
+      "name": "Fixture Fighter 5",
+      "country": "Italia",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 150,
+        "def": 350,
+        "vel": 205,
+        "crt": 105
+      },
+      "copy": "Fixture flavor text 5.",
+      "image": "EA05.png"
+    },
+    {
+      "id": "EA06",
+      "name": "Fixture Fighter 6",
+      "country": "Italia",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 160,
+        "def": 360,
+        "vel": 206,
+        "crt": 106
+      },
+      "copy": "Fixture flavor text 6.",
+      "image": "EA06.png"
+    },
+    {
+      "id": "EA07",
+      "name": "Fixture Fighter 7",
+      "country": "Italia",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 170,
+        "def": 370,
+        "vel": 207,
+        "crt": 107
+      },
+      "copy": "Fixture flavor text 7.",
+      "image": "EA07.png"
+    },
+    {
+      "id": "EA08",
+      "name": "Fixture Fighter 8",
+      "country": "Italia",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 180,
+        "def": 380,
+        "vel": 208,
+        "crt": 108
+      },
+      "copy": "Fixture flavor text 8.",
+      "image": "EA08.png"
+    },
+    {
+      "id": "EA09",
+      "name": "Fixture Fighter 9",
+      "country": "Italia",
+      "class": "Sentinelle",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 190,
+        "def": 390,
+        "vel": 209,
+        "crt": 109
+      },
+      "copy": "Fixture flavor text 9.",
+      "image": "EA09.png"
+    },
+    {
+      "id": "EA10",
+      "name": "Fixture Fighter 10",
+      "country": "Italia",
+      "class": "Combattenti",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 200,
+        "def": 400,
+        "vel": 210,
+        "crt": 110
+      },
+      "copy": "Fixture flavor text 10.",
+      "image": "EA10.png"
+    },
+    {
+      "id": "EA11",
+      "name": "Fixture Fighter 11",
+      "country": "Italia",
+      "class": "Assassini",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 210,
+        "def": 410,
+        "vel": 211,
+        "crt": 111
+      },
+      "copy": "Fixture flavor text 11.",
+      "image": "EA11.png"
+    },
+    {
+      "id": "EA12",
+      "name": "Fixture Fighter 12",
+      "country": "Italia",
+      "class": "Specialisti",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 220,
+        "def": 420,
+        "vel": 212,
+        "crt": 112
+      },
+      "copy": "Fixture flavor text 12.",
+      "image": "EA12.png"
+    },
+    {
+      "id": "EA13",
+      "name": "Fixture Fighter 13",
+      "country": "Italia",
+      "class": "Colossi",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 230,
+        "def": 430,
+        "vel": 213,
+        "crt": 113
+      },
+      "copy": "Fixture flavor text 13.",
+      "image": "EA13.png"
+    },
+    {
+      "id": "EA14",
+      "name": "Fixture Fighter 14",
+      "country": "Italia",
+      "class": "Sentinelle",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 240,
+        "def": 440,
+        "vel": 214,
+        "crt": 114
+      },
+      "copy": "Fixture flavor text 14.",
+      "image": "EA14.png"
+    },
+    {
+      "id": "EA15",
+      "name": "Fixture Fighter 15",
+      "country": "Italia",
+      "class": "Combattenti",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 250,
+        "def": 450,
+        "vel": 215,
+        "crt": 115
+      },
+      "copy": "Fixture flavor text 15.",
+      "image": "EA15.png"
+    },
+    {
+      "id": "EA16",
+      "name": "Hana Kuroda",
+      "country": "Giappone",
+      "class": "Assassini",
+      "rarity": "Leggendaria",
+      "stats": {
+        "atk": 281,
+        "def": 540,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Fixture flavor text.",
+      "image": "EA16.png"
+    }
+  ]
+}
