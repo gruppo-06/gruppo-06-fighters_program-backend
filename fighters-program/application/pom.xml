@@ -11,6 +11,10 @@
     <name>fighters-program-application</name>
     <description>Bootable module: entry point, configuration and database migrations.</description>
 
+    <properties>
+        <spring-boot.run.skip>false</spring-boot.run.skip>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>it.fightersprogram</groupId>
