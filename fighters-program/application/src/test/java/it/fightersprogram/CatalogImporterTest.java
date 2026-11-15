@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.List;
 import java.util.Map;
 
+import jakarta.persistence.EntityManager;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,6 +31,9 @@ class CatalogImporterTest {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    private EntityManager entityManager;
 
     @Test
     void insertsNewCardsWithTheirReferences() {
@@ -62,6 +67,7 @@ class CatalogImporterTest {
         importer.importAll(List.of(africanFile(entry("ZT01", "Assassini", "Comune", 100))));
 
         ImportSummary second = importer.importAll(List.of(africanFile(entry("ZT01", "Colossi", "Rara", 150))));
+        entityManager.flush();
 
         assertEquals(new ImportSummary(0, 1), second);
         assertEquals(1, countTestCards());

@@ -143,6 +143,8 @@ La configurazione (`application/src/main/resources/application.properties`) legg
 | `SPRING_DATASOURCE_PASSWORD` | `fighters` |
 | `SPRING_DATA_REDIS_HOST` | `localhost` |
 | `SPRING_DATA_REDIS_PORT` | `6379` |
+| `CATALOG_IMPORT_ENABLED` | `true` (importa all'avvio i JSON del catalogo) |
+| `CATALOG_IMPORT_LOCATION` | `classpath*:catalog/*.json` |
 
 ## 10. Test
 
