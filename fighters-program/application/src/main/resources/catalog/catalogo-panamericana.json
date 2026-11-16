@@ -4,243 +4,355 @@
   "cards": [
     {
       "id": "PA01",
-      "name": "Rafael Souza",
-      "country": "Brasile",
-      "class": "Combattenti",
+      "name": "Isabel Paredes",
+      "country": "Panama",
+      "faction": "Panamericana",
+      "class": "Assassini",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 166,
-        "def": 456,
-        "vel": 809,
-        "crt": 616
+        "atk": 255,
+        "def": 470,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA01.png"
+      "copy": "Due passi all’esterno. Il colpo arriva prima che tu riesca a girarti.",
+      "image": {
+        "file": "PA001_ASS_Common_Isabel Paredes.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA02",
-      "name": "Lucia Hernandez",
-      "country": "Messico",
-      "class": "Assassini",
+      "name": "Mateus Nogueira",
+      "country": "Brasile",
+      "faction": "Panamericana",
+      "class": "Colossi",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 187,
-        "def": 390,
-        "vel": 527,
-        "crt": 784
+        "atk": 293,
+        "def": 673,
+        "vel": 250,
+        "crt": 700
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA02.png"
+      "copy": "Sostiene la presa un istante in più. È lì che carica.",
+      "image": {
+        "file": "PA002_CLS_Common_Mateus Nogueira.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA03",
-      "name": "Mateo Gimenez",
-      "country": "Argentina",
-      "class": "Specialisti",
+      "name": "Camila Rojas",
+      "country": "Cile",
+      "faction": "Panamericana",
+      "class": "Colossi",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 170,
-        "def": 397,
-        "vel": 700,
-        "crt": 413
+        "atk": 299,
+        "def": 660,
+        "vel": 250,
+        "crt": 700
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA03.png"
+      "copy": "Quando le scarichi addosso il tuo peso, lei trova la spinta.",
+      "image": {
+        "file": "PA003_CLS_Common_Camila Rojas.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA04",
-      "name": "Valentina Rios",
-      "country": "Colombia",
-      "class": "Colossi",
+      "name": "Bruno Acosta",
+      "country": "Uruguay",
+      "faction": "Panamericana",
+      "class": "Combattenti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 214,
-        "def": 432,
-        "vel": 499,
-        "crt": 252
+        "atk": 238,
+        "def": 618,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA04.png"
+      "copy": "Appena la pressione si ferma, cambia direzione.",
+      "image": {
+        "file": "PA004_CMB_Common_Bruno Acosta.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA05",
-      "name": "Diego Fuentes",
-      "country": "Cile",
-      "class": "Sentinelle",
+      "name": "Luz Jiménez",
+      "country": "Costa Rica",
+      "faction": "Panamericana",
+      "class": "Combattenti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 216,
-        "def": 405,
-        "vel": 485,
-        "crt": 114
+        "atk": 233,
+        "def": 632,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA05.png"
+      "copy": "Cede qualche centimetro. Poi si riprende la distanza in diagonale.",
+      "image": {
+        "file": "PA005_CMB_Common_Luz Jiménez.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA06",
-      "name": "Camila Quispe",
-      "country": "Perù",
-      "class": "Combattenti",
+      "name": "Nadège Pierre",
+      "country": "Haiti",
+      "faction": "Panamericana",
+      "class": "Sentinelle",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 163,
-        "def": 429,
-        "vel": 175,
-        "crt": 152
+        "atk": 206,
+        "def": 864,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA06.png"
+      "copy": "Lascia spazio ai lati per tenersi libera la via d’uscita.",
+      "image": {
+        "file": "PA006_SNT_Common_Nadège Pierre.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA07",
-      "name": "Yoel Martinez",
+      "name": "Dalia Pérez",
       "country": "Cuba",
-      "class": "Assassini",
+      "faction": "Panamericana",
+      "class": "Specialisti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 194,
-        "def": 462,
-        "vel": 461,
-        "crt": 888
+        "atk": 183,
+        "def": 813,
+        "vel": 500,
+        "crt": 850
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA07.png"
+      "copy": "Se la mano torna lenta, il suo pugno arriva per primo.",
+      "image": {
+        "file": "PA007_SPC_Common_Dalia Pérez.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA08",
-      "name": "Andrea Parra",
-      "country": "Venezuela",
+      "name": "Micah Bennett",
+      "country": "Giamaica",
+      "faction": "Panamericana",
       "class": "Specialisti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 153,
-        "def": 383,
-        "vel": 622,
-        "crt": 587
+        "atk": 186,
+        "def": 797,
+        "vel": 500,
+        "crt": 875
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA08.png"
+      "copy": "Ripete la finta di spalla finché reagisci troppo presto.",
+      "image": {
+        "file": "PA008_SPC_Common_Micah Bennett.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA09",
-      "name": "Thiago Lima",
-      "country": "Brasile",
-      "class": "Colossi",
+      "name": "Abril Salgado",
+      "country": "Messico",
+      "faction": "Panamericana",
+      "class": "Assassini",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 220,
-        "def": 537,
-        "vel": 410,
-        "crt": 560
+        "atk": 257,
+        "def": 500,
+        "vel": 850,
+        "crt": 450
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA09.png"
+      "copy": "Ritarda l’ultimo passo e si infila tra le due parate.",
+      "image": {
+        "file": "PA009_ASS_Rare_Abril Salgado.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA10",
-      "name": "Ximena Castro",
-      "country": "Messico",
-      "class": "Sentinelle",
+      "name": "Andrés Cedeño",
+      "country": "Ecuador",
+      "faction": "Panamericana",
+      "class": "Assassini",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 220,
-        "def": 465,
-        "vel": 609,
-        "crt": 577
+        "atk": 255,
+        "def": 510,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA10.png"
+      "copy": "Appena il rientro si chiude, il piede ha già cambiato direzione.",
+      "image": {
+        "file": "PA010_ASS_Rare_Andrés Cedeño.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA11",
-      "name": "Santiago Duarte",
+      "name": "Lucía Ferrer",
       "country": "Argentina",
-      "class": "Combattenti",
+      "faction": "Panamericana",
+      "class": "Sentinelle",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 236,
-        "def": 529,
-        "vel": 274,
-        "crt": 257
+        "atk": 219,
+        "def": 882,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA11.png"
+      "copy": "Aspetta al centro. Quando ti sbilanci avanti, risponde.",
+      "image": {
+        "file": "PA011_SNT_Rare_Lucía Ferrer.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA12",
-      "name": "Paula Rojas",
+      "name": "Mariana Vélez",
       "country": "Colombia",
-      "class": "Assassini",
+      "faction": "Panamericana",
+      "class": "Specialisti",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 237,
-        "def": 516,
-        "vel": 311,
-        "crt": 544
+        "atk": 197,
+        "def": 830,
+        "vel": 500,
+        "crt": 800
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA12.png"
+      "copy": "Anche un varco sporco le basta per far passare il colpo.",
+      "image": {
+        "file": "PA012_SPC_Rare_Mariana Vélez.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA13",
-      "name": "Joaquin Vera",
-      "country": "Cile",
-      "class": "Specialisti",
+      "name": "Teo Méndez",
+      "country": "Guatemala",
+      "faction": "Panamericana",
+      "class": "Assassini",
       "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 279,
-        "def": 563,
-        "vel": 569,
-        "crt": 712
+        "atk": 270,
+        "def": 520,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA13.png"
+      "copy": "Stesso ritmo in entrata e in uscita. Quando lo insegui, cambia lato.",
+      "image": {
+        "file": "PA013_ASS_Epic_Teo Méndez.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA14",
-      "name": "Mariana Torres",
-      "country": "Perù",
+      "name": "Renata Sá",
+      "country": "Brasile",
+      "faction": "Panamericana",
       "class": "Colossi",
       "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 254,
-        "def": 528,
-        "vel": 660,
-        "crt": 508
+        "atk": 318,
+        "def": 728,
+        "vel": 250,
+        "crt": 700
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA14.png"
+      "copy": "Incassa il primo impatto per colpire quando sei ancora a portata.",
+      "image": {
+        "file": "PA014_CLS_Epic_Renata Sá.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA15",
-      "name": "Ernesto Ruiz",
-      "country": "Cuba",
-      "class": "Sentinelle",
+      "name": "Elián Rosario",
+      "country": "Repubblica Dominicana",
+      "faction": "Panamericana",
+      "class": "Combattenti",
       "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 242,
-        "def": 545,
-        "vel": 762,
-        "crt": 277
+        "atk": 257,
+        "def": 672,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA15.png"
+      "copy": "Se accorci il passo indietro, lui accorcia subito la distanza.",
+      "image": {
+        "file": "PA015_CMB_Epic_Elián Rosario.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "PA16",
-      "name": "Gabriela Mendes",
-      "country": "Venezuela",
-      "class": "Combattenti",
+      "name": "Valeria Quispe - Capitana",
+      "country": "Perù",
+      "faction": "Panamericana",
+      "class": "Sentinelle",
       "rarity": "Leggendaria",
+      "firstDelivery": true,
       "stats": {
-        "atk": 292,
-        "def": 641,
-        "vel": 657,
-        "crt": 149
+        "atk": 232,
+        "def": 972,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "PA16.png"
+      "copy": "La capitana incassa e riprende il centro un passo alla volta.",
+      "image": {
+        "file": "PA016_SNT_Legendary_Valeria Quispe - Capitana.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     }
   ]
 }

@@ -1,5 +1,6 @@
 package it.fightersprogram.catalog.importer;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -8,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @param id   card code, e.g. {@code EA16}
  * @param copy flavor text shown on the card
  */
+@JsonIgnoreProperties({"faction", "firstDelivery"})
 public record CardEntry(
         String id,
         String name,
@@ -16,5 +18,5 @@ public record CardEntry(
         String rarity,
         CardStats stats,
         String copy,
-        String image) {
+        CardImage image) {
 }
