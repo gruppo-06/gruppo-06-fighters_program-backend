@@ -129,6 +129,7 @@ Il modulo `catalog` non conosce né il controller di un altro modulo, né le sue
 ```bash
 cd fighters-program
 docker compose up -d
+export JWT_SECRET="$(openssl rand -base64 48)"   # obbligatorio, almeno 32 caratteri
 sh ./mvnw -pl application -am spring-boot:run
 ```
 
@@ -145,6 +146,24 @@ La configurazione (`application/src/main/resources/application.properties`) legg
 | `SPRING_DATA_REDIS_PORT` | `6379` |
 | `CATALOG_IMPORT_ENABLED` | `true` (importa all'avvio i JSON del catalogo) |
 | `CATALOG_IMPORT_LOCATION` | `classpath*:catalog/*.json` |
+| `JWT_SECRET` | nessuno: **obbligatorio**, almeno 32 caratteri, mai nel codice né nel repo |
+
+I test usano una chiave di prova in `application/src/test/resources/config/application.properties`.
+
+### Formato degli errori
+
+Ogni errore dell'API ha la forma `{ "code": "...", "message": "...", "details": [] }`.
+
+| HTTP | `code` | Quando |
+|---|---|---|
+| 400 | `VALIDATION_ERROR` | Campi non validi; `details` elenca `campo: motivo` |
+| 400 | `MALFORMED_REQUEST` | Corpo della richiesta non leggibile come JSON |
+| 400 | `BAD_REQUEST` | Richiesta valida nella forma ma non sensata (es. sfidare sé stessi) |
+| 401 | `UNAUTHORIZED` | Token assente, scaduto o non valido; credenziali errate |
+| 403 | `FORBIDDEN` | Ruolo insufficiente (es. `/api/admin/**` senza ADMIN) |
+| 404 | `NOT_FOUND` | Risorsa inesistente o non visibile all'utente |
+| 409 | `CONFLICT` | Duplicato o stato incompatibile (email già usata, sfida già chiusa) |
+| 422 | `INVALID_DECK` | Mazzo che viola le regole; `details` elenca le violazioni |
 
 ## 10. Test
 
