@@ -165,6 +165,24 @@ Ogni errore dell'API ha la forma `{ "code": "...", "message": "...", "details": 
 | 409 | `CONFLICT` | Duplicato o stato incompatibile (email già usata, sfida già chiusa) |
 | 422 | `INVALID_DECK` | Mazzo che viola le regole; `details` elenca le violazioni |
 
+### Violazioni del mazzo
+
+`POST /api/me/decks/validate` risponde sempre 200 con `{ "valid": true|false, "violations": [{ "code", "message" }] }`;
+creazione e modifica del mazzo rispondono 422 `INVALID_DECK` con le stesse violazioni in `details`.
+I limiti sono in `game.deck.*` (`application.properties`), i messaggi in
+`collection/src/main/resources/it/fightersprogram/collection/deck-violations.properties`.
+
+| `code` | Quando |
+|---|---|
+| `WRONG_SIZE` | Il totale delle copie è diverso da `game.deck.size` |
+| `TOO_MANY_COPIES` | Una carta supera `game.deck.max-copies` |
+| `TOO_MANY_EPIC` | Le Epiche superano `game.deck.max-epic` |
+| `TOO_MANY_LEGENDARY` | Le Leggendarie superano `game.deck.max-legendary` |
+| `OVER_BUDGET` | La somma dei punti di rarità (`game.deck.rarity-points`) supera `game.deck.power-budget` |
+| `NOT_OWNED` | Copie richieste oltre quelle possedute |
+| `UNKNOWN_CARD` | `cardId` inesistente nel catalogo |
+| `DUPLICATE_CARD` | La stessa carta su più righe |
+
 ## 10. Test
 
 - **Unità del core** (`core`): `sh ./mvnw -pl core test`. Veloci, senza Spring.
