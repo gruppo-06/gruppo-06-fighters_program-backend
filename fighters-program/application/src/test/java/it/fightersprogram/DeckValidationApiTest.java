@@ -82,6 +82,14 @@ class DeckValidationApiTest {
     }
 
     @Test
+    void anEmptyDeckOnlyHasTheWrongSize() throws Exception {
+        validate(TestDecks.body("Empty", List.of()))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.valid", is(false)))
+                .andExpect(jsonPath("$.violations[0].code", is("WRONG_SIZE")));
+    }
+
+    @Test
     void zeroCopiesIsABadRequest() throws Exception {
         long cardId = TestDecks.cardIds(jdbcTemplate, "Comune", 1).getFirst();
 
