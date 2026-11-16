@@ -16,6 +16,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.fightersprogram.catalog.importer.CardEntry;
+import it.fightersprogram.catalog.importer.CardImage;
 import it.fightersprogram.catalog.importer.CardStats;
 import it.fightersprogram.catalog.importer.CatalogFile;
 import it.fightersprogram.catalog.importer.CatalogImportException;
@@ -117,6 +118,7 @@ class CatalogImporterTest {
 
     private static CardEntry entry(String code, String fighterClass, String rarity, int attack) {
         return new CardEntry(code, "Fighter " + code, "Kenya", fighterClass, rarity,
-                new CardStats(attack, 540, 850, 400), "Flavor " + code, code + ".png");
+                new CardStats(attack, 540, 850, 400), "Flavor " + code,
+                new CardImage(code + ".png", "image/png", 900, 1200));
     }
 }
