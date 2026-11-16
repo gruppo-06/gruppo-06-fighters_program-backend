@@ -4,243 +4,355 @@
   "cards": [
     {
       "id": "IP01",
-      "name": "Priya Nair",
-      "country": "India",
-      "class": "Combattenti",
+      "name": "Trần Mai Anh",
+      "country": "Vietnam",
+      "faction": "Indo-Pacifica",
+      "class": "Assassini",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 207,
-        "def": 476,
-        "vel": 756,
-        "crt": 293
+        "atk": 244,
+        "def": 490,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP01.png"
+      "copy": "Riparte dal bordo esterno e tiene il volto dietro la spalla.",
+      "image": {
+        "file": "IP001_ASS_Common_Trần Mai Anh.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP02",
-      "name": "Kenji Watanabe",
-      "country": "Giappone",
+      "name": "Lin Yu-ting",
+      "country": "Taiwan",
+      "faction": "Indo-Pacifica",
       "class": "Assassini",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 211,
-        "def": 471,
-        "vel": 794,
-        "crt": 120
+        "atk": 248,
+        "def": 480,
+        "vel": 850,
+        "crt": 425
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP02.png"
+      "copy": "Aspetta che tu riallinei i piedi. Il colpo parte in quel momento.",
+      "image": {
+        "file": "IP002_ASS_Common_Lin Yu-ting.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP03",
-      "name": "Dewi Santoso",
-      "country": "Indonesia",
-      "class": "Specialisti",
+      "name": "Chen Wei",
+      "country": "Cina",
+      "faction": "Indo-Pacifica",
+      "class": "Colossi",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 166,
-        "def": 462,
-        "vel": 642,
-        "crt": 323
+        "atk": 309,
+        "def": 639,
+        "vel": 250,
+        "crt": 700
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP03.png"
+      "copy": "Gli basta ruotare il busto per caricare il colpo.",
+      "image": {
+        "file": "IP003_CLS_Common_Chen Wei.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP04",
-      "name": "Liam Carter",
-      "country": "Australia",
-      "class": "Colossi",
+      "name": "Saira Mirza",
+      "country": "Pakistan",
+      "faction": "Indo-Pacifica",
+      "class": "Combattenti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 216,
-        "def": 397,
-        "vel": 264,
-        "crt": 777
+        "atk": 223,
+        "def": 658,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP04.png"
+      "copy": "Quando lo scambio in piedi la sfavorisce, ti porta in presa.",
+      "image": {
+        "file": "IP004_CMB_Common_Saira Mirza.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP05",
-      "name": "Maria Santos",
-      "country": "Filippine",
-      "class": "Sentinelle",
+      "name": "Kittisak Sombat",
+      "country": "Thailandia",
+      "faction": "Indo-Pacifica",
+      "class": "Combattenti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 173,
-        "def": 429,
-        "vel": 379,
-        "crt": 535
+        "atk": 228,
+        "def": 645,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP05.png"
+      "copy": "Cambia lato in uscita per avere già la distanza del prossimo colpo.",
+      "image": {
+        "file": "IP005_CMB_Common_Kittisak Sombat.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP06",
-      "name": "Linh Tran",
-      "country": "Vietnam",
-      "class": "Combattenti",
+      "name": "Maya Villanueva",
+      "country": "Filippine",
+      "faction": "Indo-Pacifica",
+      "class": "Sentinelle",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 218,
-        "def": 433,
-        "vel": 180,
-        "crt": 492
+        "atk": 213,
+        "def": 837,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP06.png"
+      "copy": "Ferma l’ingresso. Risponde prima di cedere un passo.",
+      "image": {
+        "file": "IP006_SNT_Common_Maya Villanueva.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP07",
-      "name": "Min-jun Park",
-      "country": "Corea del Sud",
-      "class": "Assassini",
+      "name": "Bayarmaa Enkhbat",
+      "country": "Mongolia",
+      "faction": "Indo-Pacifica",
+      "class": "Sentinelle",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 189,
-        "def": 403,
-        "vel": 452,
-        "crt": 278
+        "atk": 209,
+        "def": 855,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP07.png"
+      "copy": "Prova a girarle attorno. I suoi appoggi restano larghi.",
+      "image": {
+        "file": "IP007_SNT_Common_Bayarmaa Enkhbat.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP08",
-      "name": "Niran Chaiyaporn",
-      "country": "Thailandia",
+      "name": "Litia Ravono",
+      "country": "Figi",
+      "faction": "Indo-Pacifica",
       "class": "Specialisti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 183,
-        "def": 439,
-        "vel": 609,
-        "crt": 898
+        "atk": 187,
+        "def": 797,
+        "vel": 500,
+        "crt": 850
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP08.png"
+      "copy": "Le basta il primo cambio di ritmo per trovare la risposta.",
+      "image": {
+        "file": "IP008_SPC_Common_Litia Ravono.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP09",
-      "name": "Ravi Iyer",
-      "country": "India",
-      "class": "Colossi",
+      "name": "Nisha Gurung",
+      "country": "Nepal",
+      "faction": "Indo-Pacifica",
+      "class": "Assassini",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 252,
-        "def": 503,
-        "vel": 394,
-        "crt": 578
+        "atk": 263,
+        "def": 500,
+        "vel": 850,
+        "crt": 350
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP09.png"
+      "copy": "Entra e si sfila prima che la guardia riesca a richiudersi.",
+      "image": {
+        "file": "IP009_ASS_Rare_Nisha Gurung.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP10",
-      "name": "Yuki Tanaka",
-      "country": "Giappone",
-      "class": "Sentinelle",
+      "name": "Farhan Mahmud",
+      "country": "Bangladesh",
+      "faction": "Indo-Pacifica",
+      "class": "Colossi",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 211,
-        "def": 491,
-        "vel": 631,
-        "crt": 593
+        "atk": 312,
+        "def": 680,
+        "vel": 250,
+        "crt": 750
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP10.png"
+      "copy": "Lascia che tu assorba la finta. La spinta vera arriva dopo.",
+      "image": {
+        "file": "IP010_CLS_Rare_Farhan Mahmud.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP11",
-      "name": "Budi Hartono",
+      "name": "Dewi Pranata",
       "country": "Indonesia",
-      "class": "Combattenti",
+      "faction": "Indo-Pacifica",
+      "class": "Colossi",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 228,
-        "def": 465,
-        "vel": 639,
-        "crt": 637
+        "atk": 309,
+        "def": 694,
+        "vel": 250,
+        "crt": 700
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP11.png"
+      "copy": "Tiene il contatto finché la tua postura comincia a cedere.",
+      "image": {
+        "file": "IP011_CLS_Rare_Dewi Pranata.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP12",
-      "name": "Chloe Mitchell",
-      "country": "Australia",
-      "class": "Assassini",
+      "name": "Malini Perera",
+      "country": "Sri Lanka",
+      "faction": "Indo-Pacifica",
+      "class": "Specialisti",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 250,
-        "def": 485,
-        "vel": 196,
-        "crt": 319
+        "atk": 199,
+        "def": 813,
+        "vel": 500,
+        "crt": 850
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP12.png"
+      "copy": "Colpisce durante il recupero. Le basta leggere bene un istante.",
+      "image": {
+        "file": "IP012_SPC_Rare_Malini Perera.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP13",
-      "name": "Jose Reyes",
-      "country": "Filippine",
-      "class": "Specialisti",
+      "name": "Kavya Nair",
+      "country": "India",
+      "faction": "Indo-Pacifica",
+      "class": "Colossi",
       "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 254,
-        "def": 520,
-        "vel": 195,
-        "crt": 565
+        "atk": 328,
+        "def": 707,
+        "vel": 250,
+        "crt": 700
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP13.png"
+      "copy": "Regola il carico scambio dopo scambio. Accelera quando la presa cede.",
+      "image": {
+        "file": "IP013_CLS_Epic_Kavya Nair.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP14",
-      "name": "Thanh Nguyen",
-      "country": "Vietnam",
-      "class": "Colossi",
+      "name": "Nadia Idris",
+      "country": "Malesia",
+      "faction": "Indo-Pacifica",
+      "class": "Combattenti",
       "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 281,
-        "def": 562,
-        "vel": 517,
-        "crt": 658
+        "atk": 242,
+        "def": 712,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP14.png"
+      "copy": "Ogni contatto finisce in guardia. Da lì riparte.",
+      "image": {
+        "file": "IP014_CMB_Epic_Nadia Idris.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP15",
-      "name": "Seo-yeon Kim",
-      "country": "Corea del Sud",
+      "name": "Phạm Minh Châu",
+      "country": "Vietnam",
+      "faction": "Indo-Pacifica",
       "class": "Sentinelle",
       "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 290,
-        "def": 543,
-        "vel": 127,
-        "crt": 460
+        "atk": 230,
+        "def": 909,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP15.png"
+      "copy": "Ti toglie spazio e tiene aperta la linea della risposta.",
+      "image": {
+        "file": "IP015_SNT_Epic_Phạm Minh Châu.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "IP16",
-      "name": "Arjun Rao",
-      "country": "Thailandia",
-      "class": "Combattenti",
+      "name": "Arjun Rao - Capitano",
+      "country": "India",
+      "faction": "Indo-Pacifica",
+      "class": "Specialisti",
       "rarity": "Leggendaria",
+      "firstDelivery": true,
       "stats": {
-        "atk": 300,
-        "def": 622,
-        "vel": 675,
-        "crt": 803
+        "atk": 211,
+        "def": 896,
+        "vel": 500,
+        "crt": 850
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "IP16.png"
+      "copy": "Il capitano misura il tuo recupero. Colpisce nel varco più breve.",
+      "image": {
+        "file": "IP016_SPC_Legendary_Arjun Rao - Capitano.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     }
   ]
 }
