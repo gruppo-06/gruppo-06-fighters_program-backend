@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 1,
+  "faction": "Panamericana",
+  "cards": [
+    {
+      "id": "PA01",
+      "name": "Isabel Paredes",
+      "country": "Panama",
+      "faction": "Panamericana",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 255,
+        "def": 470,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Due passi all’esterno. Il colpo arriva prima che tu riesca a girarti.",
+      "image": {
+        "file": "PA001_ASS_Common_Isabel Paredes.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA02",
+      "name": "Mateus Nogueira",
+      "country": "Brasile",
+      "faction": "Panamericana",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 293,
+        "def": 673,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Sostiene la presa un istante in più. È lì che carica.",
+      "image": {
+        "file": "PA002_CLS_Common_Mateus Nogueira.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA03",
+      "name": "Camila Rojas",
+      "country": "Cile",
+      "faction": "Panamericana",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 299,
+        "def": 660,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Quando le scarichi addosso il tuo peso, lei trova la spinta.",
+      "image": {
+        "file": "PA003_CLS_Common_Camila Rojas.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA04",
+      "name": "Bruno Acosta",
+      "country": "Uruguay",
+      "faction": "Panamericana",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 238,
+        "def": 618,
+        "vel": 550,
+        "crt": 550
+      },
+      "copy": "Appena la pressione si ferma, cambia direzione.",
+      "image": {
+        "file": "PA004_CMB_Common_Bruno Acosta.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA05",
+      "name": "Luz Jiménez",
+      "country": "Costa Rica",
+      "faction": "Panamericana",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 233,
+        "def": 632,
+        "vel": 550,
+        "crt": 550
+      },
+      "copy": "Cede qualche centimetro. Poi si riprende la distanza in diagonale.",
+      "image": {
+        "file": "PA005_CMB_Common_Luz Jiménez.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA06",
+      "name": "Nadège Pierre",
+      "country": "Haiti",
+      "faction": "Panamericana",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 206,
+        "def": 864,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "Lascia spazio ai lati per tenersi libera la via d’uscita.",
+      "image": {
+        "file": "PA006_SNT_Common_Nadège Pierre.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA07",
+      "name": "Dalia Pérez",
+      "country": "Cuba",
+      "faction": "Panamericana",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 183,
+        "def": 813,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Se la mano torna lenta, il suo pugno arriva per primo.",
+      "image": {
+        "file": "PA007_SPC_Common_Dalia Pérez.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA08",
+      "name": "Micah Bennett",
+      "country": "Giamaica",
+      "faction": "Panamericana",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 186,
+        "def": 797,
+        "vel": 500,
+        "crt": 875
+      },
+      "copy": "Ripete la finta di spalla finché reagisci troppo presto.",
+      "image": {
+        "file": "PA008_SPC_Common_Micah Bennett.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA09",
+      "name": "Abril Salgado",
+      "country": "Messico",
+      "faction": "Panamericana",
+      "class": "Assassini",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 257,
+        "def": 500,
+        "vel": 850,
+        "crt": 450
+      },
+      "copy": "Ritarda l’ultimo passo e si infila tra le due parate.",
+      "image": {
+        "file": "PA009_ASS_Rare_Abril Salgado.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA10",
+      "name": "Andrés Cedeño",
+      "country": "Ecuador",
+      "faction": "Panamericana",
+      "class": "Assassini",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 255,
+        "def": 510,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Appena il rientro si chiude, il piede ha già cambiato direzione.",
+      "image": {
+        "file": "PA010_ASS_Rare_Andrés Cedeño.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA11",
+      "name": "Lucía Ferrer",
+      "country": "Argentina",
+      "faction": "Panamericana",
+      "class": "Sentinelle",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 219,
+        "def": 882,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "Aspetta al centro. Quando ti sbilanci avanti, risponde.",
+      "image": {
+        "file": "PA011_SNT_Rare_Lucía Ferrer.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA12",
+      "name": "Mariana Vélez",
+      "country": "Colombia",
+      "faction": "Panamericana",
+      "class": "Specialisti",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 197,
+        "def": 830,
+        "vel": 500,
+        "crt": 800
+      },
+      "copy": "Anche un varco sporco le basta per far passare il colpo.",
+      "image": {
+        "file": "PA012_SPC_Rare_Mariana Vélez.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA13",
+      "name": "Teo Méndez",
+      "country": "Guatemala",
+      "faction": "Panamericana",
+      "class": "Assassini",
+      "rarity": "Epica",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 270,
+        "def": 520,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Stesso ritmo in entrata e in uscita. Quando lo insegui, cambia lato.",
+      "image": {
+        "file": "PA013_ASS_Epic_Teo Méndez.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA14",
+      "name": "Renata Sá",
+      "country": "Brasile",
+      "faction": "Panamericana",
+      "class": "Colossi",
+      "rarity": "Epica",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 318,
+        "def": 728,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Incassa il primo impatto per colpire quando sei ancora a portata.",
+      "image": {
+        "file": "PA014_CLS_Epic_Renata Sá.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA15",
+      "name": "Elián Rosario",
+      "country": "Repubblica Dominicana",
+      "faction": "Panamericana",
+      "class": "Combattenti",
+      "rarity": "Epica",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 257,
+        "def": 672,
+        "vel": 550,
+        "crt": 550
+      },
+      "copy": "Se accorci il passo indietro, lui accorcia subito la distanza.",
+      "image": {
+        "file": "PA015_CMB_Epic_Elián Rosario.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "PA16",
+      "name": "Valeria Quispe - Capitana",
+      "country": "Perù",
+      "faction": "Panamericana",
+      "class": "Sentinelle",
+      "rarity": "Leggendaria",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 232,
+        "def": 972,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "La capitana incassa e riprende il centro un passo alla volta.",
+      "image": {
+        "file": "PA016_SNT_Legendary_Valeria Quispe - Capitana.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    }
+  ]
+}

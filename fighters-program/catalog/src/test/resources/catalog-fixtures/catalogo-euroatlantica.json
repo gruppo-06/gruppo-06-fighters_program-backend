@@ -1,0 +1,358 @@
+{
+  "schemaVersion": 1,
+  "faction": "Euroatlantica",
+  "cards": [
+    {
+      "id": "EA01",
+      "name": "Inês Valente",
+      "country": "Portogallo",
+      "faction": "Euroatlantica",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 250,
+        "def": 480,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Usa lo stesso passo d’ingresso per preparare due uscite diverse.",
+      "image": {
+        "file": "EA001_ASS_Common_Inês Valente.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA02",
+      "name": "Noah Bisset",
+      "country": "Canada",
+      "faction": "Euroatlantica",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 296,
+        "def": 666,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Assorbe la spinta in presa e la restituisce a distanza corta.",
+      "image": {
+        "file": "EA002_CLS_Common_Noah Bisset.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA03",
+      "name": "Park Ji-won",
+      "country": "Corea del Sud",
+      "faction": "Euroatlantica",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 301,
+        "def": 653,
+        "vel": 250,
+        "crt": 725
+      },
+      "copy": "Interrompe il caricamento a metà per far partire il contrattacco avversario.",
+      "image": {
+        "file": "EA003_CLS_Common_Park Ji-won.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA04",
+      "name": "Mara Keene",
+      "country": "Australia",
+      "faction": "Euroatlantica",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 235,
+        "def": 625,
+        "vel": 550,
+        "crt": 550
+      },
+      "copy": "Costruisce scambi brevi attorno a una finta di presa.",
+      "image": {
+        "file": "EA004_CMB_Common_Mara Keene.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA05",
+      "name": "Élodie Marchand",
+      "country": "Francia",
+      "faction": "Euroatlantica",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 200,
+        "def": 891,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "Ex collaudatrice, lascia scorrere gli impatti sulle spalle per mantenere la posizione.",
+      "image": {
+        "file": "EA005_SNT_Common_Élodie Marchand.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA06",
+      "name": "Daniel Mercer",
+      "country": "Stati Uniti",
+      "faction": "Euroatlantica",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 204,
+        "def": 873,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "Accorcia il passo e costringe l’avversario a colpire da fermo.",
+      "image": {
+        "file": "EA006_SNT_Common_Daniel Mercer.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA07",
+      "name": "Aroha Rangi",
+      "country": "Nuova Zelanda",
+      "faction": "Euroatlantica",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 193,
+        "def": 772,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Cerca l’apertura nel cambio di appoggio dopo un attacco mancato.",
+      "image": {
+        "file": "EA007_SPC_Common_Aroha Rangi.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA08",
+      "name": "Niko Salonen",
+      "country": "Finlandia",
+      "faction": "Euroatlantica",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 189,
+        "def": 789,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Concede il primo contatto per trovare il ritmo della guardia.",
+      "image": {
+        "file": "EA008_SPC_Common_Niko Salonen.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA09",
+      "name": "Sofia Bellandi",
+      "country": "Italia",
+      "faction": "Euroatlantica",
+      "class": "Assassini",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 265,
+        "def": 490,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Accorcia la traiettoria dei colpi e accetta più rischio in uscita.",
+      "image": {
+        "file": "EA009_ASS_Rare_Sofia Bellandi.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA10",
+      "name": "Darius Bell",
+      "country": "Stati Uniti",
+      "faction": "Euroatlantica",
+      "class": "Colossi",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 318,
+        "def": 680,
+        "vel": 250,
+        "crt": 650
+      },
+      "copy": "Preferisce ripetere colpi pesanti e affidabili anche quando l’altro cambia guardia.",
+      "image": {
+        "file": "EA010_CLS_Rare_Darius Bell.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA11",
+      "name": "Seo Min-jae",
+      "country": "Corea del Sud",
+      "faction": "Euroatlantica",
+      "class": "Combattenti",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 238,
+        "def": 665,
+        "vel": 550,
+        "crt": 600
+      },
+      "copy": "Ti fa parare il primo colpo. Il secondo passa.",
+      "image": {
+        "file": "EA011_CMB_Rare_Seo Min-jae.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA12",
+      "name": "Clara Weiss",
+      "country": "Germania",
+      "faction": "Euroatlantica",
+      "class": "Combattenti",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 235,
+        "def": 678,
+        "vel": 550,
+        "crt": 550
+      },
+      "copy": "Si è specializzata nel riaprire uno scambio dopo aver perso il centro.",
+      "image": {
+        "file": "EA012_CMB_Rare_Clara Weiss.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA13",
+      "name": "Rowan Ellis",
+      "country": "Regno Unito",
+      "faction": "Euroatlantica",
+      "class": "Combattenti",
+      "rarity": "Epica",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 250,
+        "def": 692,
+        "vel": 550,
+        "crt": 550
+      },
+      "copy": "Riserva lo stesso tempo d’azione a prese, colpi e recupero della guardia.",
+      "image": {
+        "file": "EA013_CMB_Epic_Rowan Ellis.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA14",
+      "name": "Maëlle Girard",
+      "country": "Canada",
+      "faction": "Euroatlantica",
+      "class": "Sentinelle",
+      "rarity": "Epica",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 217,
+        "def": 963,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "Ha scelto una formulazione da recupero prolungato dopo un ciclo di sovraccarico.",
+      "image": {
+        "file": "EA014_SNT_Epic_Maëlle Girard.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA15",
+      "name": "Riku Hayase",
+      "country": "Giappone",
+      "faction": "Euroatlantica",
+      "class": "Specialisti",
+      "rarity": "Epica",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 209,
+        "def": 838,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Ripeti la stessa difesa e Hayase ha già trovato l’apertura.",
+      "image": {
+        "file": "EA015_SPC_Epic_Riku Hayase.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA16",
+      "name": "Hana Kuroda - Capitana",
+      "country": "Giappone",
+      "faction": "Euroatlantica",
+      "class": "Assassini",
+      "rarity": "Leggendaria",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 281,
+        "def": 540,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "La capitana pianta il piede. Al passo successivo ha già ripreso l’iniziativa.",
+      "image": {
+        "file": "EA016_ASS_Legendary_Hana Kuroda - Capitana.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    }
+  ]
+}
