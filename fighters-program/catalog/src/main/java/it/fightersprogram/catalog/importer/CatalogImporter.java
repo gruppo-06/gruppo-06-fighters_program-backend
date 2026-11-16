@@ -63,7 +63,7 @@ public class CatalogImporter {
                 .orElseThrow(() -> unknownReference(entry, "rarity", entry.rarity()));
         CardStats stats = entry.stats();
         return new CardDetails(entry.name(), entry.country(), faction, fighterClass, rarity,
-                stats.atk(), stats.def(), stats.vel(), stats.crt(), entry.copy(), entry.image());
+                stats.atk(), stats.def(), stats.vel(), stats.crt(), entry.copy(), entry.image().file());
     }
 
     private boolean upsert(String code, CardDetails details) {

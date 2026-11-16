@@ -3,244 +3,356 @@
   "faction": "Eurasiatica",
   "cards": [
     {
-      "id": "ER01",
-      "name": "Ivan Sokolov",
-      "country": "Russia",
-      "class": "Combattenti",
-      "rarity": "Comune",
-      "stats": {
-        "atk": 214,
-        "def": 476,
-        "vel": 714,
-        "crt": 602
-      },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER01.png"
-    },
-    {
-      "id": "ER02",
-      "name": "Aigerim Bekova",
-      "country": "Kazakistan",
+      "id": "EU01",
+      "name": "Zofia Bielska",
+      "country": "Polonia",
+      "faction": "Eurasiatica",
       "class": "Assassini",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 200,
-        "def": 447,
-        "vel": 364,
-        "crt": 530
+        "atk": 257,
+        "def": 465,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER02.png"
+      "copy": "Avanzi con la spalla. Lei è già sul tuo lato cieco.",
+      "image": {
+        "file": "EU001_ASS_Common_Zofia Bielska.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
-      "id": "ER03",
-      "name": "Emre Yildiz",
-      "country": "Turchia",
-      "class": "Specialisti",
-      "rarity": "Comune",
-      "stats": {
-        "atk": 211,
-        "def": 445,
-        "vel": 630,
-        "crt": 125
-      },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER03.png"
-    },
-    {
-      "id": "ER04",
+      "id": "EU02",
       "name": "Nino Beridze",
       "country": "Georgia",
+      "faction": "Eurasiatica",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 252,
+        "def": 475,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Ti invita a inseguire. Poi pianta il tallone.",
+      "image": {
+        "file": "EU002_ASS_Common_Nino Beridze.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU03",
+      "name": "Lev Morozov",
+      "country": "Russia",
+      "faction": "Eurasiatica",
       "class": "Colossi",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 178,
-        "def": 478,
-        "vel": 232,
-        "crt": 150
+        "atk": 302,
+        "def": 653,
+        "vel": 250,
+        "crt": 700
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER04.png"
+      "copy": "Quando entrambi i piedi sono a terra, il colpo è già carico.",
+      "image": {
+        "file": "EU003_CLS_Common_Lev Morozov.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
-      "id": "ER05",
-      "name": "Batu Erdene",
-      "country": "Mongolia",
-      "class": "Sentinelle",
-      "rarity": "Comune",
-      "stats": {
-        "atk": 216,
-        "def": 465,
-        "vel": 205,
-        "crt": 834
-      },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER05.png"
-    },
-    {
-      "id": "ER06",
-      "name": "Dilnoza Karimova",
-      "country": "Uzbekistan",
+      "id": "EU04",
+      "name": "Tamar Arakelyan",
+      "country": "Armenia",
+      "faction": "Eurasiatica",
       "class": "Combattenti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 204,
-        "def": 440,
-        "vel": 245,
-        "crt": 593
+        "atk": 226,
+        "def": 652,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER06.png"
+      "copy": "Una presa breve e lo scambio torna alla sua distanza.",
+      "image": {
+        "file": "EU004_CMB_Common_Tamar Arakelyan.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
-      "id": "ER07",
+      "id": "EU05",
+      "name": "Dilshod Karimov",
+      "country": "Uzbekistan",
+      "faction": "Eurasiatica",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 229,
+        "def": 638,
+        "vel": 550,
+        "crt": 575
+      },
+      "copy": "Rivede ogni errore. Al prossimo scambio lo trasforma in una risposta.",
+      "image": {
+        "file": "EU005_CMB_Common_Dilshod Karimov.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU06",
+      "name": "Samira Haddad",
+      "country": "Giordania",
+      "faction": "Eurasiatica",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 211,
+        "def": 846,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "Tiene la linea finché il tuo piede non si sposta.",
+      "image": {
+        "file": "EU006_SNT_Common_Samira Haddad.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU07",
+      "name": "Leyla Farhadi",
+      "country": "Iran",
+      "faction": "Eurasiatica",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 181,
+        "def": 822,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Il primo assalto le dice dove guardare al secondo.",
+      "image": {
+        "file": "EU007_SPC_Common_Leyla Farhadi.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU08",
+      "name": "Danylo Hrytsenko",
+      "country": "Ucraina",
+      "faction": "Eurasiatica",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 185,
+        "def": 805,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Tra la presa e il ritorno in guardia gli basta un istante.",
+      "image": {
+        "file": "EU008_SPC_Common_Danylo Hrytsenko.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU09",
+      "name": "Aigerim Ospanova",
+      "country": "Kazakistan",
+      "faction": "Eurasiatica",
+      "class": "Colossi",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 321,
+        "def": 666,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Fissa la distanza. Tutta la spinta arriva insieme.",
+      "image": {
+        "file": "EU009_CLS_Rare_Aigerim Ospanova.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU10",
+      "name": "Radu Ionescu",
+      "country": "Romania",
+      "faction": "Eurasiatica",
+      "class": "Combattenti",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 242,
+        "def": 665,
+        "vel": 550,
+        "crt": 500
+      },
+      "copy": "Taglia le finte. Lo scambio si chiude in linea retta.",
+      "image": {
+        "file": "EU010_CMB_Rare_Radu Ionescu.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU11",
+      "name": "Mina Rahimi",
+      "country": "Iran",
+      "faction": "Eurasiatica",
+      "class": "Sentinelle",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 213,
+        "def": 900,
+        "vel": 400,
+        "crt": 500
+      },
+      "copy": "Quel mezzo passo indietro è l’invito che spera tu accetti.",
+      "image": {
+        "file": "EU011_SNT_Rare_Mina Rahimi.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU12",
+      "name": "Emir Aydin",
+      "country": "Turchia",
+      "faction": "Eurasiatica",
+      "class": "Sentinelle",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 211,
+        "def": 918,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "Arretra di un passo. La guardia resta al suo posto.",
+      "image": {
+        "file": "EU012_SNT_Rare_Emir Aydin.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU13",
+      "name": "Yana Volkova",
+      "country": "Russia",
+      "faction": "Eurasiatica",
+      "class": "Assassini",
+      "rarity": "Epica",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 278,
+        "def": 505,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Se vede il primo varco, spende tutto per chiuderlo.",
+      "image": {
+        "file": "EU013_ASS_Epic_Yana Volkova.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU14",
       "name": "Aram Petrosyan",
       "country": "Armenia",
-      "class": "Assassini",
-      "rarity": "Comune",
+      "faction": "Eurasiatica",
+      "class": "Sentinelle",
+      "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 179,
-        "def": 395,
-        "vel": 741,
-        "crt": 817
+        "atk": 224,
+        "def": 936,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER07.png"
+      "copy": "La sua guardia avanza. Le tue uscite si restringono.",
+      "image": {
+        "file": "EU014_SNT_Epic_Aram Petrosyan.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
-      "id": "ER08",
-      "name": "Leyla Aliyeva",
-      "country": "Azerbaigian",
+      "id": "EU15",
+      "name": "Daria Kovalenko",
+      "country": "Ucraina",
+      "faction": "Eurasiatica",
       "class": "Specialisti",
-      "rarity": "Comune",
+      "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 208,
-        "def": 466,
-        "vel": 580,
-        "crt": 831
+        "atk": 197,
+        "def": 888,
+        "vel": 500,
+        "crt": 850
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER08.png"
+      "copy": "Aspetta che tu ripeta la sequenza. Poi la spezza sotto il braccio.",
+      "image": {
+        "file": "EU015_SPC_Epic_Daria Kovalenko.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
-      "id": "ER09",
-      "name": "Pavel Orlov",
-      "country": "Russia",
-      "class": "Colossi",
-      "rarity": "Rara",
-      "stats": {
-        "atk": 259,
-        "def": 519,
-        "vel": 357,
-        "crt": 673
-      },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER09.png"
-    },
-    {
-      "id": "ER10",
-      "name": "Timur Akhmetov",
+      "id": "EU16",
+      "name": "Temir Saparov - Capitano",
       "country": "Kazakistan",
-      "class": "Sentinelle",
-      "rarity": "Rara",
-      "stats": {
-        "atk": 225,
-        "def": 535,
-        "vel": 415,
-        "crt": 661
-      },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER10.png"
-    },
-    {
-      "id": "ER11",
-      "name": "Selin Kaya",
-      "country": "Turchia",
-      "class": "Combattenti",
-      "rarity": "Rara",
-      "stats": {
-        "atk": 251,
-        "def": 532,
-        "vel": 613,
-        "crt": 815
-      },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER11.png"
-    },
-    {
-      "id": "ER12",
-      "name": "Giorgi Kapanadze",
-      "country": "Georgia",
-      "class": "Assassini",
-      "rarity": "Rara",
-      "stats": {
-        "atk": 230,
-        "def": 501,
-        "vel": 543,
-        "crt": 307
-      },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER12.png"
-    },
-    {
-      "id": "ER13",
-      "name": "Saran Bold",
-      "country": "Mongolia",
-      "class": "Specialisti",
-      "rarity": "Epica",
-      "stats": {
-        "atk": 258,
-        "def": 554,
-        "vel": 109,
-        "crt": 133
-      },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER13.png"
-    },
-    {
-      "id": "ER14",
-      "name": "Rustam Nazarov",
-      "country": "Uzbekistan",
+      "faction": "Eurasiatica",
       "class": "Colossi",
-      "rarity": "Epica",
-      "stats": {
-        "atk": 249,
-        "def": 596,
-        "vel": 569,
-        "crt": 635
-      },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER14.png"
-    },
-    {
-      "id": "ER15",
-      "name": "Ani Hakobyan",
-      "country": "Armenia",
-      "class": "Sentinelle",
-      "rarity": "Epica",
-      "stats": {
-        "atk": 299,
-        "def": 582,
-        "vel": 468,
-        "crt": 304
-      },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER15.png"
-    },
-    {
-      "id": "ER16",
-      "name": "Kamran Huseynov",
-      "country": "Azerbaigian",
-      "class": "Combattenti",
       "rarity": "Leggendaria",
+      "firstDelivery": true,
       "stats": {
-        "atk": 306,
-        "def": 644,
-        "vel": 597,
-        "crt": 577
+        "atk": 340,
+        "def": 734,
+        "vel": 250,
+        "crt": 700
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "ER16.png"
+      "copy": "Il capitano fissa gli appoggi. Tutta la tensione si libera in un impatto.",
+      "image": {
+        "file": "EU016_CLS_Legendary_Temir Saparov - Capitano.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     }
   ]
 }

@@ -17,7 +17,7 @@ Significant decisions for this project. Newest at the bottom. Entries are never 
 ## 002 — Provisional base-mode rules and catalogs
 - **Date:** 2026-11-16
 - **Status:** Proposed
-- **Context:** SWD_EN01 (#11) is still open with the DSG and only one official catalog exists, but milestone v0.1.0 needs a playable match.
+- **Context:** SWD_EN01 (#11) is still open with the DSG, but milestone v0.1.0 needs a playable match. Update: the 80 delivered Fighters are now bundled (Euroatlantica official file, the other four generated from the DSG roster); only the rule values stay provisional.
 - **Decision:** Use the provisional values in `docs/rules-open-values.md`, read from `game.rules.*` and `game.deck.*`, and five placeholder catalog files with the official schema. Nothing is hardcoded: when the DSG decide, only `application.properties` and the JSON files change.
 - **Alternatives:** Wait for the DSG (rejected: the milestone is already late and the whole match flow would stay untested); hardcode the values in the engine (rejected: every change would need code).
 - **Consequences:** The game is playable end to end now; balance results are not meaningful until the official catalogs and values arrive; the decision becomes Accepted (or is superseded) when #11 is closed.
