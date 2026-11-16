@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.startsWith;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -29,6 +30,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.jayway.jsonpath.JsonPath;
 
+import jakarta.persistence.EntityManager;
+
 @SpringBootTest(properties = {"game.starter-collection.enabled=true", "game.deck.max-per-user=2"})
 @AutoConfigureMockMvc
 @Transactional
@@ -41,6 +44,9 @@ class DeckApiTest {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    private EntityManager entityManager;
 
     private String alice;
 
@@ -132,6 +138,24 @@ class DeckApiTest {
                 .andExpect(status().isNoContent());
         mockMvc.perform(get(DECKS + "/" + deckId).header(HttpHeaders.AUTHORIZATION, alice))
                 .andExpect(status().isNotFound());
+    }
+
+    @Test
+    void aDeckUsedInAFinishedChallengeCanBeDeletedAndTheChallengeIsKept() throws Exception {
+        long deckId = createdDeckId(alice, "Main");
+        TestUsers.registerAndLogin(mockMvc, "deck_bob");
+        long matchId = jdbcTemplate.queryForObject("""
+                INSERT INTO match (challenger_id, opponent_id, challenger_deck_id, status, finished_at)
+                SELECT a.id, b.id, ?, 'FINISHED', now()
+                FROM app_user a, app_user b WHERE a.nickname = 'deck_alice' AND b.nickname = 'deck_bob'
+                RETURNING id
+                """, Long.class, deckId);
+
+        mockMvc.perform(delete(DECKS + "/" + deckId).header(HttpHeaders.AUTHORIZATION, alice))
+                .andExpect(status().isNoContent());
+        entityManager.flush();
+        assertNull(jdbcTemplate.queryForObject(
+                "SELECT challenger_deck_id FROM match WHERE id = ?", Long.class, matchId));
     }
 
     @Test
