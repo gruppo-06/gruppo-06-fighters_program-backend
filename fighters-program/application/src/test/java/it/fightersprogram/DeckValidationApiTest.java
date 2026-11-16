@@ -58,7 +58,7 @@ class DeckValidationApiTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.valid", is(false)))
                 .andExpect(jsonPath("$.violations[0].code", is("NOT_OWNED")))
-                .andExpect(jsonPath("$.violations[0].message", is("Ti manca 1 copia di Hana Kuroda")));
+                .andExpect(jsonPath("$.violations[0].message", is("Ti manca 1 copia di Hana Kuroda - Capitana")));
     }
 
     @Test
