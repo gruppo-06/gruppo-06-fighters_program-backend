@@ -32,6 +32,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.jayway.jsonpath.JsonPath;
 
+import jakarta.persistence.EntityManager;
+
 import it.fightersprogram.engine.MatchLog;
 import it.fightersprogram.matches.MatchFinished;
 import it.fightersprogram.matches.MatchSimulator;
@@ -63,6 +65,9 @@ class MatchApiTest {
 
     @Autowired
     private ApplicationEvents events;
+
+    @Autowired
+    private EntityManager entityManager;
 
     private String alice;
     private String bob;
@@ -249,6 +254,7 @@ class MatchApiTest {
     private long playedMatch() throws Exception {
         long matchId = idOf(challenge(alice, "mt_bob", aliceDeck).andReturn().getResponse().getContentAsString());
         accept(bob, matchId, bobDeck).andExpect(status().isOk());
+        entityManager.flush();
         return matchId;
     }
 
