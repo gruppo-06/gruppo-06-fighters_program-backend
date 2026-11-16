@@ -183,6 +183,26 @@ I limiti sono in `game.deck.*` (`application.properties`), i messaggi in
 | `UNKNOWN_CARD` | `cardId` inesistente nel catalogo |
 | `DUPLICATE_CARD` | La stessa carta su più righe |
 
+### Endpoint principali (dettagli su Swagger)
+
+Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e catalogo.
+
+| Metodo e percorso | Cosa fa |
+|---|---|
+| `POST /api/auth/register` | Registra un giocatore (riceve il set iniziale provvisorio, decisione 003) |
+| `POST /api/auth/login` | Restituisce `{ accessToken, expiresIn }` |
+| `GET /api/me` | Profilo dell'utente corrente |
+| `GET /api/cards`, `GET /api/cards/{code}` | Catalogo pubblico |
+| `GET /api/me/collection`, `GET /api/me/collection/progress` | Carte possedute e avanzamento per fazione |
+| `POST /api/me/decks/validate` | Verifica un mazzo senza salvarlo |
+| `GET/POST /api/me/decks`, `GET/PUT/DELETE /api/me/decks/{id}` | Mazzi dell'utente |
+| `POST /api/matches` | Sfida un giocatore: `{ opponentNickname, deckId }` |
+| `GET /api/matches/incoming`, `GET /api/matches/outgoing` | Sfide ricevute in attesa e sfide inviate |
+| `POST /api/matches/{id}/accept` | Accetta con `{ deckId }`: il server simula e restituisce il replay |
+| `POST /api/matches/{id}/decline`, `POST /api/matches/{id}/cancel` | Rifiuta (sfidato) o annulla (sfidante) |
+| `GET /api/matches/{id}` | Replay: mazzi e log turno per turno (solo partecipanti) |
+| `GET /api/matches/history` | Storico paginato con esito `WIN`, `LOSS`, `DRAW` |
+
 ## 10. Test
 
 - **Unità del core** (`core`): `sh ./mvnw -pl core test`. Veloci, senza Spring.
