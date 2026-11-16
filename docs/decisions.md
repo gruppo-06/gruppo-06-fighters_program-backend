@@ -21,3 +21,13 @@ Significant decisions for this project. Newest at the bottom. Entries are never 
 - **Decision:** Use the provisional values in `docs/rules-open-values.md`, read from `game.rules.*` and `game.deck.*`, and five placeholder catalog files with the official schema. Nothing is hardcoded: when the DSG decide, only `application.properties` and the JSON files change.
 - **Alternatives:** Wait for the DSG (rejected: the milestone is already late and the whole match flow would stay untested); hardcode the values in the engine (rejected: every change would need code).
 - **Consequences:** The game is playable end to end now; balance results are not meaningful until the official catalogs and values arrive; the decision becomes Accepted (or is superseded) when #11 is closed.
+
+---
+
+## 003 — Provisional starter collection on registration
+- **Date:** 2026-11-16
+- **Status:** Proposed
+- **Context:** Players get cards only from packs (SWD_EC02) and the initial credit bonus (SWD_EC01), both in milestone v0.1.4. Without cards nobody can build a deck, so no match could be played in v0.1.0/v0.1.2.
+- **Decision:** On `UserRegistered`, the collection module grants 2 copies of every Comune and 1 of every Rara card. It is switched on by `game.starter-collection.enabled` and lives in one class (`StarterCollection`).
+- **Alternatives:** Seed users and collections with a Flyway migration (rejected: only works for fixed test users); wait for packs (rejected: blocks the whole match flow).
+- **Consequences:** Every new player can build a valid deck at once (Epic and Legendary cards still need packs). When SWD_EC01/EC02 land, the team either removes the class or keeps it as a small welcome gift.
