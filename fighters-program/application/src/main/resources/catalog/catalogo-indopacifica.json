@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "faction": "Indo-Pacifica",
+  "cards": [
+    {
+      "id": "IP01",
+      "name": "Priya Nair",
+      "country": "India",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 207,
+        "def": 476,
+        "vel": 756,
+        "crt": 293
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP01.png"
+    },
+    {
+      "id": "IP02",
+      "name": "Kenji Watanabe",
+      "country": "Giappone",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 211,
+        "def": 471,
+        "vel": 794,
+        "crt": 120
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP02.png"
+    },
+    {
+      "id": "IP03",
+      "name": "Dewi Santoso",
+      "country": "Indonesia",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 166,
+        "def": 462,
+        "vel": 642,
+        "crt": 323
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP03.png"
+    },
+    {
+      "id": "IP04",
+      "name": "Liam Carter",
+      "country": "Australia",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 216,
+        "def": 397,
+        "vel": 264,
+        "crt": 777
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP04.png"
+    },
+    {
+      "id": "IP05",
+      "name": "Maria Santos",
+      "country": "Filippine",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 173,
+        "def": 429,
+        "vel": 379,
+        "crt": 535
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP05.png"
+    },
+    {
+      "id": "IP06",
+      "name": "Linh Tran",
+      "country": "Vietnam",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 218,
+        "def": 433,
+        "vel": 180,
+        "crt": 492
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP06.png"
+    },
+    {
+      "id": "IP07",
+      "name": "Min-jun Park",
+      "country": "Corea del Sud",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 189,
+        "def": 403,
+        "vel": 452,
+        "crt": 278
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP07.png"
+    },
+    {
+      "id": "IP08",
+      "name": "Niran Chaiyaporn",
+      "country": "Thailandia",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 183,
+        "def": 439,
+        "vel": 609,
+        "crt": 898
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP08.png"
+    },
+    {
+      "id": "IP09",
+      "name": "Ravi Iyer",
+      "country": "India",
+      "class": "Colossi",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 252,
+        "def": 503,
+        "vel": 394,
+        "crt": 578
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP09.png"
+    },
+    {
+      "id": "IP10",
+      "name": "Yuki Tanaka",
+      "country": "Giappone",
+      "class": "Sentinelle",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 211,
+        "def": 491,
+        "vel": 631,
+        "crt": 593
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP10.png"
+    },
+    {
+      "id": "IP11",
+      "name": "Budi Hartono",
+      "country": "Indonesia",
+      "class": "Combattenti",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 228,
+        "def": 465,
+        "vel": 639,
+        "crt": 637
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP11.png"
+    },
+    {
+      "id": "IP12",
+      "name": "Chloe Mitchell",
+      "country": "Australia",
+      "class": "Assassini",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 250,
+        "def": 485,
+        "vel": 196,
+        "crt": 319
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP12.png"
+    },
+    {
+      "id": "IP13",
+      "name": "Jose Reyes",
+      "country": "Filippine",
+      "class": "Specialisti",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 254,
+        "def": 520,
+        "vel": 195,
+        "crt": 565
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP13.png"
+    },
+    {
+      "id": "IP14",
+      "name": "Thanh Nguyen",
+      "country": "Vietnam",
+      "class": "Colossi",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 281,
+        "def": 562,
+        "vel": 517,
+        "crt": 658
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP14.png"
+    },
+    {
+      "id": "IP15",
+      "name": "Seo-yeon Kim",
+      "country": "Corea del Sud",
+      "class": "Sentinelle",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 290,
+        "def": 543,
+        "vel": 127,
+        "crt": 460
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP15.png"
+    },
+    {
+      "id": "IP16",
+      "name": "Arjun Rao",
+      "country": "Thailandia",
+      "class": "Combattenti",
+      "rarity": "Leggendaria",
+      "stats": {
+        "atk": 300,
+        "def": 622,
+        "vel": 675,
+        "crt": 803
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "IP16.png"
+    }
+  ]
+}

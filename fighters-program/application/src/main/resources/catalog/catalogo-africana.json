@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "faction": "Africana",
+  "cards": [
+    {
+      "id": "AF01",
+      "name": "Chidi Okafor",
+      "country": "Nigeria",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 215,
+        "def": 478,
+        "vel": 609,
+        "crt": 544
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF01.png"
+    },
+    {
+      "id": "AF02",
+      "name": "Amina Wanjiru",
+      "country": "Kenya",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 154,
+        "def": 417,
+        "vel": 424,
+        "crt": 568
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF02.png"
+    },
+    {
+      "id": "AF03",
+      "name": "Karim Hassan",
+      "country": "Egitto",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 162,
+        "def": 436,
+        "vel": 805,
+        "crt": 833
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF03.png"
+    },
+    {
+      "id": "AF04",
+      "name": "Thando Nkosi",
+      "country": "Sudafrica",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 215,
+        "def": 413,
+        "vel": 563,
+        "crt": 287
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF04.png"
+    },
+    {
+      "id": "AF05",
+      "name": "Kwame Mensah",
+      "country": "Ghana",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 204,
+        "def": 473,
+        "vel": 590,
+        "crt": 165
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF05.png"
+    },
+    {
+      "id": "AF06",
+      "name": "Yasmine Alaoui",
+      "country": "Marocco",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 184,
+        "def": 443,
+        "vel": 479,
+        "crt": 198
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF06.png"
+    },
+    {
+      "id": "AF07",
+      "name": "Abebe Tesfaye",
+      "country": "Etiopia",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 174,
+        "def": 475,
+        "vel": 521,
+        "crt": 249
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF07.png"
+    },
+    {
+      "id": "AF08",
+      "name": "Awa Diop",
+      "country": "Senegal",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 207,
+        "def": 381,
+        "vel": 194,
+        "crt": 100
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF08.png"
+    },
+    {
+      "id": "AF09",
+      "name": "Tunde Adeyemi",
+      "country": "Nigeria",
+      "class": "Colossi",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 228,
+        "def": 524,
+        "vel": 659,
+        "crt": 185
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF09.png"
+    },
+    {
+      "id": "AF10",
+      "name": "Zawadi Otieno",
+      "country": "Kenya",
+      "class": "Sentinelle",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 239,
+        "def": 475,
+        "vel": 353,
+        "crt": 223
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF10.png"
+    },
+    {
+      "id": "AF11",
+      "name": "Omar Farouk",
+      "country": "Egitto",
+      "class": "Combattenti",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 239,
+        "def": 455,
+        "vel": 869,
+        "crt": 659
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF11.png"
+    },
+    {
+      "id": "AF12",
+      "name": "Lindiwe Dube",
+      "country": "Sudafrica",
+      "class": "Assassini",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 217,
+        "def": 535,
+        "vel": 875,
+        "crt": 750
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF12.png"
+    },
+    {
+      "id": "AF13",
+      "name": "Kofi Asante",
+      "country": "Ghana",
+      "class": "Specialisti",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 262,
+        "def": 539,
+        "vel": 105,
+        "crt": 420
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF13.png"
+    },
+    {
+      "id": "AF14",
+      "name": "Salma Bennani",
+      "country": "Marocco",
+      "class": "Colossi",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 282,
+        "def": 594,
+        "vel": 688,
+        "crt": 887
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF14.png"
+    },
+    {
+      "id": "AF15",
+      "name": "Hiwot Bekele",
+      "country": "Etiopia",
+      "class": "Sentinelle",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 299,
+        "def": 582,
+        "vel": 806,
+        "crt": 837
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF15.png"
+    },
+    {
+      "id": "AF16",
+      "name": "Moussa Sarr",
+      "country": "Senegal",
+      "class": "Combattenti",
+      "rarity": "Leggendaria",
+      "stats": {
+        "atk": 298,
+        "def": 634,
+        "vel": 328,
+        "crt": 584
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "AF16.png"
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "faction": "Panamericana",
+  "cards": [
+    {
+      "id": "PA01",
+      "name": "Rafael Souza",
+      "country": "Brasile",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 166,
+        "def": 456,
+        "vel": 809,
+        "crt": 616
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA01.png"
+    },
+    {
+      "id": "PA02",
+      "name": "Lucia Hernandez",
+      "country": "Messico",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 187,
+        "def": 390,
+        "vel": 527,
+        "crt": 784
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA02.png"
+    },
+    {
+      "id": "PA03",
+      "name": "Mateo Gimenez",
+      "country": "Argentina",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 170,
+        "def": 397,
+        "vel": 700,
+        "crt": 413
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA03.png"
+    },
+    {
+      "id": "PA04",
+      "name": "Valentina Rios",
+      "country": "Colombia",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 214,
+        "def": 432,
+        "vel": 499,
+        "crt": 252
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA04.png"
+    },
+    {
+      "id": "PA05",
+      "name": "Diego Fuentes",
+      "country": "Cile",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 216,
+        "def": 405,
+        "vel": 485,
+        "crt": 114
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA05.png"
+    },
+    {
+      "id": "PA06",
+      "name": "Camila Quispe",
+      "country": "Perù",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 163,
+        "def": 429,
+        "vel": 175,
+        "crt": 152
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA06.png"
+    },
+    {
+      "id": "PA07",
+      "name": "Yoel Martinez",
+      "country": "Cuba",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 194,
+        "def": 462,
+        "vel": 461,
+        "crt": 888
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA07.png"
+    },
+    {
+      "id": "PA08",
+      "name": "Andrea Parra",
+      "country": "Venezuela",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 153,
+        "def": 383,
+        "vel": 622,
+        "crt": 587
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA08.png"
+    },
+    {
+      "id": "PA09",
+      "name": "Thiago Lima",
+      "country": "Brasile",
+      "class": "Colossi",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 220,
+        "def": 537,
+        "vel": 410,
+        "crt": 560
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA09.png"
+    },
+    {
+      "id": "PA10",
+      "name": "Ximena Castro",
+      "country": "Messico",
+      "class": "Sentinelle",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 220,
+        "def": 465,
+        "vel": 609,
+        "crt": 577
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA10.png"
+    },
+    {
+      "id": "PA11",
+      "name": "Santiago Duarte",
+      "country": "Argentina",
+      "class": "Combattenti",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 236,
+        "def": 529,
+        "vel": 274,
+        "crt": 257
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA11.png"
+    },
+    {
+      "id": "PA12",
+      "name": "Paula Rojas",
+      "country": "Colombia",
+      "class": "Assassini",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 237,
+        "def": 516,
+        "vel": 311,
+        "crt": 544
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA12.png"
+    },
+    {
+      "id": "PA13",
+      "name": "Joaquin Vera",
+      "country": "Cile",
+      "class": "Specialisti",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 279,
+        "def": 563,
+        "vel": 569,
+        "crt": 712
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA13.png"
+    },
+    {
+      "id": "PA14",
+      "name": "Mariana Torres",
+      "country": "Perù",
+      "class": "Colossi",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 254,
+        "def": 528,
+        "vel": 660,
+        "crt": 508
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA14.png"
+    },
+    {
+      "id": "PA15",
+      "name": "Ernesto Ruiz",
+      "country": "Cuba",
+      "class": "Sentinelle",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 242,
+        "def": 545,
+        "vel": 762,
+        "crt": 277
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA15.png"
+    },
+    {
+      "id": "PA16",
+      "name": "Gabriela Mendes",
+      "country": "Venezuela",
+      "class": "Combattenti",
+      "rarity": "Leggendaria",
+      "stats": {
+        "atk": 292,
+        "def": 641,
+        "vel": 657,
+        "crt": 149
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "PA16.png"
+    }
+  ]
+}

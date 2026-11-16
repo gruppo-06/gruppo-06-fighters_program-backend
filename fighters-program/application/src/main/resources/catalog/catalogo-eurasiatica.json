@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "faction": "Eurasiatica",
+  "cards": [
+    {
+      "id": "ER01",
+      "name": "Ivan Sokolov",
+      "country": "Russia",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 214,
+        "def": 476,
+        "vel": 714,
+        "crt": 602
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER01.png"
+    },
+    {
+      "id": "ER02",
+      "name": "Aigerim Bekova",
+      "country": "Kazakistan",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 200,
+        "def": 447,
+        "vel": 364,
+        "crt": 530
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER02.png"
+    },
+    {
+      "id": "ER03",
+      "name": "Emre Yildiz",
+      "country": "Turchia",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 211,
+        "def": 445,
+        "vel": 630,
+        "crt": 125
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER03.png"
+    },
+    {
+      "id": "ER04",
+      "name": "Nino Beridze",
+      "country": "Georgia",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 178,
+        "def": 478,
+        "vel": 232,
+        "crt": 150
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER04.png"
+    },
+    {
+      "id": "ER05",
+      "name": "Batu Erdene",
+      "country": "Mongolia",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 216,
+        "def": 465,
+        "vel": 205,
+        "crt": 834
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER05.png"
+    },
+    {
+      "id": "ER06",
+      "name": "Dilnoza Karimova",
+      "country": "Uzbekistan",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 204,
+        "def": 440,
+        "vel": 245,
+        "crt": 593
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER06.png"
+    },
+    {
+      "id": "ER07",
+      "name": "Aram Petrosyan",
+      "country": "Armenia",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 179,
+        "def": 395,
+        "vel": 741,
+        "crt": 817
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER07.png"
+    },
+    {
+      "id": "ER08",
+      "name": "Leyla Aliyeva",
+      "country": "Azerbaigian",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 208,
+        "def": 466,
+        "vel": 580,
+        "crt": 831
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER08.png"
+    },
+    {
+      "id": "ER09",
+      "name": "Pavel Orlov",
+      "country": "Russia",
+      "class": "Colossi",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 259,
+        "def": 519,
+        "vel": 357,
+        "crt": 673
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER09.png"
+    },
+    {
+      "id": "ER10",
+      "name": "Timur Akhmetov",
+      "country": "Kazakistan",
+      "class": "Sentinelle",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 225,
+        "def": 535,
+        "vel": 415,
+        "crt": 661
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER10.png"
+    },
+    {
+      "id": "ER11",
+      "name": "Selin Kaya",
+      "country": "Turchia",
+      "class": "Combattenti",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 251,
+        "def": 532,
+        "vel": 613,
+        "crt": 815
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER11.png"
+    },
+    {
+      "id": "ER12",
+      "name": "Giorgi Kapanadze",
+      "country": "Georgia",
+      "class": "Assassini",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 230,
+        "def": 501,
+        "vel": 543,
+        "crt": 307
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER12.png"
+    },
+    {
+      "id": "ER13",
+      "name": "Saran Bold",
+      "country": "Mongolia",
+      "class": "Specialisti",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 258,
+        "def": 554,
+        "vel": 109,
+        "crt": 133
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER13.png"
+    },
+    {
+      "id": "ER14",
+      "name": "Rustam Nazarov",
+      "country": "Uzbekistan",
+      "class": "Colossi",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 249,
+        "def": 596,
+        "vel": 569,
+        "crt": 635
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER14.png"
+    },
+    {
+      "id": "ER15",
+      "name": "Ani Hakobyan",
+      "country": "Armenia",
+      "class": "Sentinelle",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 299,
+        "def": 582,
+        "vel": 468,
+        "crt": 304
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER15.png"
+    },
+    {
+      "id": "ER16",
+      "name": "Kamran Huseynov",
+      "country": "Azerbaigian",
+      "class": "Combattenti",
+      "rarity": "Leggendaria",
+      "stats": {
+        "atk": 306,
+        "def": 644,
+        "vel": 597,
+        "crt": 577
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "ER16.png"
+    }
+  ]
+}

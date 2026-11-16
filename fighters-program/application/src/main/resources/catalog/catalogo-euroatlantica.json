@@ -1,0 +1,246 @@
+{
+  "schemaVersion": 1,
+  "faction": "Euroatlantica",
+  "cards": [
+    {
+      "id": "EA01",
+      "name": "Marco Valli",
+      "country": "Italia",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 165,
+        "def": 420,
+        "vel": 614,
+        "crt": 624
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA01.png"
+    },
+    {
+      "id": "EA02",
+      "name": "Noah Bisset",
+      "country": "Francia",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 163,
+        "def": 408,
+        "vel": 715,
+        "crt": 736
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA02.png"
+    },
+    {
+      "id": "EA03",
+      "name": "Lukas Brandt",
+      "country": "Germania",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 203,
+        "def": 480,
+        "vel": 686,
+        "crt": 660
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA03.png"
+    },
+    {
+      "id": "EA04",
+      "name": "Ines Robles",
+      "country": "Spagna",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 212,
+        "def": 476,
+        "vel": 891,
+        "crt": 700
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA04.png"
+    },
+    {
+      "id": "EA05",
+      "name": "Oliver Hayes",
+      "country": "Regno Unito",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 206,
+        "def": 410,
+        "vel": 102,
+        "crt": 728
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA05.png"
+    },
+    {
+      "id": "EA06",
+      "name": "Claire Dumont",
+      "country": "Stati Uniti",
+      "class": "Combattenti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 160,
+        "def": 394,
+        "vel": 394,
+        "crt": 200
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA06.png"
+    },
+    {
+      "id": "EA07",
+      "name": "Sofia Lindqvist",
+      "country": "Canada",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 207,
+        "def": 381,
+        "vel": 801,
+        "crt": 602
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA07.png"
+    },
+    {
+      "id": "EA08",
+      "name": "Pierre Lacombe",
+      "country": "Portogallo",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "stats": {
+        "atk": 190,
+        "def": 406,
+        "vel": 506,
+        "crt": 357
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA08.png"
+    },
+    {
+      "id": "EA09",
+      "name": "Elena Moretti",
+      "country": "Italia",
+      "class": "Colossi",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 222,
+        "def": 495,
+        "vel": 485,
+        "crt": 863
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA09.png"
+    },
+    {
+      "id": "EA10",
+      "name": "Darius Bell",
+      "country": "Francia",
+      "class": "Sentinelle",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 232,
+        "def": 531,
+        "vel": 178,
+        "crt": 840
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA10.png"
+    },
+    {
+      "id": "EA11",
+      "name": "Isabel Navarro",
+      "country": "Germania",
+      "class": "Combattenti",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 221,
+        "def": 461,
+        "vel": 670,
+        "crt": 650
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA11.png"
+    },
+    {
+      "id": "EA12",
+      "name": "Greta Vogel",
+      "country": "Spagna",
+      "class": "Assassini",
+      "rarity": "Rara",
+      "stats": {
+        "atk": 218,
+        "def": 486,
+        "vel": 568,
+        "crt": 244
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA12.png"
+    },
+    {
+      "id": "EA13",
+      "name": "Tomas Ferreira",
+      "country": "Regno Unito",
+      "class": "Specialisti",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 296,
+        "def": 593,
+        "vel": 416,
+        "crt": 125
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA13.png"
+    },
+    {
+      "id": "EA14",
+      "name": "Amelia Grant",
+      "country": "Stati Uniti",
+      "class": "Colossi",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 294,
+        "def": 567,
+        "vel": 472,
+        "crt": 572
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA14.png"
+    },
+    {
+      "id": "EA15",
+      "name": "Victor Hale",
+      "country": "Canada",
+      "class": "Sentinelle",
+      "rarity": "Epica",
+      "stats": {
+        "atk": 267,
+        "def": 531,
+        "vel": 508,
+        "crt": 699
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA15.png"
+    },
+    {
+      "id": "EA16",
+      "name": "Hana Kuroda",
+      "country": "Giappone",
+      "class": "Assassini",
+      "rarity": "Leggendaria",
+      "stats": {
+        "atk": 281,
+        "def": 540,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
+      "image": "EA16.png"
+    }
+  ]
+}
