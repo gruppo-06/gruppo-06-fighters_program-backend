@@ -32,12 +32,15 @@ class CatalogReaderTest {
     }
 
     @Test
-    void mapsEveryFieldOfACard() throws IOException {
+    void mapsEveryFieldOfACardInTheDsgFormat() throws IOException {
         try (InputStream json = getClass().getResourceAsStream(FIXTURE)) {
             CardEntry hana = reader.read(json, FIXTURE).cards().getLast();
 
-            assertEquals(new CardEntry("EA16", "Hana Kuroda", "Giappone", "Assassini", "Leggendaria",
-                    new CardStats(281, 540, 850, 400), "Fixture flavor text.", "EA16.png"), hana);
+            assertEquals(new CardEntry("EA16", "Hana Kuroda - Capitana", "Giappone", "Assassini", "Leggendaria",
+                    new CardStats(281, 540, 850, 400),
+                    "La capitana pianta il piede. Al passo successivo ha già ripreso l’iniziativa.",
+                    new CardImage("EA016_ASS_Legendary_Hana Kuroda - Capitana.webp", "image/webp", 900, 1200)),
+                    hana);
         }
     }
 
