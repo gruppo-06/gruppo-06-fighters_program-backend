@@ -58,6 +58,14 @@ class DeckRulebookTest {
     }
 
     @Test
+    void usesTheSingularForASingleMissingCopy() {
+        List<DeckLine> deck = commons(9);
+        deck.add(new DeckLine(99, "Darius Bell", "Rara", 1, 0));
+
+        assertEquals("Ti manca 1 copia di Darius Bell", rulebook.check(deck).getFirst().message());
+    }
+
+    @Test
     void reportsEveryProblemAtOnce() {
         List<DeckLine> deck = List.of(new DeckLine(1, "Legend", "Leggendaria", 2, 0));
 
