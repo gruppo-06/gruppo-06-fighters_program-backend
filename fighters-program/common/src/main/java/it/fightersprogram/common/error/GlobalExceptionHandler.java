@@ -44,4 +44,10 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(ApiError.of("MALFORMED_REQUEST", "The request body is not valid JSON"));
     }
+
+    @ExceptionHandler(UnprocessableException.class)
+    public ResponseEntity<ApiError> handleUnprocessable(UnprocessableException exception) {
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_CONTENT)
+                .body(new ApiError(exception.getCode(), exception.getMessage(), exception.getDetails()));
+    }
 }
