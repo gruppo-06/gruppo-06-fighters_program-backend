@@ -22,15 +22,20 @@ import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.test.context.event.ApplicationEvents;
+import org.springframework.test.context.event.RecordApplicationEvents;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jayway.jsonpath.JsonPath;
 
+import it.fightersprogram.identity.UserRegistered;
+
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
+@RecordApplicationEvents
 class IdentityApiTest {
 
     private static final String PASSWORD = "correct-horse-1";
@@ -40,6 +45,9 @@ class IdentityApiTest {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    private ApplicationEvents events;
 
     @Test
     void registeringCreatesAPlayerWithoutExposingThePassword() throws Exception {
@@ -61,6 +69,15 @@ class IdentityApiTest {
                 "SELECT password_hash FROM app_user WHERE email = 'id_alice@example.com'", String.class);
         assertNotEquals(PASSWORD, storedHash);
         assertThat(storedHash, startsWith("$2"));
+    }
+
+    @Test
+    void announcesTheNewUserToTheOtherModules() throws Exception {
+        String body = register("id_alice", "id_alice@example.com", PASSWORD).andReturn().getResponse()
+                .getContentAsString();
+        long userId = ((Number) JsonPath.read(body, "$.id")).longValue();
+
+        assertEquals(1, events.stream(UserRegistered.class).filter(event -> event.userId() == userId).count());
     }
 
     @Test
