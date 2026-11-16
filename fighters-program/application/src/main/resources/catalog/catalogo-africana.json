@@ -4,243 +4,355 @@
   "cards": [
     {
       "id": "AF01",
-      "name": "Chidi Okafor",
-      "country": "Nigeria",
-      "class": "Combattenti",
+      "name": "Lina El Mansouri",
+      "country": "Marocco",
+      "faction": "Africana",
+      "class": "Assassini",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 215,
-        "def": 478,
-        "vel": 609,
-        "crt": 544
+        "atk": 242,
+        "def": 495,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF01.png"
+      "copy": "Rinuncia al secondo colpo pur di uscire con la guardia alta.",
+      "image": {
+        "file": "AF001_ASS_Common_Lina El Mansouri.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF02",
-      "name": "Amina Wanjiru",
-      "country": "Kenya",
+      "name": "Teboho Mokoena",
+      "country": "Sudafrica",
+      "faction": "Africana",
       "class": "Assassini",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 154,
-        "def": 417,
-        "vel": 424,
-        "crt": 568
+        "atk": 247,
+        "def": 485,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF02.png"
+      "copy": "Allarga la curva per rientrare dove il colpo può arrivare.",
+      "image": {
+        "file": "AF002_ASS_Common_Teboho Mokoena.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF03",
-      "name": "Karim Hassan",
-      "country": "Egitto",
-      "class": "Specialisti",
+      "name": "Malik Okafor",
+      "country": "Nigeria",
+      "faction": "Africana",
+      "class": "Colossi",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 162,
-        "def": 436,
-        "vel": 805,
-        "crt": 833
+        "atk": 312,
+        "def": 632,
+        "vel": 250,
+        "crt": 700
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF03.png"
+      "copy": "Colpisce mentre il tuo peso cerca ancora la gamba posteriore.",
+      "image": {
+        "file": "AF003_CLS_Common_Malik Okafor.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF04",
-      "name": "Thando Nkosi",
-      "country": "Sudafrica",
+      "name": "Samira Ben Youssef",
+      "country": "Tunisia",
+      "faction": "Africana",
       "class": "Colossi",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 215,
-        "def": 413,
-        "vel": 563,
-        "crt": 287
+        "atk": 306,
+        "def": 646,
+        "vel": 250,
+        "crt": 700
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF04.png"
+      "copy": "Tiene il pugno al fianco finché la guardia si chiude troppo.",
+      "image": {
+        "file": "AF004_CLS_Common_Samira Ben Youssef.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF05",
       "name": "Kwame Mensah",
       "country": "Ghana",
-      "class": "Sentinelle",
+      "faction": "Africana",
+      "class": "Combattenti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 204,
-        "def": 473,
-        "vel": 590,
-        "crt": 165
+        "atk": 230,
+        "def": 638,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF05.png"
+      "copy": "I primi scambi gli dicono se lavorare in presa o a distanza.",
+      "image": {
+        "file": "AF005_CMB_Common_Kwame Mensah.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF06",
-      "name": "Yasmine Alaoui",
-      "country": "Marocco",
-      "class": "Combattenti",
+      "name": "Njeri Kamau",
+      "country": "Kenya",
+      "faction": "Africana",
+      "class": "Sentinelle",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 184,
-        "def": 443,
-        "vel": 479,
-        "crt": 198
+        "atk": 202,
+        "def": 882,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF06.png"
+      "copy": "Passi corti. Anche sotto una raffica, il centro resta suo.",
+      "image": {
+        "file": "AF006_SNT_Common_Njeri Kamau.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF07",
-      "name": "Abebe Tesfaye",
-      "country": "Etiopia",
-      "class": "Assassini",
+      "name": "Salim Mansour",
+      "country": "Egitto",
+      "faction": "Africana",
+      "class": "Sentinelle",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 174,
-        "def": 475,
-        "vel": 521,
-        "crt": 249
+        "atk": 205,
+        "def": 864,
+        "vel": 400,
+        "crt": 475
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF07.png"
+      "copy": "Il colpo tocca la guardia e gli consegna una risposta.",
+      "image": {
+        "file": "AF007_SNT_Common_Salim Mansour.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF08",
-      "name": "Awa Diop",
-      "country": "Senegal",
+      "name": "Aina Rakoto",
+      "country": "Madagascar",
+      "faction": "Africana",
       "class": "Specialisti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 207,
-        "def": 381,
-        "vel": 194,
-        "crt": 100
+        "atk": 191,
+        "def": 780,
+        "vel": 500,
+        "crt": 850
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF08.png"
+      "copy": "Legge il cambio di peso e arriva prima della ripartenza.",
+      "image": {
+        "file": "AF008_SPC_Common_Aina Rakoto.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF09",
-      "name": "Tunde Adeyemi",
-      "country": "Nigeria",
-      "class": "Colossi",
+      "name": "Inès Mbala",
+      "country": "Repubblica Democratica del Congo",
+      "faction": "Africana",
+      "class": "Combattenti",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 228,
-        "def": 524,
-        "vel": 659,
-        "crt": 185
+        "atk": 245,
+        "def": 652,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF09.png"
+      "copy": "Apre il secondo scambio prima che tu rimetta i piedi in ordine.",
+      "image": {
+        "file": "AF009_CMB_Rare_Inès Mbala.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF10",
-      "name": "Zawadi Otieno",
-      "country": "Kenya",
+      "name": "Sefu Mtemi",
+      "country": "Tanzania",
+      "faction": "Africana",
       "class": "Sentinelle",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 239,
-        "def": 475,
-        "vel": 353,
-        "crt": 223
+        "atk": 217,
+        "def": 900,
+        "vel": 400,
+        "crt": 400
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF10.png"
+      "copy": "La guardia è semplice. La risposta arriva ogni volta.",
+      "image": {
+        "file": "AF010_SNT_Rare_Sefu Mtemi.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF11",
-      "name": "Omar Farouk",
-      "country": "Egitto",
-      "class": "Combattenti",
+      "name": "Hana Bekele",
+      "country": "Etiopia",
+      "faction": "Africana",
+      "class": "Specialisti",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 239,
-        "def": 455,
-        "vel": 869,
-        "crt": 659
+        "atk": 193,
+        "def": 830,
+        "vel": 500,
+        "crt": 900
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF11.png"
+      "copy": "Prima verifica il varco. Poi ci manda un solo pugno.",
+      "image": {
+        "file": "AF011_SPC_Rare_Hana Bekele.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF12",
-      "name": "Lindiwe Dube",
-      "country": "Sudafrica",
-      "class": "Assassini",
+      "name": "Rui Chissano",
+      "country": "Mozambico",
+      "faction": "Africana",
+      "class": "Specialisti",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 217,
-        "def": 535,
-        "vel": 875,
-        "crt": 750
+        "atk": 191,
+        "def": 847,
+        "vel": 500,
+        "crt": 850
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF12.png"
+      "copy": "Allunga lo scambio finché la fatica cambia la tua guardia.",
+      "image": {
+        "file": "AF012_SPC_Rare_Rui Chissano.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF13",
-      "name": "Kofi Asante",
-      "country": "Ghana",
-      "class": "Specialisti",
+      "name": "Yasmine Bensaïd",
+      "country": "Algeria",
+      "faction": "Africana",
+      "class": "Assassini",
       "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 262,
-        "def": 539,
-        "vel": 105,
-        "crt": 420
+        "atk": 263,
+        "def": 535,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF13.png"
+      "copy": "Anche se l’ingresso si chiude, l’uscita resta veloce.",
+      "image": {
+        "file": "AF013_ASS_Epic_Yasmine Bensaïd.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF14",
-      "name": "Salma Bennani",
-      "country": "Marocco",
+      "name": "Lúcia Domingos",
+      "country": "Angola",
+      "faction": "Africana",
       "class": "Colossi",
       "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 282,
-        "def": 594,
-        "vel": 688,
-        "crt": 887
+        "atk": 337,
+        "def": 687,
+        "vel": 250,
+        "crt": 700
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF14.png"
+      "copy": "Prova a fermarla di fronte. È il momento che aspettava.",
+      "image": {
+        "file": "AF014_CLS_Epic_Lúcia Domingos.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF15",
-      "name": "Hiwot Bekele",
-      "country": "Etiopia",
-      "class": "Sentinelle",
+      "name": "Aïcha Koné",
+      "country": "Costa d’Avorio",
+      "faction": "Africana",
+      "class": "Specialisti",
       "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 299,
-        "def": 582,
-        "vel": 806,
-        "crt": 837
+        "atk": 203,
+        "def": 863,
+        "vel": 500,
+        "crt": 850
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF15.png"
+      "copy": "Cambia cadenza a metà e fa partire la tua difesa in anticipo.",
+      "image": {
+        "file": "AF015_SPC_Epic_Aïcha Koné.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "AF16",
-      "name": "Moussa Sarr",
+      "name": "Amara Diop - Capitana",
       "country": "Senegal",
+      "faction": "Africana",
       "class": "Combattenti",
       "rarity": "Leggendaria",
+      "firstDelivery": true,
       "stats": {
-        "atk": 298,
-        "def": 634,
-        "vel": 328,
-        "crt": 584
+        "atk": 259,
+        "def": 718,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "AF16.png"
+      "copy": "La capitana passa all’attacco e torna in difesa sullo stesso appoggio.",
+      "image": {
+        "file": "AF016_CMB_Legendary_Amara Diop - Capitana.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     }
   ]
 }

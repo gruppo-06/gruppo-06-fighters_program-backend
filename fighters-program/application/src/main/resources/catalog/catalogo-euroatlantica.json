@@ -4,243 +4,355 @@
   "cards": [
     {
       "id": "EA01",
-      "name": "Marco Valli",
-      "country": "Italia",
-      "class": "Combattenti",
+      "name": "Inês Valente",
+      "country": "Portogallo",
+      "faction": "Euroatlantica",
+      "class": "Assassini",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 165,
-        "def": 420,
-        "vel": 614,
-        "crt": 624
+        "atk": 250,
+        "def": 480,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA01.png"
+      "copy": "Usa lo stesso passo d’ingresso per preparare due uscite diverse.",
+      "image": {
+        "file": "EA001_ASS_Common_Inês Valente.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA02",
       "name": "Noah Bisset",
-      "country": "Francia",
-      "class": "Assassini",
+      "country": "Canada",
+      "faction": "Euroatlantica",
+      "class": "Colossi",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 163,
-        "def": 408,
-        "vel": 715,
-        "crt": 736
+        "atk": 296,
+        "def": 666,
+        "vel": 250,
+        "crt": 700
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA02.png"
+      "copy": "Assorbe la spinta in presa e la restituisce a distanza corta.",
+      "image": {
+        "file": "EA002_CLS_Common_Noah Bisset.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA03",
-      "name": "Lukas Brandt",
-      "country": "Germania",
-      "class": "Specialisti",
+      "name": "Park Ji-won",
+      "country": "Corea del Sud",
+      "faction": "Euroatlantica",
+      "class": "Colossi",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 203,
-        "def": 480,
-        "vel": 686,
-        "crt": 660
+        "atk": 301,
+        "def": 653,
+        "vel": 250,
+        "crt": 725
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA03.png"
+      "copy": "Interrompe il caricamento a metà per far partire il contrattacco avversario.",
+      "image": {
+        "file": "EA003_CLS_Common_Park Ji-won.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA04",
-      "name": "Ines Robles",
-      "country": "Spagna",
-      "class": "Colossi",
+      "name": "Mara Keene",
+      "country": "Australia",
+      "faction": "Euroatlantica",
+      "class": "Combattenti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 212,
-        "def": 476,
-        "vel": 891,
-        "crt": 700
+        "atk": 235,
+        "def": 625,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA04.png"
+      "copy": "Costruisce scambi brevi attorno a una finta di presa.",
+      "image": {
+        "file": "EA004_CMB_Common_Mara Keene.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA05",
-      "name": "Oliver Hayes",
-      "country": "Regno Unito",
+      "name": "Élodie Marchand",
+      "country": "Francia",
+      "faction": "Euroatlantica",
       "class": "Sentinelle",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 206,
-        "def": 410,
-        "vel": 102,
-        "crt": 728
+        "atk": 200,
+        "def": 891,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA05.png"
+      "copy": "Ex collaudatrice, lascia scorrere gli impatti sulle spalle per mantenere la posizione.",
+      "image": {
+        "file": "EA005_SNT_Common_Élodie Marchand.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA06",
-      "name": "Claire Dumont",
+      "name": "Daniel Mercer",
       "country": "Stati Uniti",
-      "class": "Combattenti",
+      "faction": "Euroatlantica",
+      "class": "Sentinelle",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 160,
-        "def": 394,
-        "vel": 394,
-        "crt": 200
+        "atk": 204,
+        "def": 873,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA06.png"
+      "copy": "Accorcia il passo e costringe l’avversario a colpire da fermo.",
+      "image": {
+        "file": "EA006_SNT_Common_Daniel Mercer.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA07",
-      "name": "Sofia Lindqvist",
-      "country": "Canada",
-      "class": "Assassini",
+      "name": "Aroha Rangi",
+      "country": "Nuova Zelanda",
+      "faction": "Euroatlantica",
+      "class": "Specialisti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 207,
-        "def": 381,
-        "vel": 801,
-        "crt": 602
+        "atk": 193,
+        "def": 772,
+        "vel": 500,
+        "crt": 850
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA07.png"
+      "copy": "Cerca l’apertura nel cambio di appoggio dopo un attacco mancato.",
+      "image": {
+        "file": "EA007_SPC_Common_Aroha Rangi.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA08",
-      "name": "Pierre Lacombe",
-      "country": "Portogallo",
+      "name": "Niko Salonen",
+      "country": "Finlandia",
+      "faction": "Euroatlantica",
       "class": "Specialisti",
       "rarity": "Comune",
+      "firstDelivery": true,
       "stats": {
-        "atk": 190,
-        "def": 406,
-        "vel": 506,
-        "crt": 357
+        "atk": 189,
+        "def": 789,
+        "vel": 500,
+        "crt": 850
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA08.png"
+      "copy": "Concede il primo contatto per trovare il ritmo della guardia.",
+      "image": {
+        "file": "EA008_SPC_Common_Niko Salonen.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA09",
-      "name": "Elena Moretti",
+      "name": "Sofia Bellandi",
       "country": "Italia",
-      "class": "Colossi",
+      "faction": "Euroatlantica",
+      "class": "Assassini",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 222,
-        "def": 495,
-        "vel": 485,
-        "crt": 863
+        "atk": 265,
+        "def": 490,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA09.png"
+      "copy": "Accorcia la traiettoria dei colpi e accetta più rischio in uscita.",
+      "image": {
+        "file": "EA009_ASS_Rare_Sofia Bellandi.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA10",
       "name": "Darius Bell",
-      "country": "Francia",
-      "class": "Sentinelle",
+      "country": "Stati Uniti",
+      "faction": "Euroatlantica",
+      "class": "Colossi",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 232,
-        "def": 531,
-        "vel": 178,
-        "crt": 840
+        "atk": 318,
+        "def": 680,
+        "vel": 250,
+        "crt": 650
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA10.png"
+      "copy": "Preferisce ripetere colpi pesanti e affidabili anche quando l’altro cambia guardia.",
+      "image": {
+        "file": "EA010_CLS_Rare_Darius Bell.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA11",
-      "name": "Isabel Navarro",
-      "country": "Germania",
+      "name": "Seo Min-jae",
+      "country": "Corea del Sud",
+      "faction": "Euroatlantica",
       "class": "Combattenti",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 221,
-        "def": 461,
-        "vel": 670,
-        "crt": 650
+        "atk": 238,
+        "def": 665,
+        "vel": 550,
+        "crt": 600
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA11.png"
+      "copy": "Ti fa parare il primo colpo. Il secondo passa.",
+      "image": {
+        "file": "EA011_CMB_Rare_Seo Min-jae.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA12",
-      "name": "Greta Vogel",
-      "country": "Spagna",
-      "class": "Assassini",
+      "name": "Clara Weiss",
+      "country": "Germania",
+      "faction": "Euroatlantica",
+      "class": "Combattenti",
       "rarity": "Rara",
+      "firstDelivery": true,
       "stats": {
-        "atk": 218,
-        "def": 486,
-        "vel": 568,
-        "crt": 244
+        "atk": 235,
+        "def": 678,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA12.png"
+      "copy": "Si è specializzata nel riaprire uno scambio dopo aver perso il centro.",
+      "image": {
+        "file": "EA012_CMB_Rare_Clara Weiss.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA13",
-      "name": "Tomas Ferreira",
+      "name": "Rowan Ellis",
       "country": "Regno Unito",
-      "class": "Specialisti",
+      "faction": "Euroatlantica",
+      "class": "Combattenti",
       "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 296,
-        "def": 593,
-        "vel": 416,
-        "crt": 125
+        "atk": 250,
+        "def": 692,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA13.png"
+      "copy": "Riserva lo stesso tempo d’azione a prese, colpi e recupero della guardia.",
+      "image": {
+        "file": "EA013_CMB_Epic_Rowan Ellis.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA14",
-      "name": "Amelia Grant",
-      "country": "Stati Uniti",
-      "class": "Colossi",
+      "name": "Maëlle Girard",
+      "country": "Canada",
+      "faction": "Euroatlantica",
+      "class": "Sentinelle",
       "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 294,
-        "def": 567,
-        "vel": 472,
-        "crt": 572
+        "atk": 217,
+        "def": 963,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA14.png"
+      "copy": "Ha scelto una formulazione da recupero prolungato dopo un ciclo di sovraccarico.",
+      "image": {
+        "file": "EA014_SNT_Epic_Maëlle Girard.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA15",
-      "name": "Victor Hale",
-      "country": "Canada",
-      "class": "Sentinelle",
+      "name": "Riku Hayase",
+      "country": "Giappone",
+      "faction": "Euroatlantica",
+      "class": "Specialisti",
       "rarity": "Epica",
+      "firstDelivery": true,
       "stats": {
-        "atk": 267,
-        "def": 531,
-        "vel": 508,
-        "crt": 699
+        "atk": 209,
+        "def": 838,
+        "vel": 500,
+        "crt": 850
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA15.png"
+      "copy": "Ripeti la stessa difesa e Hayase ha già trovato l’apertura.",
+      "image": {
+        "file": "EA015_SPC_Epic_Riku Hayase.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     },
     {
       "id": "EA16",
-      "name": "Hana Kuroda",
+      "name": "Hana Kuroda - Capitana",
       "country": "Giappone",
+      "faction": "Euroatlantica",
       "class": "Assassini",
       "rarity": "Leggendaria",
+      "firstDelivery": true,
       "stats": {
         "atk": 281,
         "def": 540,
         "vel": 850,
         "crt": 400
       },
-      "copy": "Testo provvisorio: da sostituire con il catalogo ufficiale dei DSG.",
-      "image": "EA16.png"
+      "copy": "La capitana pianta il piede. Al passo successivo ha già ripreso l’iniziativa.",
+      "image": {
+        "file": "EA016_ASS_Legendary_Hana Kuroda - Capitana.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
     }
   ]
 }

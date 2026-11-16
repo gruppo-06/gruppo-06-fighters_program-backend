@@ -21,6 +21,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
 
 import it.fightersprogram.catalog.importer.CardEntry;
+import it.fightersprogram.catalog.importer.CardImage;
 import it.fightersprogram.catalog.importer.CardStats;
 import it.fightersprogram.catalog.importer.CatalogFile;
 import it.fightersprogram.catalog.importer.CatalogImporter;
@@ -117,7 +118,8 @@ class CatalogApiTest {
         for (int number = 1; number <= CARDS_PER_FACTION; number++) {
             String code = "ZA%02d".formatted(number);
             cards.add(new CardEntry(code, "Fighter " + code, "Kenya", classes.get((number - 1) % classes.size()),
-                    rarityOf(number), new CardStats(281, 540, 850, 400), "Flavor " + code, code + ".png"));
+                    rarityOf(number), new CardStats(281, 540, 850, 400), "Flavor " + code,
+                    new CardImage(code + ".png", "image/png", 900, 1200)));
         }
         return new CatalogFile(1, FACTION, cards);
     }

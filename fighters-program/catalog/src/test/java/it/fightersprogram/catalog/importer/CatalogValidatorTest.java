@@ -102,7 +102,8 @@ class CatalogValidatorTest {
         for (int index = 0; index < rarities.size(); index++) {
             String code = "%s%02d".formatted(codePrefix, index + 1);
             cards.add(new CardEntry(code, "Fighter " + code, "Paese", "Combattenti", rarities.get(index),
-                    new CardStats(300, 500, 400, 200), "Flavor", code + ".png"));
+                    new CardStats(300, 500, 400, 200), "Flavor",
+                    new CardImage(code + ".png", "image/png", 900, 1200)));
         }
         return new CatalogFile(1, faction, cards);
     }
