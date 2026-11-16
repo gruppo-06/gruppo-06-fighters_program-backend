@@ -1,5 +1,7 @@
 package it.fightersprogram.catalog.domain;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.EntityGraph;
@@ -10,4 +12,10 @@ public interface CardRepository extends JpaRepository<Card, Long>, JpaSpecificat
 
     @EntityGraph(attributePaths = {"faction", "fighterClass", "rarity"})
     Optional<Card> findByCode(String code);
+
+    @EntityGraph(attributePaths = {"faction", "fighterClass", "rarity"})
+    List<Card> findAllByOrderByCodeAsc();
+
+    @EntityGraph(attributePaths = {"faction", "fighterClass", "rarity"})
+    List<Card> findAllByIdIn(Collection<Long> ids);
 }
