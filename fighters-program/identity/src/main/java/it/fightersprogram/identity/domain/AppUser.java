@@ -42,4 +42,15 @@ public class AppUser {
         this.passwordHash = passwordHash;
         this.role = Role.PLAYER;
     }
+
+    private AppUser(String nickname, String email, String passwordHash, Role role) {
+        this.nickname = nickname;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.role = role;
+    }
+
+    public static AppUser admin(String nickname, String email, String passwordHash) {
+        return new AppUser(nickname, email, passwordHash, Role.ADMIN);
+    }
 }
