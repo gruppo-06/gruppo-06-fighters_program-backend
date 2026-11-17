@@ -30,12 +30,11 @@ class AdminAccountInitializerTest {
     void failsStartupWhenAdminPasswordIsShorterThan12Characters() {
         assertThrows(Exception.class, () -> {
             try (ConfigurableApplicationContext ignored = new SpringApplicationBuilder(FightersProgramApplication.class)
-                    .properties(
-                            "server.port=0",
-                            "identity.admin.email=shortpass@example.com",
-                            "identity.admin.password=too-short",
-                            "identity.admin.nickname=shortadmin")
-                    .run()) {
+                    .run(
+                            "--server.port=0",
+                            "--identity.admin.email=shortpass@example.com",
+                            "--identity.admin.password=too-short",
+                            "--identity.admin.nickname=shortadmin")) {
                 // startup must fail before reaching here
             }
         });
@@ -50,12 +49,11 @@ class AdminAccountInitializerTest {
         try {
             // 1. First startup: creates the admin user with role ADMIN and no starter cards
             try (ConfigurableApplicationContext context = new SpringApplicationBuilder(FightersProgramApplication.class)
-                    .properties(
-                            "server.port=0",
-                            "identity.admin.email=" + email,
-                            "identity.admin.password=" + password,
-                            "identity.admin.nickname=" + nickname)
-                    .run()) {
+                    .run(
+                            "--server.port=0",
+                            "--identity.admin.email=" + email,
+                            "--identity.admin.password=" + password,
+                            "--identity.admin.nickname=" + nickname)) {
                 JdbcTemplate jdbc = context.getBean(JdbcTemplate.class);
                 Map<String, Object> user = jdbc.queryForMap(
                         "SELECT id, nickname, role FROM app_user WHERE email = ?", email);
@@ -70,12 +68,11 @@ class AdminAccountInitializerTest {
 
             // 2. Second startup (restart): does not create a duplicate admin and issues JWT with roles: ["ADMIN"]
             try (ConfigurableApplicationContext context = new SpringApplicationBuilder(FightersProgramApplication.class)
-                    .properties(
-                            "server.port=0",
-                            "identity.admin.email=" + email,
-                            "identity.admin.password=" + password,
-                            "identity.admin.nickname=" + nickname)
-                    .run()) {
+                    .run(
+                            "--server.port=0",
+                            "--identity.admin.email=" + email,
+                            "--identity.admin.password=" + password,
+                            "--identity.admin.nickname=" + nickname)) {
                 JdbcTemplate jdbc = context.getBean(JdbcTemplate.class);
                 Integer adminCount = jdbc.queryForObject(
                         "SELECT COUNT(*) FROM app_user WHERE email = ?", Integer.class, email);
@@ -103,8 +100,7 @@ class AdminAccountInitializerTest {
             }
         } finally {
             try (ConfigurableApplicationContext cleanup = new SpringApplicationBuilder(FightersProgramApplication.class)
-                    .properties("server.port=0")
-                    .run()) {
+                    .run("--server.port=0")) {
                 cleanup.getBean(JdbcTemplate.class).update("DELETE FROM app_user WHERE email = ?", email);
             }
         }
@@ -117,20 +113,18 @@ class AdminAccountInitializerTest {
 
         try {
             try (ConfigurableApplicationContext setupContext = new SpringApplicationBuilder(FightersProgramApplication.class)
-                    .properties("server.port=0")
-                    .run()) {
+                    .run("--server.port=0")) {
                 setupContext.getBean(JdbcTemplate.class).update(
                         "INSERT INTO app_user (nickname, email, password_hash, role) VALUES (?, ?, ?, 'PLAYER')",
                         nickname, email, "original-hash");
             }
 
             try (ConfigurableApplicationContext context = new SpringApplicationBuilder(FightersProgramApplication.class)
-                    .properties(
-                            "server.port=0",
-                            "identity.admin.email=" + email,
-                            "identity.admin.password=valid-long-password-123",
-                            "identity.admin.nickname=" + nickname)
-                    .run()) {
+                    .run(
+                            "--server.port=0",
+                            "--identity.admin.email=" + email,
+                            "--identity.admin.password=valid-long-password-123",
+                            "--identity.admin.nickname=" + nickname)) {
                 JdbcTemplate jdbc = context.getBean(JdbcTemplate.class);
                 Map<String, Object> user = jdbc.queryForMap(
                         "SELECT role, password_hash FROM app_user WHERE email = ?", email);
@@ -139,8 +133,7 @@ class AdminAccountInitializerTest {
             }
         } finally {
             try (ConfigurableApplicationContext cleanup = new SpringApplicationBuilder(FightersProgramApplication.class)
-                    .properties("server.port=0")
-                    .run()) {
+                    .run("--server.port=0")) {
                 cleanup.getBean(JdbcTemplate.class).update("DELETE FROM app_user WHERE email = ?", email);
             }
         }
