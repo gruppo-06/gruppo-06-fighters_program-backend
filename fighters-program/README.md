@@ -149,6 +149,9 @@ La configurazione (`application/src/main/resources/application.properties`) legg
 | `CATALOG_IMPORT_LOCATION` | `classpath*:catalog/*.json` |
 | `CORS_ALLOWED_ORIGINS` | `http://localhost:5173` (dev server di Vite); più origini separate da virgola |
 | `JWT_SECRET` | nessuno: **obbligatorio**, almeno 32 caratteri, mai nel codice né nel repo |
+| `ADMIN_EMAIL` | nessuno (opzionale: se valorizzata insieme a `ADMIN_PASSWORD`, crea all'avvio l'utente amministratore iniziale se assente) |
+| `ADMIN_PASSWORD` | nessuno (opzionale: almeno 12 caratteri se `ADMIN_EMAIL` è impostata; mai nel codice né nel repo) |
+| `ADMIN_NICKNAME` | `admin` |
 
 I test usano una chiave di prova in `application/src/test/resources/config/application.properties`.
 
