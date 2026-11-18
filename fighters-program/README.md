@@ -123,6 +123,7 @@ Il modulo `catalog` non conosce né il controller di un altro modulo, né le sue
 - Sessione stateless, JWT come resource server OAuth2.
 - Pubblici: `GET /api/cards/**`, Swagger (`/swagger-ui/**`, `/v3/api-docs/**`), `/actuator/health`. Tutto il resto richiede autenticazione.
 - Errori di sicurezza nello stesso formato JSON di `common`.
+- CORS su `/api/**` solo per le origini in `app.cors.allowed-origins` (`CORS_ALLOWED_ORIGINS`), con gli header `Authorization`, `Content-Type` e `Idempotency-Key`.
 
 ## 9. Configurazione e avvio locale
 
@@ -146,6 +147,7 @@ La configurazione (`application/src/main/resources/application.properties`) legg
 | `SPRING_DATA_REDIS_PORT` | `6379` |
 | `CATALOG_IMPORT_ENABLED` | `true` (importa all'avvio i JSON del catalogo) |
 | `CATALOG_IMPORT_LOCATION` | `classpath*:catalog/*.json` |
+| `CORS_ALLOWED_ORIGINS` | `http://localhost:5173` (dev server di Vite); più origini separate da virgola |
 | `JWT_SECRET` | nessuno: **obbligatorio**, almeno 32 caratteri, mai nel codice né nel repo |
 
 I test usano una chiave di prova in `application/src/test/resources/config/application.properties`.
