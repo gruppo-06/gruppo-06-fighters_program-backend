@@ -1,6 +1,8 @@
 package it.fightersprogram;
 
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.hasSize;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -110,6 +112,60 @@ class TradeApiTest {
         mockMvc.perform(post(url).header(HttpHeaders.AUTHORIZATION, alice).contentType(MediaType.APPLICATION_JSON)
                         .content(request("trade_receiver", 999999, 1, requested, 1)))
                 .andExpect(status().isUnprocessableContent());
+    }
+
+    @Test
+    void listsOnlyRelevantTradesAndHidesDetailsFromThirdParties() throws Exception {
+        String sender = TestUsers.registerAndLogin(mockMvc, "trade_list_sender");
+        String recipient = TestUsers.registerAndLogin(mockMvc, "trade_list_recipient");
+        String outsider = TestUsers.registerAndLogin(mockMvc, "trade_list_outsider");
+        long senderId = userId("trade_list_sender");
+        long recipientId = userId("trade_list_recipient");
+        long offered = cardId("EA01");
+        long requested = cardId("EA02");
+        own(senderId, offered, 5);
+        own(recipientId, requested, 5);
+
+        long olderId = createTrade(sender, "trade_list_recipient", offered, requested);
+        long newerId = createTrade(sender, "trade_list_recipient", offered, requested);
+        jdbcTemplate.update("UPDATE trade SET created_at = now() - interval '2 minutes' WHERE id = ?", olderId);
+        jdbcTemplate.update("UPDATE trade SET created_at = now() - interval '1 minute' WHERE id = ?", newerId);
+        jdbcTemplate.update("UPDATE trade SET status = 'ACCEPTED', resolved_at = now() WHERE id = ?", newerId);
+
+        mockMvc.perform(get("/api/trades/incoming").header(HttpHeaders.AUTHORIZATION, recipient))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].id", is((int) olderId)))
+                .andExpect(jsonPath("$[0].status", is("PENDING")));
+        mockMvc.perform(get("/api/trades/outgoing").header(HttpHeaders.AUTHORIZATION, sender))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$[0].id", is((int) newerId)))
+                .andExpect(jsonPath("$[0].status", is("ACCEPTED")))
+                .andExpect(jsonPath("$[1].id", is((int) olderId)));
+        mockMvc.perform(get("/api/trades/incoming").header(HttpHeaders.AUTHORIZATION, sender))
+                .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(0)));
+        mockMvc.perform(get("/api/trades/outgoing").header(HttpHeaders.AUTHORIZATION, recipient))
+                .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(0)));
+        mockMvc.perform(get("/api/trades/incoming").header(HttpHeaders.AUTHORIZATION, outsider))
+                .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(0)));
+        mockMvc.perform(get("/api/trades/outgoing").header(HttpHeaders.AUTHORIZATION, outsider))
+                .andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(0)));
+
+        String detail = "/api/trades/" + olderId;
+        mockMvc.perform(get(detail).header(HttpHeaders.AUTHORIZATION, sender))
+                .andExpect(status().isOk()).andExpect(jsonPath("$.id", is((int) olderId)));
+        mockMvc.perform(get(detail).header(HttpHeaders.AUTHORIZATION, recipient))
+                .andExpect(status().isOk()).andExpect(jsonPath("$.id", is((int) olderId)));
+        mockMvc.perform(get(detail).header(HttpHeaders.AUTHORIZATION, outsider))
+                .andExpect(status().isNotFound());
+    }
+
+    private long createTrade(String token, String recipient, long offered, long requested) throws Exception {
+        String body = mockMvc.perform(post("/api/trades").header(HttpHeaders.AUTHORIZATION, token)
+                        .contentType(MediaType.APPLICATION_JSON).content(request(recipient, offered, 1, requested, 1)))
+                .andExpect(status().isCreated()).andReturn().getResponse().getContentAsString();
+        return com.jayway.jsonpath.JsonPath.<Integer>read(body, "$.id").longValue();
     }
 
     private long userId(String nickname) {
