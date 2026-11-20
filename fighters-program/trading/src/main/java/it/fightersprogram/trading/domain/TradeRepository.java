@@ -9,4 +9,6 @@ public interface TradeRepository extends JpaRepository<Trade, Long> {
     List<Trade> findByRecipientIdAndStatusOrderByCreatedAtDesc(long recipientId, TradeStatus status);
 
     List<Trade> findBySenderIdOrderByCreatedAtDesc(long senderId);
+
+    List<Trade> findBySenderIdAndStatus(long senderId, TradeStatus status);
 }
