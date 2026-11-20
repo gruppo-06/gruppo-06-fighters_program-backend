@@ -64,6 +64,25 @@ public class TradeService {
         return toView(trade, catalog);
     }
 
+    public List<TradeView> incoming(long userId) {
+        return tradeRepository.findByRecipientIdAndStatusOrderByCreatedAtDesc(userId, TradeStatus.PENDING).stream()
+                .map(this::toView)
+                .toList();
+    }
+
+    public List<TradeView> outgoing(long userId) {
+        return tradeRepository.findBySenderIdOrderByCreatedAtDesc(userId).stream()
+                .map(this::toView)
+                .toList();
+    }
+
+    public TradeView findVisibleTrade(long userId, long tradeId) {
+        Trade trade = tradeRepository.findById(tradeId)
+                .filter(candidate -> candidate.getSenderId() == userId || candidate.getRecipientId() == userId)
+                .orElseThrow(() -> new NotFoundException("Trade not found: " + tradeId));
+        return toView(trade);
+    }
+
     private Map<Long, Integer> pendingOfferedQuantities(long senderId) {
         Map<Long, Integer> quantities = new HashMap<>();
         tradeRepository.findBySenderIdAndStatus(senderId, TradeStatus.PENDING).forEach(trade -> trade.getItems().stream()
@@ -88,6 +107,13 @@ public class TradeService {
         return new TradeView(trade.getId(), userDirectory.nicknameOf(trade.getSenderId()),
                 userDirectory.nicknameOf(trade.getRecipientId()), trade.getStatus(), offered, requested,
                 trade.getCreatedAt(), trade.getResolvedAt());
+    }
+
+    private TradeView toView(Trade trade) {
+        List<Long> cardIds = trade.getItems().stream().map(TradeItem::getCardId).distinct().toList();
+        Map<Long, CatalogCard> catalog = catalogService.findCardsByIds(cardIds).stream()
+                .collect(Collectors.toMap(CatalogCard::id, Function.identity()));
+        return toView(trade, catalog);
     }
 
     private static TradeCardView view(TradeItem item, Map<Long, CatalogCard> catalog) {
