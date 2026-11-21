@@ -38,7 +38,7 @@ public class CatalogImportRunner implements ApplicationRunner {
         }
         validator.validate(files);
         ImportSummary summary = importer.importAll(files);
-        LOGGER.info("Imported {} catalog files from {}: {} cards created, {} updated",
-                files.size(), location, summary.created(), summary.updated());
+        LOGGER.info("Imported {} catalog files from {}: {} cards created, {} updated, {} skipped as admin-managed",
+                files.size(), location, summary.created(), summary.updated(), summary.skipped());
     }
 }
