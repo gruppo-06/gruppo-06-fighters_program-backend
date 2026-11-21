@@ -1,13 +1,18 @@
 package it.fightersprogram;
 
 import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.List;
 import java.util.Map;
 
 import jakarta.persistence.EntityManager;
@@ -24,6 +29,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.transaction.annotation.Transactional;
 
+import it.fightersprogram.catalog.CatalogCard;
+import it.fightersprogram.catalog.CatalogService;
+import it.fightersprogram.collection.CollectionService;
+
 @SpringBootTest
 @AutoConfigureMockMvc
 @Transactional
@@ -39,6 +48,12 @@ class AdminCardApiTest {
 
     @Autowired
     private EntityManager entityManager;
+
+    @Autowired
+    private CatalogService catalogService;
+
+    @Autowired
+    private CollectionService collectionService;
 
     private String admin;
     private String player;
@@ -148,6 +163,50 @@ class AdminCardApiTest {
     private ResultActions edit(String token, String code, String body) throws Exception {
         return mockMvc.perform(put(ADMIN_CARDS + "/" + code).header(HttpHeaders.AUTHORIZATION, token)
                 .contentType(MediaType.APPLICATION_JSON).content(body));
+    }
+
+    @Test
+    void aDeactivatedCardLeavesThePublicCatalogButStaysInItsOwnersCollection() throws Exception {
+        create(admin, cardJson("ZX01", "Admin Fighter", "Rara", 300)).andExpect(status().isCreated());
+        long cardId = jdbcTemplate.queryForObject("SELECT id FROM card WHERE code = 'ZX01'", Long.class);
+        long playerId = jdbcTemplate.queryForObject(
+                "SELECT id FROM app_user WHERE nickname = 'acard_player'", Long.class);
+        collectionService.grant(playerId, cardId, 1);
+
+        deactivate(admin, "ZX01").andExpect(status().isNoContent());
+
+        assertFlags("ZX01", false, true);
+        mockMvc.perform(get("/api/cards").param("faction", "Africana").param("size", "100"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.content[*].code", not(hasItem("ZX01"))));
+        assertFalse(catalogService.findAllCards().stream().map(CatalogCard::code).anyMatch("ZX01"::equals));
+        assertEquals(1, catalogService.findCardsByIds(List.of(cardId)).size());
+        mockMvc.perform(get("/api/me/collection").header(HttpHeaders.AUTHORIZATION, player).param("size", "100"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.content[*].code", hasItem("ZX01")));
+    }
+
+    @Test
+    void anEditCanDeactivateACard() throws Exception {
+        create(admin, cardJson("ZX01", "Admin Fighter", "Rara", 300)).andExpect(status().isCreated());
+
+        edit(admin, "ZX01", cardJson("ZX01", "Admin Fighter", "Rara", 300).replace("}", ", \"active\": false}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.active", is(false)));
+    }
+
+    @Test
+    void deactivatingAnUnknownCardIsNotFound() throws Exception {
+        deactivate(admin, "ZX99").andExpect(status().isNotFound());
+    }
+
+    @Test
+    void aPlayerCannotDeactivateCards() throws Exception {
+        deactivate(player, "ZX01").andExpect(status().isForbidden());
+    }
+
+    private ResultActions deactivate(String token, String code) throws Exception {
+        return mockMvc.perform(delete(ADMIN_CARDS + "/" + code).header(HttpHeaders.AUTHORIZATION, token));
     }
 
     private ResultActions create(String token, String body) throws Exception {
