@@ -196,6 +196,7 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 | `GET /api/me` | Profilo dell'utente corrente |
 | `GET /api/cards`, `GET /api/cards/{code}` | Catalogo pubblico |
 | `GET /api/me/collection`, `GET /api/me/collection/progress` | Carte possedute e avanzamento per fazione |
+| `GET /api/me/credits` | Saldo crediti (somma dei movimenti) e ultimi 20 movimenti |
 | `POST /api/me/decks/validate` | Verifica un mazzo senza salvarlo |
 | `GET/POST /api/me/decks`, `GET/PUT/DELETE /api/me/decks/{id}` | Mazzi dell'utente |
 | `POST /api/matches` | Sfida un giocatore: `{ opponentNickname, deckId }` |
