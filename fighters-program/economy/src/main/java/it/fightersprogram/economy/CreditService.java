@@ -1,5 +1,7 @@
 package it.fightersprogram.economy;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +24,13 @@ public class CreditService {
 
     public long balance(long userId) {
         return transactions.balanceOf(userId);
+    }
+
+    public CreditSummary summary(long userId) {
+        List<CreditMovement> latest = transactions.findTop20ByUserIdOrderByCreatedAtDescIdDesc(userId).stream()
+                .map(CreditService::toMovement)
+                .toList();
+        return new CreditSummary(balance(userId), latest);
     }
 
     @Transactional
@@ -66,7 +75,7 @@ public class CreditService {
         return amount;
     }
 
-    static CreditMovement toMovement(CreditTransaction transaction) {
+    private static CreditMovement toMovement(CreditTransaction transaction) {
         return new CreditMovement(transaction.getId(), transaction.getAmount(), transaction.getType(),
                 transaction.getReference(), transaction.getCreatedAt());
     }
