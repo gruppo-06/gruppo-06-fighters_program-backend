@@ -14,7 +14,9 @@ import it.fightersprogram.catalog.domain.FighterClass;
 import it.fightersprogram.catalog.domain.FighterClassRepository;
 import it.fightersprogram.catalog.domain.Rarity;
 import it.fightersprogram.catalog.domain.RarityRepository;
+import it.fightersprogram.common.error.BadRequestException;
 import it.fightersprogram.common.error.ConflictException;
+import it.fightersprogram.common.error.NotFoundException;
 import it.fightersprogram.common.error.UnprocessableException;
 
 import lombok.RequiredArgsConstructor;
@@ -35,6 +37,19 @@ public class AdminCardService {
         }
         Card card = Card.createdByAdmin(request.code(), toDetails(request));
         return toResponse(cardRepository.save(card));
+    }
+
+    public AdminCardResponse edit(String code, AdminCardRequest request) {
+        if (!code.equals(request.code())) {
+            throw new BadRequestException("The code of a card cannot be changed");
+        }
+        Card card = cardRepository.findByCode(code)
+                .orElseThrow(() -> new NotFoundException("Card not found: " + code));
+        card.editByAdmin(toDetails(request));
+        if (Boolean.TRUE.equals(request.active())) {
+            card.activate();
+        }
+        return toResponse(card);
     }
 
     private CardDetails toDetails(AdminCardRequest request) {
