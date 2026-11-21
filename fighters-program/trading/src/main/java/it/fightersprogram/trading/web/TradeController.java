@@ -62,4 +62,16 @@ public class TradeController {
     public TradeView accept(@AuthenticationPrincipal Jwt token, @PathVariable long tradeId) {
         return tradeService.accept(CurrentUser.id(token), tradeId);
     }
+
+    @PostMapping("/{tradeId}/decline")
+    @Operation(summary = "Decline a pending trade you received")
+    public TradeView decline(@AuthenticationPrincipal Jwt token, @PathVariable long tradeId) {
+        return tradeService.decline(CurrentUser.id(token), tradeId);
+    }
+
+    @PostMapping("/{tradeId}/cancel")
+    @Operation(summary = "Cancel a pending trade you proposed")
+    public TradeView cancel(@AuthenticationPrincipal Jwt token, @PathVariable long tradeId) {
+        return tradeService.cancel(CurrentUser.id(token), tradeId);
+    }
 }

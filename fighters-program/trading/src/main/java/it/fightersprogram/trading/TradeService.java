@@ -78,17 +78,12 @@ public class TradeService {
     }
 
     public TradeView findVisibleTrade(long userId, long tradeId) {
-        Trade trade = tradeRepository.findById(tradeId)
-                .filter(candidate -> candidate.getSenderId() == userId || candidate.getRecipientId() == userId)
-                .orElseThrow(() -> new NotFoundException("Trade not found: " + tradeId));
-        return toView(trade);
+        return toView(visibleTrade(userId, tradeId));
     }
 
     @Transactional
     public TradeView accept(long userId, long tradeId) {
-        Trade trade = tradeRepository.lockById(tradeId)
-                .filter(candidate -> candidate.getSenderId() == userId || candidate.getRecipientId() == userId)
-                .orElseThrow(() -> new NotFoundException("Trade not found: " + tradeId));
+        Trade trade = lockedVisibleTrade(userId, tradeId);
         trade.accept(userId);
         List<CardTransfer> transfers = trade.getItems().stream()
                 .map(item -> item.getSide() == TradeSide.OFFERED
@@ -99,6 +94,32 @@ public class TradeService {
                 .toList();
         collectionService.transfer(transfers);
         return toView(trade);
+    }
+
+    @Transactional
+    public TradeView decline(long userId, long tradeId) {
+        Trade trade = lockedVisibleTrade(userId, tradeId);
+        trade.decline(userId);
+        return toView(trade);
+    }
+
+    @Transactional
+    public TradeView cancel(long userId, long tradeId) {
+        Trade trade = lockedVisibleTrade(userId, tradeId);
+        trade.cancel(userId);
+        return toView(trade);
+    }
+
+    private Trade visibleTrade(long userId, long tradeId) {
+        return tradeRepository.findById(tradeId)
+                .filter(candidate -> candidate.getSenderId() == userId || candidate.getRecipientId() == userId)
+                .orElseThrow(() -> new NotFoundException("Trade not found: " + tradeId));
+    }
+
+    private Trade lockedVisibleTrade(long userId, long tradeId) {
+        return tradeRepository.lockById(tradeId)
+                .filter(candidate -> candidate.getSenderId() == userId || candidate.getRecipientId() == userId)
+                .orElseThrow(() -> new NotFoundException("Trade not found: " + tradeId));
     }
 
     private Map<Long, Integer> pendingOfferedQuantities(long senderId) {

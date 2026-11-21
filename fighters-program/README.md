@@ -208,6 +208,7 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 | `GET /api/trades/incoming`, `GET /api/trades/outgoing` | Scambi ricevuti PENDING e scambi inviati in ogni stato |
 | `GET /api/trades/{id}` | Dettaglio dello scambio (solo partecipanti) |
 | `POST /api/trades/{id}/accept` | Accetta uno scambio e trasferisce le carte |
+| `POST /api/trades/{id}/decline`, `POST /api/trades/{id}/cancel` | Rifiuta uno scambio ricevuto o annulla uno proposto |
 
 ## 10. Test
 
