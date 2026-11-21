@@ -242,6 +242,74 @@ class TradeApiTest {
         org.junit.jupiter.api.Assertions.assertEquals(0, quantity(recipientId, offered));
     }
 
+    @Test
+    void onlyRecipientCanDeclinePendingTradeAndDeclineDoesNotMoveCards() throws Exception {
+        String sender = TestUsers.registerAndLogin(mockMvc, "trade_decline_sender");
+        String recipient = TestUsers.registerAndLogin(mockMvc, "trade_decline_recipient");
+        String outsider = TestUsers.registerAndLogin(mockMvc, "trade_decline_outsider");
+        long senderId = userId("trade_decline_sender");
+        long recipientId = userId("trade_decline_recipient");
+        long offered = cardId("EA01");
+        long requested = cardId("EA02");
+        own(senderId, offered, 1);
+        own(recipientId, requested, 1);
+        long tradeId = createTrade(sender, "trade_decline_recipient", offered, requested);
+
+        mockMvc.perform(post("/api/trades/" + tradeId + "/decline")
+                        .header(HttpHeaders.AUTHORIZATION, sender))
+                .andExpect(status().isForbidden());
+        mockMvc.perform(post("/api/trades/" + tradeId + "/decline")
+                        .header(HttpHeaders.AUTHORIZATION, outsider))
+                .andExpect(status().isNotFound());
+        mockMvc.perform(post("/api/trades/" + tradeId + "/decline")
+                        .header(HttpHeaders.AUTHORIZATION, recipient))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status", is("DECLINED")))
+                .andExpect(jsonPath("$.resolvedAt").isNotEmpty());
+
+        org.junit.jupiter.api.Assertions.assertEquals(1, quantity(senderId, offered));
+        org.junit.jupiter.api.Assertions.assertEquals(1, quantity(recipientId, requested));
+        mockMvc.perform(post("/api/trades/" + tradeId + "/decline")
+                        .header(HttpHeaders.AUTHORIZATION, recipient))
+                .andExpect(status().isConflict());
+    }
+
+    @Test
+    void onlySenderCanCancelAndCancelledOfferCanBeProposedAgain() throws Exception {
+        String sender = TestUsers.registerAndLogin(mockMvc, "trade_cancel_sender");
+        String recipient = TestUsers.registerAndLogin(mockMvc, "trade_cancel_recipient");
+        String outsider = TestUsers.registerAndLogin(mockMvc, "trade_cancel_outsider");
+        long senderId = userId("trade_cancel_sender");
+        long recipientId = userId("trade_cancel_recipient");
+        long offered = cardId("EA01");
+        long requested = cardId("EA02");
+        own(senderId, offered, 1);
+        own(recipientId, requested, 1);
+        long tradeId = createTrade(sender, "trade_cancel_recipient", offered, requested);
+
+        mockMvc.perform(post("/api/trades/" + tradeId + "/cancel")
+                        .header(HttpHeaders.AUTHORIZATION, recipient))
+                .andExpect(status().isForbidden());
+        mockMvc.perform(post("/api/trades/" + tradeId + "/cancel")
+                        .header(HttpHeaders.AUTHORIZATION, outsider))
+                .andExpect(status().isNotFound());
+        mockMvc.perform(post("/api/trades/" + tradeId + "/cancel")
+                        .header(HttpHeaders.AUTHORIZATION, sender))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status", is("CANCELLED")))
+                .andExpect(jsonPath("$.resolvedAt").isNotEmpty());
+
+        org.junit.jupiter.api.Assertions.assertEquals(1, quantity(senderId, offered));
+        org.junit.jupiter.api.Assertions.assertEquals(1, quantity(recipientId, requested));
+        mockMvc.perform(post("/api/trades").header(HttpHeaders.AUTHORIZATION, sender)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(request("trade_cancel_recipient", offered, 1, requested, 1)))
+                .andExpect(status().isCreated());
+        mockMvc.perform(post("/api/trades/" + tradeId + "/cancel")
+                        .header(HttpHeaders.AUTHORIZATION, sender))
+                .andExpect(status().isConflict());
+    }
+
     private long createTrade(String token, String recipient, long offered, long requested) throws Exception {
         return createTrade(token, recipient, offered, requested, 1);
     }
