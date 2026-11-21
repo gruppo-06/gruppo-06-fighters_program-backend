@@ -1,13 +1,17 @@
 package it.fightersprogram;
 
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.hasItem;
+import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.not;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.util.UUID;
+
+import jakarta.persistence.EntityManager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +21,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import jakarta.persistence.EntityManager;
 
 @SpringBootTest(properties = "game.starter-collection.enabled=false")
 @AutoConfigureMockMvc
@@ -138,6 +141,7 @@ class TradeApiTest {
         jdbcTemplate.update("UPDATE trade SET created_at = now() - interval '2 minutes' WHERE id = ?", olderId);
         jdbcTemplate.update("UPDATE trade SET created_at = now() - interval '1 minute' WHERE id = ?", newerId);
         jdbcTemplate.update("UPDATE trade SET status = 'ACCEPTED', resolved_at = now() WHERE id = ?", newerId);
+        entityManager.clear();
 
         mockMvc.perform(get("/api/trades/incoming").header(HttpHeaders.AUTHORIZATION, recipient))
                 .andExpect(status().isOk())
@@ -214,26 +218,26 @@ class TradeApiTest {
     }
 
     @Test
+    @Transactional(propagation = Propagation.NOT_SUPPORTED)
     void acceptingFailsWithoutChangingCardsOrTradeWhenSenderNoLongerHasCopies() throws Exception {
-        String sender = TestUsers.registerAndLogin(mockMvc, "ts_sender");
-        String recipient = TestUsers.registerAndLogin(mockMvc, "ts_recipient");
-        long senderId = userId("ts_sender");
-        long recipientId = userId("ts_recipient");
+        String senderNickname = "ts_s" + UUID.randomUUID().toString().replace("-", "").substring(0, 8);
+        String recipientNickname = "ts_r" + UUID.randomUUID().toString().replace("-", "").substring(0, 8);
+        String sender = TestUsers.registerAndLogin(mockMvc, senderNickname);
+        String recipient = TestUsers.registerAndLogin(mockMvc, recipientNickname);
+        long senderId = userId(senderNickname);
+        long recipientId = userId(recipientNickname);
         long offered = cardId("EA01");
         long requested = cardId("EA02");
         own(senderId, offered, 2);
         own(recipientId, requested, 1);
-        long tradeId = createTrade(sender, "ts_recipient", offered, requested, 2);
-        entityManager.flush();
+        long tradeId = createTrade(sender, recipientNickname, offered, requested, 2);
         jdbcTemplate.update("UPDATE user_card SET quantity = 1 WHERE user_id = ? AND card_id = ?",
                 senderId, offered);
-        entityManager.clear();
 
         mockMvc.perform(post("/api/trades/" + tradeId + "/accept")
                         .header(HttpHeaders.AUTHORIZATION, recipient))
                 .andExpect(status().isUnprocessableContent());
 
-        entityManager.flush();
         org.junit.jupiter.api.Assertions.assertEquals("PENDING", jdbcTemplate.queryForObject(
                 "SELECT status FROM trade WHERE id = ?", String.class, tradeId));
         org.junit.jupiter.api.Assertions.assertEquals(1, quantity(senderId, offered));

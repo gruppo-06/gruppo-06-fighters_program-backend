@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
+
 import jakarta.persistence.EntityManager;
+
 import it.fightersprogram.trading.domain.Trade;
 import it.fightersprogram.trading.domain.TradeItem;
 import it.fightersprogram.trading.domain.TradeRepository;
@@ -134,7 +138,7 @@ class MatchAndTradeSchemaTest {
 
     @Test
     void tradeAndItemsCanBePersistedAndReadBack() {
-        Trade trade = Trade.propose(challengerId, opponentId, java.util.List.of(
+        Trade trade = Trade.propose(challengerId, opponentId, List.of(
                 new TradeItem(cardId, 3, TradeSide.OFFERED),
                 new TradeItem(cardId, 1, TradeSide.REQUESTED)));
 

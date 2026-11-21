@@ -109,7 +109,7 @@ public class CollectionService {
             int added = incoming.getOrDefault(key, 0);
             UserCard owned = lockedCards.get(key);
             if (owned == null) {
-                userCardRepository.save(new UserCard(key.userId(), key.cardId(), added));
+                userCardRepository.addCopiesAtomically(key.userId(), key.cardId(), added);
             } else if (added >= removed) {
                 if (added > removed) {
                     owned.add(added - removed);
