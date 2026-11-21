@@ -7,6 +7,10 @@ public final class CardSpecifications {
     private CardSpecifications() {
     }
 
+    public static Specification<Card> isActive() {
+        return (root, query, builder) -> builder.isTrue(root.get("active"));
+    }
+
     public static Specification<Card> hasFaction(String name) {
         return (root, query, builder) -> name == null ? null : builder.equal(root.get("faction").get("name"), name);
     }

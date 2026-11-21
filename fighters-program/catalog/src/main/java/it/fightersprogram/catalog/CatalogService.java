@@ -29,6 +29,7 @@ public class CatalogService {
 
     public Page<CardResponse> findCards(CardFilter filter, Pageable pageable) {
         Specification<Card> specification = Specification.allOf(
+                CardSpecifications.isActive(),
                 CardSpecifications.hasFaction(filter.faction()),
                 CardSpecifications.hasClass(filter.fighterClass()),
                 CardSpecifications.hasRarity(filter.rarity()));
@@ -42,7 +43,7 @@ public class CatalogService {
     }
 
     public List<CatalogCard> findAllCards() {
-        return cardRepository.findAllByOrderByCodeAsc().stream().map(CatalogService::toCatalogCard).toList();
+        return cardRepository.findAllByActiveTrueOrderByCodeAsc().stream().map(CatalogService::toCatalogCard).toList();
     }
 
     public List<CatalogCard> findCardsByIds(Collection<Long> ids) {

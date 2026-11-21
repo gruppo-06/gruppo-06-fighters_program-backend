@@ -1,6 +1,7 @@
 package it.fightersprogram.catalog.web;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -38,5 +39,12 @@ public class AdminCardController {
     @Operation(summary = "Edit a card; the importer will no longer overwrite it. \"active\": true reactivates it")
     public AdminCardResponse edit(@PathVariable String code, @Valid @RequestBody AdminCardRequest request) {
         return adminCardService.edit(code, request);
+    }
+
+    @DeleteMapping("/{code}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @Operation(summary = "Deactivate a card: it leaves the catalog and packs but stays in its owners' collections")
+    public void deactivate(@PathVariable String code) {
+        adminCardService.deactivate(code);
     }
 }

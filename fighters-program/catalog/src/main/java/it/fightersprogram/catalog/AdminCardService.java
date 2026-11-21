@@ -43,13 +43,23 @@ public class AdminCardService {
         if (!code.equals(request.code())) {
             throw new BadRequestException("The code of a card cannot be changed");
         }
-        Card card = cardRepository.findByCode(code)
-                .orElseThrow(() -> new NotFoundException("Card not found: " + code));
+        Card card = findCard(code);
         card.editByAdmin(toDetails(request));
         if (Boolean.TRUE.equals(request.active())) {
             card.activate();
+        } else if (Boolean.FALSE.equals(request.active())) {
+            card.deactivate();
         }
         return toResponse(card);
+    }
+
+    public void deactivate(String code) {
+        findCard(code).deactivate();
+    }
+
+    private Card findCard(String code) {
+        return cardRepository.findByCode(code)
+                .orElseThrow(() -> new NotFoundException("Card not found: " + code));
     }
 
     private CardDetails toDetails(AdminCardRequest request) {

@@ -14,7 +14,7 @@ public interface CardRepository extends JpaRepository<Card, Long>, JpaSpecificat
     Optional<Card> findByCode(String code);
 
     @EntityGraph(attributePaths = {"faction", "fighterClass", "rarity"})
-    List<Card> findAllByOrderByCodeAsc();
+    List<Card> findAllByActiveTrueOrderByCodeAsc();
 
     @EntityGraph(attributePaths = {"faction", "fighterClass", "rarity"})
     List<Card> findAllByIdIn(Collection<Long> ids);
