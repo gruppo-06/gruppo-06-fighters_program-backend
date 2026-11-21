@@ -194,7 +194,9 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 | `POST /api/auth/register` | Registra un giocatore (riceve il set iniziale provvisorio, decisione 003) |
 | `POST /api/auth/login` | Restituisce `{ accessToken, expiresIn }` |
 | `GET /api/me` | Profilo dell'utente corrente |
-| `GET /api/cards`, `GET /api/cards/{code}` | Catalogo pubblico |
+| `GET /api/cards`, `GET /api/cards/{code}` | Catalogo pubblico (l'elenco mostra solo le carte attive) |
+| `POST /api/admin/cards`, `PUT /api/admin/cards/{code}` | Crea o modifica una carta (solo ADMIN); l'importer non la sovrascrive più |
+| `DELETE /api/admin/cards/{code}` | Disattiva una carta (solo ADMIN): esce da catalogo e pacchetti, resta nelle collezioni; `PUT` con `"active": true` la riattiva |
 | `GET /api/me/collection`, `GET /api/me/collection/progress` | Carte possedute e avanzamento per fazione |
 | `POST /api/me/decks/validate` | Verifica un mazzo senza salvarlo |
 | `GET/POST /api/me/decks`, `GET/PUT/DELETE /api/me/decks/{id}` | Mazzi dell'utente |
