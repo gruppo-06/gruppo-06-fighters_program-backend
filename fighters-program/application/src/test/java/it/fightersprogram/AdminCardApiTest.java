@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -99,12 +100,63 @@ class AdminCardApiTest {
                 .andExpect(status().isUnprocessableContent());
     }
 
+    @Test
+    void anAdminEditsAnImportedCardAndTakesItOver() throws Exception {
+        String importedCode = jdbcTemplate.queryForObject(
+                "SELECT code FROM card WHERE admin_managed = FALSE ORDER BY code LIMIT 1", String.class);
+
+        edit(admin, importedCode, cardJson(importedCode, "Edited Fighter", "Rara", 777))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name", is("Edited Fighter")))
+                .andExpect(jsonPath("$.atk", is(777)));
+
+        assertFlags(importedCode, true, true);
+    }
+
+    @Test
+    void editingAnUnknownCardIsNotFound() throws Exception {
+        edit(admin, "ZX99", cardJson("ZX99", "Edited Fighter", "Rara", 300)).andExpect(status().isNotFound());
+    }
+
+    @Test
+    void theCodeOfACardCannotBeChanged() throws Exception {
+        create(admin, cardJson("ZX01", "Admin Fighter", "Rara", 300)).andExpect(status().isCreated());
+
+        edit(admin, "ZX01", cardJson("ZX02", "Admin Fighter", "Rara", 300))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code", is("BAD_REQUEST")));
+    }
+
+    @Test
+    void anEditCanReactivateADeactivatedCard() throws Exception {
+        create(admin, cardJson("ZX01", "Admin Fighter", "Rara", 300)).andExpect(status().isCreated());
+        jdbcTemplate.update("UPDATE card SET active = FALSE WHERE code = 'ZX01'");
+        entityManager.clear();
+
+        edit(admin, "ZX01", cardJson("ZX01", "Admin Fighter", "Rara", 300).replace("}", ", \"active\": true}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.active", is(true)));
+
+        assertFlags("ZX01", true, true);
+    }
+
+    @Test
+    void aPlayerCannotEditCards() throws Exception {
+        edit(player, "ZX01", cardJson("ZX01", "Admin Fighter", "Rara", 300)).andExpect(status().isForbidden());
+    }
+
+    private ResultActions edit(String token, String code, String body) throws Exception {
+        return mockMvc.perform(put(ADMIN_CARDS + "/" + code).header(HttpHeaders.AUTHORIZATION, token)
+                .contentType(MediaType.APPLICATION_JSON).content(body));
+    }
+
     private ResultActions create(String token, String body) throws Exception {
         return mockMvc.perform(post(ADMIN_CARDS).header(HttpHeaders.AUTHORIZATION, token)
                 .contentType(MediaType.APPLICATION_JSON).content(body));
     }
 
     private void assertFlags(String code, boolean active, boolean adminManaged) {
+        entityManager.flush();
         Map<String, Object> flags = jdbcTemplate.queryForMap(
                 "SELECT active, admin_managed FROM card WHERE code = ?", code);
         assertEquals(active, flags.get("active"));
