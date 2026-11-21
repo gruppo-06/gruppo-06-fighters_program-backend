@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import it.fightersprogram.catalog.CatalogCard;
 import it.fightersprogram.catalog.CatalogService;
+import it.fightersprogram.collection.CardTransfer;
 import it.fightersprogram.collection.CollectionService;
 import it.fightersprogram.common.error.BadRequestException;
 import it.fightersprogram.common.error.NotFoundException;
@@ -80,6 +81,23 @@ public class TradeService {
         Trade trade = tradeRepository.findById(tradeId)
                 .filter(candidate -> candidate.getSenderId() == userId || candidate.getRecipientId() == userId)
                 .orElseThrow(() -> new NotFoundException("Trade not found: " + tradeId));
+        return toView(trade);
+    }
+
+    @Transactional
+    public TradeView accept(long userId, long tradeId) {
+        Trade trade = tradeRepository.lockById(tradeId)
+                .filter(candidate -> candidate.getSenderId() == userId || candidate.getRecipientId() == userId)
+                .orElseThrow(() -> new NotFoundException("Trade not found: " + tradeId));
+        trade.accept(userId);
+        List<CardTransfer> transfers = trade.getItems().stream()
+                .map(item -> item.getSide() == TradeSide.OFFERED
+                        ? new CardTransfer(trade.getSenderId(), trade.getRecipientId(), item.getCardId(),
+                                item.getQuantity())
+                        : new CardTransfer(trade.getRecipientId(), trade.getSenderId(), item.getCardId(),
+                                item.getQuantity()))
+                .toList();
+        collectionService.transfer(transfers);
         return toView(trade);
     }
 
