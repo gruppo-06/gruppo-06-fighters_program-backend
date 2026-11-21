@@ -56,7 +56,7 @@ class TradeApiTest {
                 .andExpect(jsonPath("$.status", is("PENDING")))
                 .andExpect(jsonPath("$.offered[0].cardId", is((int) offered)))
                 .andExpect(jsonPath("$.offered[0].code", is("EA01")))
-                .andExpect(jsonPath("$.offered[0].name", is("Fighter EA01")))
+                .andExpect(jsonPath("$.offered[0].name", is(cardName("EA01"))))
                 .andExpect(jsonPath("$.offered[0].quantity", is(2)))
                 .andExpect(jsonPath("$.requested[0].code", is("EA02")))
                 .andExpect(jsonPath("$.requested[0].quantity", is(1)))
@@ -123,18 +123,18 @@ class TradeApiTest {
 
     @Test
     void listsOnlyRelevantTradesAndHidesDetailsFromThirdParties() throws Exception {
-        String sender = TestUsers.registerAndLogin(mockMvc, "trade_list_sender");
-        String recipient = TestUsers.registerAndLogin(mockMvc, "trade_list_recipient");
-        String outsider = TestUsers.registerAndLogin(mockMvc, "trade_list_outsider");
-        long senderId = userId("trade_list_sender");
-        long recipientId = userId("trade_list_recipient");
+        String sender = TestUsers.registerAndLogin(mockMvc, "tl_sender");
+        String recipient = TestUsers.registerAndLogin(mockMvc, "tl_recipient");
+        String outsider = TestUsers.registerAndLogin(mockMvc, "tl_outsider");
+        long senderId = userId("tl_sender");
+        long recipientId = userId("tl_recipient");
         long offered = cardId("EA01");
         long requested = cardId("EA02");
         own(senderId, offered, 5);
         own(recipientId, requested, 5);
 
-        long olderId = createTrade(sender, "trade_list_recipient", offered, requested);
-        long newerId = createTrade(sender, "trade_list_recipient", offered, requested);
+        long olderId = createTrade(sender, "tl_recipient", offered, requested);
+        long newerId = createTrade(sender, "tl_recipient", offered, requested);
         jdbcTemplate.update("UPDATE trade SET created_at = now() - interval '2 minutes' WHERE id = ?", olderId);
         jdbcTemplate.update("UPDATE trade SET created_at = now() - interval '1 minute' WHERE id = ?", newerId);
         jdbcTemplate.update("UPDATE trade SET status = 'ACCEPTED', resolved_at = now() WHERE id = ?", newerId);
@@ -170,16 +170,16 @@ class TradeApiTest {
 
     @Test
     void acceptingTransfersCardsAtomicallyAndOnlyTheRecipientCanAccept() throws Exception {
-        String sender = TestUsers.registerAndLogin(mockMvc, "trade_accept_sender");
-        String recipient = TestUsers.registerAndLogin(mockMvc, "trade_accept_recipient");
-        String outsider = TestUsers.registerAndLogin(mockMvc, "trade_accept_outsider");
-        long senderId = userId("trade_accept_sender");
-        long recipientId = userId("trade_accept_recipient");
+        String sender = TestUsers.registerAndLogin(mockMvc, "ta_sender");
+        String recipient = TestUsers.registerAndLogin(mockMvc, "ta_recipient");
+        String outsider = TestUsers.registerAndLogin(mockMvc, "ta_out");
+        long senderId = userId("ta_sender");
+        long recipientId = userId("ta_recipient");
         long offered = cardId("EA01");
         long requested = cardId("EA02");
         own(senderId, offered, 1);
         own(recipientId, requested, 1);
-        long tradeId = createTrade(sender, "trade_accept_recipient", offered, requested);
+        long tradeId = createTrade(sender, "ta_recipient", offered, requested);
         int offeredTotal = totalCopies(offered);
         int requestedTotal = totalCopies(requested);
 
@@ -215,15 +215,15 @@ class TradeApiTest {
 
     @Test
     void acceptingFailsWithoutChangingCardsOrTradeWhenSenderNoLongerHasCopies() throws Exception {
-        String sender = TestUsers.registerAndLogin(mockMvc, "trade_stale_sender");
-        String recipient = TestUsers.registerAndLogin(mockMvc, "trade_stale_recipient");
-        long senderId = userId("trade_stale_sender");
-        long recipientId = userId("trade_stale_recipient");
+        String sender = TestUsers.registerAndLogin(mockMvc, "ts_sender");
+        String recipient = TestUsers.registerAndLogin(mockMvc, "ts_recipient");
+        long senderId = userId("ts_sender");
+        long recipientId = userId("ts_recipient");
         long offered = cardId("EA01");
         long requested = cardId("EA02");
         own(senderId, offered, 2);
         own(recipientId, requested, 1);
-        long tradeId = createTrade(sender, "trade_stale_recipient", offered, requested, 2);
+        long tradeId = createTrade(sender, "ts_recipient", offered, requested, 2);
         entityManager.flush();
         jdbcTemplate.update("UPDATE user_card SET quantity = 1 WHERE user_id = ? AND card_id = ?",
                 senderId, offered);
@@ -244,16 +244,16 @@ class TradeApiTest {
 
     @Test
     void onlyRecipientCanDeclinePendingTradeAndDeclineDoesNotMoveCards() throws Exception {
-        String sender = TestUsers.registerAndLogin(mockMvc, "trade_decline_sender");
-        String recipient = TestUsers.registerAndLogin(mockMvc, "trade_decline_recipient");
-        String outsider = TestUsers.registerAndLogin(mockMvc, "trade_decline_outsider");
-        long senderId = userId("trade_decline_sender");
-        long recipientId = userId("trade_decline_recipient");
+        String sender = TestUsers.registerAndLogin(mockMvc, "td_sender");
+        String recipient = TestUsers.registerAndLogin(mockMvc, "td_recipient");
+        String outsider = TestUsers.registerAndLogin(mockMvc, "td_out");
+        long senderId = userId("td_sender");
+        long recipientId = userId("td_recipient");
         long offered = cardId("EA01");
         long requested = cardId("EA02");
         own(senderId, offered, 1);
         own(recipientId, requested, 1);
-        long tradeId = createTrade(sender, "trade_decline_recipient", offered, requested);
+        long tradeId = createTrade(sender, "td_recipient", offered, requested);
 
         mockMvc.perform(post("/api/trades/" + tradeId + "/decline")
                         .header(HttpHeaders.AUTHORIZATION, sender))
@@ -276,16 +276,16 @@ class TradeApiTest {
 
     @Test
     void onlySenderCanCancelAndCancelledOfferCanBeProposedAgain() throws Exception {
-        String sender = TestUsers.registerAndLogin(mockMvc, "trade_cancel_sender");
-        String recipient = TestUsers.registerAndLogin(mockMvc, "trade_cancel_recipient");
-        String outsider = TestUsers.registerAndLogin(mockMvc, "trade_cancel_outsider");
-        long senderId = userId("trade_cancel_sender");
-        long recipientId = userId("trade_cancel_recipient");
+        String sender = TestUsers.registerAndLogin(mockMvc, "tc_sender");
+        String recipient = TestUsers.registerAndLogin(mockMvc, "tc_recipient");
+        String outsider = TestUsers.registerAndLogin(mockMvc, "tc_out");
+        long senderId = userId("tc_sender");
+        long recipientId = userId("tc_recipient");
         long offered = cardId("EA01");
         long requested = cardId("EA02");
         own(senderId, offered, 1);
         own(recipientId, requested, 1);
-        long tradeId = createTrade(sender, "trade_cancel_recipient", offered, requested);
+        long tradeId = createTrade(sender, "tc_recipient", offered, requested);
 
         mockMvc.perform(post("/api/trades/" + tradeId + "/cancel")
                         .header(HttpHeaders.AUTHORIZATION, recipient))
@@ -303,7 +303,7 @@ class TradeApiTest {
         org.junit.jupiter.api.Assertions.assertEquals(1, quantity(recipientId, requested));
         mockMvc.perform(post("/api/trades").header(HttpHeaders.AUTHORIZATION, sender)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(request("trade_cancel_recipient", offered, 1, requested, 1)))
+                        .content(request("tc_recipient", offered, 1, requested, 1)))
                 .andExpect(status().isCreated());
         mockMvc.perform(post("/api/trades/" + tradeId + "/cancel")
                         .header(HttpHeaders.AUTHORIZATION, sender))
@@ -340,6 +340,10 @@ class TradeApiTest {
 
     private long cardId(String code) {
         return jdbcTemplate.queryForObject("SELECT id FROM card WHERE code = ?", Long.class, code);
+    }
+
+    private String cardName(String code) {
+        return jdbcTemplate.queryForObject("SELECT name FROM card WHERE code = ?", String.class, code);
     }
 
     private void own(long userId, long cardId, int quantity) {
