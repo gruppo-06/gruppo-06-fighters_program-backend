@@ -7,8 +7,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.UUID;
+import java.util.concurrent.ThreadLocalRandom;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -23,13 +23,9 @@ import com.jayway.jsonpath.JsonPath;
 
 import it.fightersprogram.economy.CreditService;
 import it.fightersprogram.economy.CreditType;
-import it.fightersprogram.matches.MatchFinished;
 import it.fightersprogram.economy.MatchWinReward;
+import it.fightersprogram.matches.MatchFinished;
 
-/**
- * Tests for {@link MatchWinReward}. Not {@code @Transactional} because the listener uses
- * {@code @TransactionalEventListener(phase = AFTER_COMMIT)} which requires a real commit.
- */
 @SpringBootTest(properties = "game.starter-collection.enabled=true")
 @AutoConfigureMockMvc
 class MatchWinRewardTest {
@@ -48,19 +44,10 @@ class MatchWinRewardTest {
     @Autowired
     private MatchWinReward matchWinReward;
 
-    @BeforeEach
-    void cleanSlate() {
-        jdbcTemplate.update("DELETE FROM credit_transaction");
-        jdbcTemplate.update("DELETE FROM match");
-        jdbcTemplate.update("DELETE FROM user_card");
-        jdbcTemplate.update("DELETE FROM deck");
-        jdbcTemplate.update("DELETE FROM app_user");
-    }
-
     @Test
     void directListenerCallIsIdempotentForSameMatchFinished() {
         long userId = insertUser("mwr_user_" + randomSuffix());
-        MatchFinished event = new MatchFinished(42L, userId);
+        MatchFinished event = new MatchFinished(unusedMatchId(), userId);
 
         matchWinReward.onMatchFinished(event);
         matchWinReward.onMatchFinished(event);
@@ -72,7 +59,7 @@ class MatchWinRewardTest {
     @Test
     void drawCreatesNoMovement() {
         long userId = insertUser("mwr_user_" + randomSuffix());
-        MatchFinished event = new MatchFinished(99L, null);
+        MatchFinished event = new MatchFinished(unusedMatchId(), null);
 
         matchWinReward.onMatchFinished(event);
 
@@ -124,6 +111,10 @@ class MatchWinRewardTest {
             assertEquals(0, aliceBalanceAfter - aliceBalanceBefore);
             assertEquals(0, bobBalanceAfter - bobBalanceBefore);
         }
+    }
+
+    private static long unusedMatchId() {
+        return ThreadLocalRandom.current().nextLong(1_000_000_000L, Long.MAX_VALUE);
     }
 
     private String randomSuffix() {
