@@ -24,3 +24,15 @@ size and constraints, turn limit, outcome when a deck runs out or the limit is r
 | Outcome at the turn limit | engine | Healthier player wins, equal health is a draw | Provisional | |
 | Outcome when a deck runs out | engine | The player who cannot replace a knocked-out card loses; both at once: decided by health | Provisional | |
 | Max decks per user | `game.deck.max-per-user` | 10 | Decided | From #57 |
+
+## Card roster: open values (#185)
+
+Since 22 November 2026 the catalog is the **"proposta di carte"** roster (see
+`fighters-program/application/src/main/resources/catalog/README.md`). Its documents give names, nationalities, classes
+and the legendary of each faction; everything else is provisional.
+
+| Value | Where | Provisional value | Status | Rationale |
+|---|---|---|---|---|
+| Rarity of non-legendary cards | `catalogo-*.json` | 8 Comune, 4 Rara, 3 Epica per faction; Epica and Rara spread over different classes in document order | Provisional (DSG) | Same distribution as the previous delivery, which the deck rules and packs assume |
+| Card stats | `catalogo-*.json` | Values of the previous catalog's cards with the same class and rarity | Provisional (DSG) | Keeps the balance the DSG tuned per class and rarity |
+| Card copy | `catalogo-*.json` | A sentence of the character's story | Provisional (DSG) | |
