@@ -29,8 +29,8 @@ public class OpenApiConfig {
     private static final String NULL_TYPE = "null";
 
     private static final Map<String, Set<String>> NULLABLE_PROPERTIES = Map.of(
-            "CardResponse", Set.of("country", "flavorText", "imageFile"),
-            "CollectionEntry", Set.of("imageFile"),
+            "CardResponse", Set.of("country", "flavorText", "imageFile", "imageUrl"),
+            "CollectionEntry", Set.of("imageFile", "imageUrl"),
             "DeckCardView", Set.of("imageFile"),
             "MatchReplay", Set.of("winnerNickname", "finishedAt", "challengerDeck", "opponentDeck", "log"),
             "TurnLog", Set.of("replacementOne", "replacementTwo"));

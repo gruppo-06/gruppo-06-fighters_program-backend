@@ -11,5 +11,6 @@ public record CatalogCard(
         int def,
         int vel,
         int crt,
-        String imageFile) {
+        String imageFile,
+        String imageUrl) {
 }

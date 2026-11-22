@@ -13,5 +13,6 @@ public record AdminCardResponse(
         int crt,
         String flavorText,
         String imageFile,
-        boolean active) {
+        boolean active,
+        String imageUrl) {
 }

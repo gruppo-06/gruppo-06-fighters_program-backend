@@ -146,6 +146,7 @@ public class CollectionService {
 
     private static CollectionEntry toEntry(CatalogCard card, int quantity) {
         return new CollectionEntry(card.id(), card.code(), card.name(), card.faction(), card.fighterClass(),
-                card.rarity(), card.atk(), card.def(), card.vel(), card.crt(), card.imageFile(), quantity);
+                card.rarity(), card.atk(), card.def(), card.vel(), card.crt(), card.imageFile(), quantity,
+                card.imageUrl());
     }
 }

@@ -41,7 +41,8 @@ class OpenApiContractTest {
                 .andExpect(jsonPath(SCHEMAS + "MatchReplay.properties.challengerDeck.type", hasItem("null")))
                 .andExpect(jsonPath(SCHEMAS + "MatchReplay.properties.log.anyOf[*].type", hasItem("null")))
                 .andExpect(jsonPath(SCHEMAS + "TurnLog.properties.replacementOne.anyOf[*].type", hasItem("null")))
-                .andExpect(jsonPath(SCHEMAS + "CardResponse.properties.imageFile.type", hasItem("null")));
+                .andExpect(jsonPath(SCHEMAS + "CardResponse.properties.imageFile.type", hasItem("null")))
+                .andExpect(jsonPath(SCHEMAS + "CardResponse.properties.imageUrl.type", hasItem("null")));
     }
 
     @Test
