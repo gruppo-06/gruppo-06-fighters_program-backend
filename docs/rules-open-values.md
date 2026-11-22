@@ -24,3 +24,19 @@ size and constraints, turn limit, outcome when a deck runs out or the limit is r
 | Outcome at the turn limit | engine | Healthier player wins, equal health is a draw | Provisional | |
 | Outcome when a deck runs out | engine | The player who cannot replace a knocked-out card loses; both at once: decided by health | Provisional | |
 | Max decks per user | `game.deck.max-per-user` | 10 | Decided | From #57 |
+
+## Economy: open values (SWD_EC01 #13, SWD_EC02 #9)
+
+Credit values live in `application.properties` (`game.credits.*`); pack prices and contents in
+`V9__seed_packs.sql` and, from then on, in the admin endpoints (`/api/admin/packs`). The DSG still have to confirm
+them with DSG_MO01, DSG_MO02 and DSG_MO03.
+
+| Value | Property | Provisional value | Status | Rationale |
+|---|---|---|---|---|
+| Welcome bonus | `game.credits.welcome` | 500 | Provisional | Five Base packs, or one Leggendario |
+| Match win | `game.credits.match-win` | 50 | Provisional | A draw gives nothing |
+| Daily streak | `game.credits.daily-streak` | 10, 15, 20, 25, 30, 40, 50 | Provisional | Day 8 and later stay at 50; the game day is Europe/Rome |
+| Pacchetto Base | `V9__seed_packs.sql` | 100 credits: 4 Comune, 1 Rara | Provisional | Prices taken from the frontend mock of the Negozio |
+| Pacchetto Avanzato | `V9__seed_packs.sql` | 220 credits: 5 Comune, 2 Rara, 1 Epica | Provisional | |
+| Pacchetto Leggendario | `V9__seed_packs.sql` | 500 credits: 6 Comune, 2 Rara, 1 Epica, 1 Leggendaria | Provisional | |
+| Draw within a rarity | `PackOpeningService` | Uniform, with replacement, among the active cards of the rarity | Provisional | Effect cards are not in packs yet (advanced mode) |
