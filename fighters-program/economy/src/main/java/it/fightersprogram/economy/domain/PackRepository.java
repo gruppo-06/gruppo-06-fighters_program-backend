@@ -14,6 +14,8 @@ public interface PackRepository extends JpaRepository<Pack, Long> {
 
     Optional<Pack> findByIdAndActiveTrue(Long id);
 
+    Optional<Pack> findByName(String name);
+
     @Query(value = "SELECT name FROM rarity WHERE id = :rarityId", nativeQuery = true)
     String rarityName(@Param("rarityId") short rarityId);
 }
