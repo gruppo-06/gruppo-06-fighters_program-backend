@@ -194,7 +194,7 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 
 | Metodo e percorso | Cosa fa |
 |---|---|
-| `POST /api/auth/register` | Registra un giocatore (riceve il set iniziale provvisorio, decisione 003) |
+| `POST /api/auth/register` | Registra un giocatore (riceve il set iniziale provvisorio, decisione 003, e 500 crediti di benvenuto) |
 | `POST /api/auth/login` | Restituisce `{ accessToken, expiresIn }` |
 | `GET /api/me` | Profilo dell'utente corrente |
 | `GET /api/cards`, `GET /api/cards/{code}` | Catalogo pubblico (l'elenco mostra solo le carte attive) |
@@ -202,11 +202,16 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 | `DELETE /api/admin/cards/{code}` | Disattiva una carta (solo ADMIN): esce da catalogo e pacchetti, resta nelle collezioni; `PUT` con `"active": true` la riattiva |
 | `GET /api/me/collection`, `GET /api/me/collection/progress` | Carte possedute e avanzamento per fazione |
 | `GET /api/me/credits` | Saldo crediti (somma dei movimenti) e ultimi 20 movimenti |
+| `GET/POST /api/me/credits/daily` | Stato e ritiro del bonus giornaliero, con serie di giorni consecutivi (giorno di gioco: Europe/Rome) |
+| `GET /api/packs`, `GET /api/packs/{id}` | Pacchetti attivi con prezzo e carte per rarità (pubblici) |
+| `POST /api/packs/{id}/open` | Apre un pacchetto: addebito e carte in un'unica transazione; header `Idempotency-Key` obbligatorio, saldo insufficiente 402 |
+| `POST /api/admin/users/{nickname}/credits` | Accredito o addebito manuale (solo ADMIN, header `Idempotency-Key`) |
+| `GET/POST /api/admin/packs`, `PUT/DELETE /api/admin/packs/{id}` | Gestione dei pacchetti (solo ADMIN); `DELETE` li disattiva |
 | `POST /api/me/decks/validate` | Verifica un mazzo senza salvarlo |
 | `GET/POST /api/me/decks`, `GET/PUT/DELETE /api/me/decks/{id}` | Mazzi dell'utente |
 | `POST /api/matches` | Sfida un giocatore: `{ opponentNickname, deckId }` |
 | `GET /api/matches/incoming`, `GET /api/matches/outgoing` | Sfide ricevute in attesa e sfide inviate |
-| `POST /api/matches/{id}/accept` | Accetta con `{ deckId }`: il server simula e restituisce il replay |
+| `POST /api/matches/{id}/accept` | Accetta con `{ deckId }`: il server simula e restituisce il replay; il vincitore riceve 50 crediti |
 | `POST /api/matches/{id}/decline`, `POST /api/matches/{id}/cancel` | Rifiuta (sfidato) o annulla (sfidante) |
 | `GET /api/matches/{id}` | Replay: mazzi e log turno per turno (solo partecipanti) |
 | `GET /api/matches/history` | Storico paginato con esito `WIN`, `LOSS`, `DRAW` |
