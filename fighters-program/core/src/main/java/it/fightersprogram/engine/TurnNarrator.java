@@ -23,8 +23,15 @@ public final class TurnNarrator {
         List<String> lines = new ArrayList<>();
         addFactionAdvantage(lines, turn.fighterOne());
         addFactionAdvantage(lines, turn.fighterTwo());
-        lines.add(strike(turn.fighterOne(), turn.fighterTwo()));
-        lines.add(strike(turn.fighterTwo(), turn.fighterOne()));
+        boolean advanced = turn.fighterOne().struckFirst() || turn.fighterTwo().struckFirst();
+        addInitiative(lines, turn);
+        if (advanced && turn.fighterTwo().struckFirst()) {
+            addStrike(lines, turn.fighterTwo(), turn.fighterOne(), advanced);
+            addStrike(lines, turn.fighterOne(), turn.fighterTwo(), advanced);
+        } else {
+            addStrike(lines, turn.fighterOne(), turn.fighterTwo(), advanced);
+            addStrike(lines, turn.fighterTwo(), turn.fighterOne(), advanced);
+        }
         addKnockout(lines, turn);
         addReplacement(lines, PLAYER_ONE, turn.replacementOne());
         addReplacement(lines, PLAYER_TWO, turn.replacementTwo());
@@ -35,6 +42,28 @@ public final class TurnNarrator {
         if (fighter.hasFactionAdvantage()) {
             lines.add(format("factionAdvantage", fighter.cardName(), fighter.printedAttack(),
                     fighter.effectiveAttack()));
+        }
+    }
+
+    private void addInitiative(List<String> lines, TurnLog turn) {
+        if (turn.fighterOne().struckFirst()) {
+            lines.add(format("initiative", turn.fighterOne().cardName()));
+        } else if (turn.fighterTwo().struckFirst()) {
+            lines.add(format("initiative", turn.fighterTwo().cardName()));
+        }
+    }
+
+    private void addStrike(List<String> lines, FighterLog attacker, FighterLog defender, boolean advanced) {
+        if (advanced && !attacker.struckFirst() && attacker.defenseAfter() == 0) {
+            return;
+        }
+        if (attacker.criticalHit()) {
+            lines.add(format("critical", attacker.cardName()));
+        }
+        if (defender.dodged()) {
+            lines.add(format("dodge", defender.cardName(), attacker.cardName()));
+        } else {
+            lines.add(strike(attacker, defender));
         }
     }
 

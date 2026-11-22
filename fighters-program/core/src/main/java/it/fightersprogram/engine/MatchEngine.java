@@ -161,7 +161,8 @@ public final class MatchEngine {
             inPlay = new FighterInPlay(own.card(), own.defenseAfter());
             FighterCard card = own.card();
             return new FighterLog(inPlayPosition, card.code(), card.name(), card.faction(), own.hasFactionAdvantage(),
-                    card.attack(), own.effectiveAttack(), own.damageDealt(), own.defenseBefore(), own.defenseAfter());
+                    card.attack(), own.effectiveAttack(), own.damageDealt(), own.defenseBefore(), own.defenseAfter(),
+                    own.struckFirst(), own.dodged(), own.criticalHit());
         }
 
         int takeDamage(int damage) {
