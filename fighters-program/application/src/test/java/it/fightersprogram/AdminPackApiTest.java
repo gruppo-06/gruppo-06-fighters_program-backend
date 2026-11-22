@@ -339,8 +339,11 @@ class AdminPackApiTest {
     }
 
     private static String contents(Object... rarityAndCount) {
+        if (rarityAndCount.length % 2 != 0) {
+            throw new IllegalArgumentException("Expected rarity and card count pairs");
+        }
         StringBuilder json = new StringBuilder("[");
-        for (int i = 0; i < rarityAndCount.length; i += 2) {
+        for (int i = 0; i + 1 < rarityAndCount.length; i += 2) {
             if (i > 0) {
                 json.append(", ");
             }
