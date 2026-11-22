@@ -5,10 +5,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import it.fightersprogram.engine.BaseRules;
+import it.fightersprogram.matches.AdvancedModeProperties;
 import it.fightersprogram.matches.GameRulesProperties;
 
 @Configuration
-@EnableConfigurationProperties(GameRulesProperties.class)
+@EnableConfigurationProperties({GameRulesProperties.class, AdvancedModeProperties.class})
 class GameRulesConfiguration {
 
     @Bean

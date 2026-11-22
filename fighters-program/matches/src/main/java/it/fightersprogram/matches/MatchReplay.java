@@ -7,6 +7,7 @@ import it.fightersprogram.engine.MatchLog;
 
 /**
  * @param log null while the challenge is not finished
+ * @param mode {@code BASE} or {@code ADVANCED}
  */
 public record MatchReplay(
         long id,
@@ -18,5 +19,6 @@ public record MatchReplay(
         OffsetDateTime finishedAt,
         List<SnapshotCard> challengerDeck,
         List<SnapshotCard> opponentDeck,
-        MatchLog log) {
+        MatchLog log,
+        String mode) {
 }

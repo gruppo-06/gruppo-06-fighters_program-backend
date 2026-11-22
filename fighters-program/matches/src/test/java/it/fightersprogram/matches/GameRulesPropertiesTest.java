@@ -19,18 +19,19 @@ class GameRulesPropertiesTest {
                 "game.rules.starting-health", "500",
                 "game.rules.deck-size", "10",
                 "game.rules.faction-bonus-percent", "5",
-                "game.rules.max-turns", "20");
+                "game.rules.max-turns", "20",
+                "game.rules.advanced-faction-bonus", "true");
 
         GameRulesProperties rules = new Binder(new MapConfigurationPropertySource(properties))
                 .bind("game.rules", GameRulesProperties.class)
                 .get();
 
-        assertEquals(new GameRulesProperties(1, 500, 10, 5, 20), rules);
+        assertEquals(new GameRulesProperties(1, 500, 10, 5, 20, true), rules);
     }
 
     @Test
     void convertsToTheEngineRules() {
-        GameRulesProperties rules = new GameRulesProperties(1, 500, 10, 5, 20);
+        GameRulesProperties rules = new GameRulesProperties(1, 500, 10, 5, 20, true);
 
         assertEquals(new BaseRules(1, 500, 10, 5, 20), rules.toBaseRules());
     }

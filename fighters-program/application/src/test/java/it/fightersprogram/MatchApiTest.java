@@ -34,6 +34,7 @@ import com.jayway.jsonpath.JsonPath;
 
 import jakarta.persistence.EntityManager;
 
+import it.fightersprogram.engine.GameMode;
 import it.fightersprogram.engine.MatchLog;
 import it.fightersprogram.matches.MatchFinished;
 import it.fightersprogram.matches.MatchSimulator;
@@ -142,7 +143,8 @@ class MatchApiTest {
 
         MatchLog stored = jsonMapper.readValue((String) row.get("log"), MatchLog.class);
         MatchLog replayed = simulator.simulate(jsonMapper.readValue((String) row.get("one"), SNAPSHOT),
-                jsonMapper.readValue((String) row.get("two"), SNAPSHOT), (Long) row.get("seed")).log();
+                jsonMapper.readValue((String) row.get("two"), SNAPSHOT), (Long) row.get("seed"), GameMode.BASE)
+                .log();
 
         assertEquals(stored, replayed);
     }

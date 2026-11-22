@@ -33,6 +33,7 @@ public class OpenApiConfig {
             "CollectionEntry", Set.of("imageFile", "imageUrl"),
             "DeckCardView", Set.of("imageFile"),
             "MatchReplay", Set.of("winnerNickname", "finishedAt", "challengerDeck", "opponentDeck", "log"),
+            "SnapshotCard", Set.of("vel", "crt"),
             "TurnLog", Set.of("replacementOne", "replacementTwo"));
 
     @Bean
