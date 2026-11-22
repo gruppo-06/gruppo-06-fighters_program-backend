@@ -26,9 +26,28 @@ public class SubcardService {
     }
 
     public Map<String, SubcardView> findByCodes(Collection<String> codes) {
+        if (codes.isEmpty()) {
+            return Map.of();
+        }
         return subcardRepository.findAllByCodeIn(codes).stream()
                 .map(SubcardService::toView)
                 .collect(Collectors.toMap(SubcardView::code, Function.identity()));
+    }
+
+    public Map<Short, SubcardView> findByIds(Collection<Short> ids) {
+        if (ids.isEmpty()) {
+            return Map.of();
+        }
+        return subcardRepository.findAllById(ids).stream()
+                .collect(Collectors.toMap(Subcard::getId, SubcardService::toView));
+    }
+
+    public Map<String, Short> findIdsByCodes(Collection<String> codes) {
+        if (codes.isEmpty()) {
+            return Map.of();
+        }
+        return subcardRepository.findAllByCodeIn(codes).stream()
+                .collect(Collectors.toMap(Subcard::getCode, Subcard::getId));
     }
 
     private static SubcardView toView(Subcard subcard) {

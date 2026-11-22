@@ -4,15 +4,22 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import it.fightersprogram.collection.DeckRules;
 import it.fightersprogram.collection.Violation;
 
 public final class DeckRulebook {
 
+    private static final String COMMON = "Comune";
+    private static final String RARE = "Rara";
     private static final String EPIC = "Epica";
     private static final String LEGENDARY = "Leggendaria";
+    private static final Map<String, Integer> SUBCARD_SLOTS =
+            Map.of(COMMON, 3, RARE, 2, EPIC, 1, LEGENDARY, 0);
     private static final ResourceBundle MESSAGES =
             ResourceBundle.getBundle("it.fightersprogram.collection.deck-violations", Locale.ITALIAN);
 
@@ -47,6 +54,7 @@ public final class DeckRulebook {
                 .filter(line -> line.copies() > line.ownedCopies())
                 .forEach(line -> violations.add(
                         violation("NOT_OWNED", line.copies() - line.ownedCopies(), line.cardName())));
+        deck.forEach(line -> subcardViolations(line, violations));
         return violations;
     }
 
@@ -56,5 +64,20 @@ public final class DeckRulebook {
 
     private static int copiesOfRarity(List<DeckLine> deck, String rarity) {
         return deck.stream().filter(line -> rarity.equals(line.rarity())).mapToInt(DeckLine::copies).sum();
+    }
+
+    private static void subcardViolations(DeckLine line, List<Violation> violations) {
+        Map<String, Long> counts = line.subcards().stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        counts.forEach((code, count) -> {
+            if (count > 1) {
+                violations.add(violation("DUPLICATE_SUBCARD", line.cardName(), code));
+            }
+        });
+        int slots = SUBCARD_SLOTS.getOrDefault(line.rarity(), 0);
+        if (line.subcards().size() > slots) {
+            violations.add(violation("TOO_MANY_SUBCARDS", line.cardName(), slots, line.rarity(),
+                    line.subcards().size()));
+        }
     }
 }
