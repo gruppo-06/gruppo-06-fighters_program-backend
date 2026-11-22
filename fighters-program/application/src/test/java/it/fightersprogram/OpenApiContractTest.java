@@ -53,6 +53,15 @@ class OpenApiContractTest {
     }
 
     @Test
+    void theGameModeIsPublishedAndTheAdvancedStatsOfOldSnapshotsAreNullable() throws Exception {
+        apiDocs()
+                .andExpect(jsonPath(SCHEMAS + "MatchReplay.required", hasItem("mode")))
+                .andExpect(jsonPath(SCHEMAS + "MatchListItem.required", hasItem("mode")))
+                .andExpect(jsonPath(SCHEMAS + "SnapshotCard.properties.vel.type", hasItem("null")))
+                .andExpect(jsonPath(SCHEMAS + "SnapshotCard.properties.crt.type", hasItem("null")));
+    }
+
+    @Test
     void theErrorFormatIsPublished() throws Exception {
         apiDocs().andExpect(jsonPath(SCHEMAS + "ApiError.required", containsInAnyOrder("code", "message", "details")));
     }

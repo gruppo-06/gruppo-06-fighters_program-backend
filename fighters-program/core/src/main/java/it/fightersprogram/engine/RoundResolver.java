@@ -1,6 +1,6 @@
 package it.fightersprogram.engine;
 
-public final class RoundResolver {
+public final class RoundResolver implements RuleSet.Duel {
 
     private static final int PERCENT = 100;
 
@@ -13,8 +13,15 @@ public final class RoundResolver {
         this.factionBonusPercent = factionBonusPercent;
     }
 
+    @Override
     public RoundResult resolve(FighterInPlay first, FighterInPlay second) {
         return new RoundResult(strike(first, second), strike(second, first));
+    }
+
+    // Provisional convention until SWD_EN01 (#24): effective attack minus the loser's defense before the lethal hit.
+    @Override
+    public int healthDamage(FighterRound survivor, FighterRound loser) {
+        return Math.max(0, survivor.effectiveAttack() - loser.defenseBefore());
     }
 
     private FighterRound strike(FighterInPlay fighter, FighterInPlay opponent) {
