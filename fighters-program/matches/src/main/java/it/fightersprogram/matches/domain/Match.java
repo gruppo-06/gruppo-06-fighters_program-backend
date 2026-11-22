@@ -8,6 +8,7 @@ import org.hibernate.type.SqlTypes;
 import it.fightersprogram.common.error.BadRequestException;
 import it.fightersprogram.common.error.ConflictException;
 import it.fightersprogram.common.error.ForbiddenException;
+import it.fightersprogram.engine.GameMode;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -40,6 +41,9 @@ public class Match {
     @Enumerated(EnumType.STRING)
     private MatchStatus status;
 
+    @Enumerated(EnumType.STRING)
+    private GameMode mode;
+
     private Long winnerId;
 
     private Long seed;
@@ -58,6 +62,10 @@ public class Match {
     private OffsetDateTime finishedAt;
 
     public static Match challenge(long challengerId, long opponentId, long challengerDeckId) {
+        return challenge(challengerId, opponentId, challengerDeckId, GameMode.BASE);
+    }
+
+    public static Match challenge(long challengerId, long opponentId, long challengerDeckId, GameMode mode) {
         if (challengerId == opponentId) {
             throw new BadRequestException("You cannot challenge yourself");
         }
@@ -65,6 +73,7 @@ public class Match {
         match.challengerId = challengerId;
         match.opponentId = opponentId;
         match.challengerDeckId = challengerDeckId;
+        match.mode = mode;
         match.status = MatchStatus.PENDING;
         match.createdAt = OffsetDateTime.now();
         return match;

@@ -19,9 +19,11 @@ import it.fightersprogram.collection.DeckEntry;
 import it.fightersprogram.collection.DeckService;
 import it.fightersprogram.collection.DeckValidator;
 import it.fightersprogram.collection.Violation;
+import it.fightersprogram.common.error.BadRequestException;
 import it.fightersprogram.common.error.ConflictException;
 import it.fightersprogram.common.error.NotFoundException;
 import it.fightersprogram.common.error.UnprocessableException;
+import it.fightersprogram.engine.GameMode;
 import it.fightersprogram.engine.MatchLog;
 import it.fightersprogram.engine.MatchOutcome;
 import it.fightersprogram.engine.MatchResult;
@@ -47,15 +49,20 @@ public class MatchService {
     private final DeckValidator deckValidator;
     private final CatalogService catalogService;
     private final MatchSimulator simulator;
+    private final AdvancedModeProperties advancedMode;
     private final JsonMapper jsonMapper;
     private final ApplicationEventPublisher events;
     private final SecureRandom seeds = new SecureRandom();
 
     @Transactional
     public MatchListItem challenge(long userId, CreateMatchRequest request) {
+        GameMode mode = request.mode() == null ? GameMode.BASE : request.mode();
+        if (mode == GameMode.ADVANCED && !advancedMode.enabled()) {
+            throw new BadRequestException("The advanced mode is not enabled");
+        }
         long opponentId = userDirectory.findIdByNickname(request.opponentNickname())
                 .orElseThrow(() -> new NotFoundException("Player not found: " + request.opponentNickname()));
-        Match match = Match.challenge(userId, opponentId, request.deckId());
+        Match match = Match.challenge(userId, opponentId, request.deckId(), mode);
         requireValidDeck(userId, deckService.cardsOf(userId, request.deckId()));
         return toListItem(matchRepository.save(match));
     }
@@ -83,7 +90,7 @@ public class MatchService {
         List<SnapshotCard> challengerDeck = snapshot(challengerCards);
         List<SnapshotCard> opponentDeck = snapshot(opponentCards);
         long seed = seeds.nextLong();
-        MatchResult result = simulator.simulate(challengerDeck, opponentDeck, seed);
+        MatchResult result = simulator.simulate(challengerDeck, opponentDeck, seed, match.getMode());
         Long winnerId = winnerOf(match, result.outcome());
 
         match.finish(userId, request.deckId(), winnerId, seed, jsonMapper.writeValueAsString(result.log()),
@@ -152,7 +159,7 @@ public class MatchService {
             CatalogCard card = cards.get(entry.cardId());
             for (int copy = 0; copy < entry.copies(); copy++) {
                 deck.add(new SnapshotCard(card.code(), card.name(), card.faction(), card.rarity(), card.atk(),
-                        card.def()));
+                        card.def(), card.vel(), card.crt()));
             }
         }
         return deck;
@@ -168,7 +175,8 @@ public class MatchService {
 
     private MatchListItem toListItem(Match match) {
         return new MatchListItem(match.getId(), userDirectory.nicknameOf(match.getChallengerId()),
-                userDirectory.nicknameOf(match.getOpponentId()), match.getStatus().name(), match.getCreatedAt());
+                userDirectory.nicknameOf(match.getOpponentId()), match.getStatus().name(), match.getCreatedAt(),
+                match.getMode().name());
     }
 
     private MatchReplay toReplay(Match match) {
@@ -179,6 +187,7 @@ public class MatchService {
                 match.getCreatedAt(), match.getFinishedAt(),
                 isFinished ? jsonMapper.readValue(match.getChallengerDeckSnapshot(), SNAPSHOT) : null,
                 isFinished ? jsonMapper.readValue(match.getOpponentDeckSnapshot(), SNAPSHOT) : null,
-                isFinished ? jsonMapper.readValue(match.getLog(), MatchLog.class) : null);
+                isFinished ? jsonMapper.readValue(match.getLog(), MatchLog.class) : null,
+                match.getMode().name());
     }
 }
