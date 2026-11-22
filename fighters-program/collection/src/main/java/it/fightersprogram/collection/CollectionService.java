@@ -65,9 +65,10 @@ public class CollectionService {
 
     @Transactional
     public void grant(long userId, long cardId, int copies) {
-        userCardRepository.findById(new UserCardId(userId, cardId))
-                .ifPresentOrElse(owned -> owned.add(copies),
-                        () -> userCardRepository.save(new UserCard(userId, cardId, copies)));
+        if (copies < 1) {
+            throw new IllegalArgumentException("Copies must be at least 1, got " + copies);
+        }
+        userCardRepository.addCopiesAtomically(userId, cardId, copies);
     }
 
     @Transactional
