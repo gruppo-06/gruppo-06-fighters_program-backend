@@ -198,6 +198,7 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 | `POST /api/admin/cards`, `PUT /api/admin/cards/{code}` | Crea o modifica una carta (solo ADMIN); l'importer non la sovrascrive più |
 | `DELETE /api/admin/cards/{code}` | Disattiva una carta (solo ADMIN): esce da catalogo e pacchetti, resta nelle collezioni; `PUT` con `"active": true` la riattiva |
 | `GET /api/me/collection`, `GET /api/me/collection/progress` | Carte possedute e avanzamento per fazione |
+| `GET /api/me/credits` | Saldo crediti (somma dei movimenti) e ultimi 20 movimenti |
 | `POST /api/me/decks/validate` | Verifica un mazzo senza salvarlo |
 | `GET/POST /api/me/decks`, `GET/PUT/DELETE /api/me/decks/{id}` | Mazzi dell'utente |
 | `POST /api/matches` | Sfida un giocatore: `{ opponentNickname, deckId }` |
