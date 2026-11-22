@@ -53,9 +53,32 @@ public class Card {
 
     private String imageFile;
 
+    private boolean active = true;
+
+    private boolean adminManaged;
+
     public Card(String code, CardDetails details) {
         this.code = code;
         update(details);
+    }
+
+    public static Card createdByAdmin(String code, CardDetails details) {
+        Card card = new Card(code, details);
+        card.adminManaged = true;
+        return card;
+    }
+
+    public void editByAdmin(CardDetails details) {
+        update(details);
+        adminManaged = true;
+    }
+
+    public void activate() {
+        active = true;
+    }
+
+    public void deactivate() {
+        active = false;
     }
 
     public void update(CardDetails details) {

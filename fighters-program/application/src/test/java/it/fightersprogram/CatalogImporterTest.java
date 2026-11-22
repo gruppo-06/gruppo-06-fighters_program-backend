@@ -40,7 +40,7 @@ class CatalogImporterTest {
     void insertsNewCardsWithTheirReferences() {
         ImportSummary summary = importer.importAll(List.of(africanFile(entry("ZT01", "Assassini", "Leggendaria", 281))));
 
-        assertEquals(new ImportSummary(1, 0), summary);
+        assertEquals(new ImportSummary(1, 0, 0), summary);
         Map<String, Object> card = jdbcTemplate.queryForMap("""
                 SELECT c.name, c.country, f.name AS faction, fc.name AS fighter_class, r.name AS rarity,
                        c.atk, c.def, c.vel, c.crt, c.flavor_text, c.image_file
@@ -70,8 +70,35 @@ class CatalogImporterTest {
         ImportSummary second = importer.importAll(List.of(africanFile(entry("ZT01", "Colossi", "Rara", 150))));
         entityManager.flush();
 
-        assertEquals(new ImportSummary(0, 1), second);
+        assertEquals(new ImportSummary(0, 1, 0), second);
         assertEquals(1, countTestCards());
+        assertEquals(150, jdbcTemplate.queryForObject("SELECT atk FROM card WHERE code = 'ZT01'", Integer.class));
+    }
+
+    @Test
+    void cardsManagedByAnAdminAreNotOverwritten() {
+        importer.importAll(List.of(africanFile(entry("ZT01", "Assassini", "Comune", 100))));
+        jdbcTemplate.update("UPDATE card SET atk = 999, admin_managed = TRUE WHERE code = 'ZT01'");
+        entityManager.clear();
+
+        ImportSummary summary = importer.importAll(List.of(africanFile(entry("ZT01", "Assassini", "Comune", 150))));
+        entityManager.flush();
+
+        assertEquals(new ImportSummary(0, 0, 1), summary);
+        assertEquals(999, jdbcTemplate.queryForObject("SELECT atk FROM card WHERE code = 'ZT01'", Integer.class));
+    }
+
+    @Test
+    void importingNeverReactivatesADeactivatedCard() {
+        importer.importAll(List.of(africanFile(entry("ZT01", "Assassini", "Comune", 100))));
+        jdbcTemplate.update("UPDATE card SET active = FALSE WHERE code = 'ZT01'");
+        entityManager.clear();
+
+        importer.importAll(List.of(africanFile(entry("ZT01", "Assassini", "Comune", 150))));
+        entityManager.flush();
+
+        assertEquals(Boolean.FALSE,
+                jdbcTemplate.queryForObject("SELECT active FROM card WHERE code = 'ZT01'", Boolean.class));
         assertEquals(150, jdbcTemplate.queryForObject("SELECT atk FROM card WHERE code = 'ZT01'", Integer.class));
     }
 
