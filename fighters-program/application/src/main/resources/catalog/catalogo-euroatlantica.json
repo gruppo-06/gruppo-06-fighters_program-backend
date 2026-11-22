@@ -4,21 +4,21 @@
   "cards": [
     {
       "id": "EA01",
-      "name": "Inês Valente",
-      "country": "Portogallo",
+      "name": "Daichi Arata",
+      "country": "Giappone",
       "faction": "Euroatlantica",
-      "class": "Assassini",
-      "rarity": "Comune",
+      "class": "Combattenti",
+      "rarity": "Epica",
       "firstDelivery": true,
       "stats": {
-        "atk": 250,
-        "def": 480,
-        "vel": 850,
-        "crt": 400
+        "atk": 257,
+        "def": 672,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Usa lo stesso passo d’ingresso per preparare due uscite diverse.",
+      "copy": "Discendente di una famiglia di maestri di karate, Daichi considera il combattimento una forma di perfezionamento spirituale.",
       "image": {
-        "file": "EA001_ASS_Common_Inês Valente.webp",
+        "file": "EA01.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -26,228 +26,8 @@
     },
     {
       "id": "EA02",
-      "name": "Noah Bisset",
-      "country": "Canada",
-      "faction": "Euroatlantica",
-      "class": "Colossi",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 296,
-        "def": 666,
-        "vel": 250,
-        "crt": 700
-      },
-      "copy": "Assorbe la spinta in presa e la restituisce a distanza corta.",
-      "image": {
-        "file": "EA002_CLS_Common_Noah Bisset.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA03",
-      "name": "Park Ji-won",
-      "country": "Corea del Sud",
-      "faction": "Euroatlantica",
-      "class": "Colossi",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 301,
-        "def": 653,
-        "vel": 250,
-        "crt": 725
-      },
-      "copy": "Interrompe il caricamento a metà per far partire il contrattacco avversario.",
-      "image": {
-        "file": "EA003_CLS_Common_Park Ji-won.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA04",
-      "name": "Mara Keene",
-      "country": "Australia",
-      "faction": "Euroatlantica",
-      "class": "Combattenti",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 235,
-        "def": 625,
-        "vel": 550,
-        "crt": 550
-      },
-      "copy": "Costruisce scambi brevi attorno a una finta di presa.",
-      "image": {
-        "file": "EA004_CMB_Common_Mara Keene.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA05",
-      "name": "Élodie Marchand",
-      "country": "Francia",
-      "faction": "Euroatlantica",
-      "class": "Sentinelle",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 200,
-        "def": 891,
-        "vel": 400,
-        "crt": 450
-      },
-      "copy": "Ex collaudatrice, lascia scorrere gli impatti sulle spalle per mantenere la posizione.",
-      "image": {
-        "file": "EA005_SNT_Common_Élodie Marchand.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA06",
-      "name": "Daniel Mercer",
-      "country": "Stati Uniti",
-      "faction": "Euroatlantica",
-      "class": "Sentinelle",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 204,
-        "def": 873,
-        "vel": 400,
-        "crt": 450
-      },
-      "copy": "Accorcia il passo e costringe l’avversario a colpire da fermo.",
-      "image": {
-        "file": "EA006_SNT_Common_Daniel Mercer.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA07",
-      "name": "Aroha Rangi",
-      "country": "Nuova Zelanda",
-      "faction": "Euroatlantica",
-      "class": "Specialisti",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 193,
-        "def": 772,
-        "vel": 500,
-        "crt": 850
-      },
-      "copy": "Cerca l’apertura nel cambio di appoggio dopo un attacco mancato.",
-      "image": {
-        "file": "EA007_SPC_Common_Aroha Rangi.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA08",
-      "name": "Niko Salonen",
-      "country": "Finlandia",
-      "faction": "Euroatlantica",
-      "class": "Specialisti",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 189,
-        "def": 789,
-        "vel": 500,
-        "crt": 850
-      },
-      "copy": "Concede il primo contatto per trovare il ritmo della guardia.",
-      "image": {
-        "file": "EA008_SPC_Common_Niko Salonen.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA09",
-      "name": "Sofia Bellandi",
+      "name": "Nico Valenti",
       "country": "Italia",
-      "faction": "Euroatlantica",
-      "class": "Assassini",
-      "rarity": "Rara",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 265,
-        "def": 490,
-        "vel": 850,
-        "crt": 400
-      },
-      "copy": "Accorcia la traiettoria dei colpi e accetta più rischio in uscita.",
-      "image": {
-        "file": "EA009_ASS_Rare_Sofia Bellandi.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA10",
-      "name": "Darius Bell",
-      "country": "Stati Uniti",
-      "faction": "Euroatlantica",
-      "class": "Colossi",
-      "rarity": "Rara",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 318,
-        "def": 680,
-        "vel": 250,
-        "crt": 650
-      },
-      "copy": "Preferisce ripetere colpi pesanti e affidabili anche quando l’altro cambia guardia.",
-      "image": {
-        "file": "EA010_CLS_Rare_Darius Bell.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA11",
-      "name": "Seo Min-jae",
-      "country": "Corea del Sud",
-      "faction": "Euroatlantica",
-      "class": "Combattenti",
-      "rarity": "Rara",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 238,
-        "def": 665,
-        "vel": 550,
-        "crt": 600
-      },
-      "copy": "Ti fa parare il primo colpo. Il secondo passa.",
-      "image": {
-        "file": "EA011_CMB_Rare_Seo Min-jae.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA12",
-      "name": "Clara Weiss",
-      "country": "Germania",
       "faction": "Euroatlantica",
       "class": "Combattenti",
       "rarity": "Rara",
@@ -258,83 +38,17 @@
         "vel": 550,
         "crt": 550
       },
-      "copy": "Si è specializzata nel riaprire uno scambio dopo aver perso il centro.",
+      "copy": "Nato in un quartiere popolare di Torino, Nico è un giovane kickboxer che sogna di diventare famoso.",
       "image": {
-        "file": "EA012_CMB_Rare_Clara Weiss.webp",
+        "file": "EA02.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
       }
     },
     {
-      "id": "EA13",
-      "name": "Rowan Ellis",
-      "country": "Regno Unito",
-      "faction": "Euroatlantica",
-      "class": "Combattenti",
-      "rarity": "Epica",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 250,
-        "def": 692,
-        "vel": 550,
-        "crt": 550
-      },
-      "copy": "Riserva lo stesso tempo d’azione a prese, colpi e recupero della guardia.",
-      "image": {
-        "file": "EA013_CMB_Epic_Rowan Ellis.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA14",
-      "name": "Maëlle Girard",
-      "country": "Canada",
-      "faction": "Euroatlantica",
-      "class": "Sentinelle",
-      "rarity": "Epica",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 217,
-        "def": 963,
-        "vel": 400,
-        "crt": 450
-      },
-      "copy": "Ha scelto una formulazione da recupero prolungato dopo un ciclo di sovraccarico.",
-      "image": {
-        "file": "EA014_SNT_Epic_Maëlle Girard.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA15",
-      "name": "Riku Hayase",
-      "country": "Giappone",
-      "faction": "Euroatlantica",
-      "class": "Specialisti",
-      "rarity": "Epica",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 209,
-        "def": 838,
-        "vel": 500,
-        "crt": 850
-      },
-      "copy": "Ripeti la stessa difesa e Hayase ha già trovato l’apertura.",
-      "image": {
-        "file": "EA015_SPC_Epic_Riku Hayase.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EA16",
-      "name": "Hana Kuroda - Capitana",
+      "id": "EA03",
+      "name": "Ren Saito",
       "country": "Giappone",
       "faction": "Euroatlantica",
       "class": "Assassini",
@@ -346,9 +60,295 @@
         "vel": 850,
         "crt": 400
       },
-      "copy": "La capitana pianta il piede. Al passo successivo ha già ripreso l’iniziativa.",
+      "copy": "Ren appartiene a un'antica famiglia di samurai che ha continuato a tramandare le proprie tradizioni anche nell'era delle megacorporazioni.",
       "image": {
-        "file": "EA016_ASS_Legendary_Hana Kuroda - Capitana.webp",
+        "file": "EA03.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA04",
+      "name": "Adrian Sterling",
+      "country": "Regno Unito",
+      "faction": "Euroatlantica",
+      "class": "Assassini",
+      "rarity": "Epica",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 270,
+        "def": 520,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Un tempo agente di un servizio d'intelligence britannico, Adrian è diventato una spia privata per le più importanti corporazioni del mondo.",
+      "image": {
+        "file": "EA04.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA05",
+      "name": "Luc Moreau",
+      "country": "Francia",
+      "faction": "Euroatlantica",
+      "class": "Assassini",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 257,
+        "def": 500,
+        "vel": 850,
+        "crt": 450
+      },
+      "copy": "Luc è un ex agente operativo di una corporazione specializzata in armamenti sperimentali.",
+      "image": {
+        "file": "EA05.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA06",
+      "name": "Seo Yuna",
+      "country": "Corea del Sud",
+      "faction": "Euroatlantica",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 247,
+        "def": 485,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Yuna è cresciuta in una famiglia che custodisce antiche tecniche marziali coreane.",
+      "image": {
+        "file": "EA06.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA07",
+      "name": "Tiago Vale",
+      "country": "Portogallo",
+      "faction": "Euroatlantica",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 250,
+        "def": 480,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Tiago è cresciuto nei quartieri portuali di Lisbona, sopravvivendo attraverso contrabbando e lavori per organizzazioni criminali.",
+      "image": {
+        "file": "EA07.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA08",
+      "name": "Mason Cole",
+      "country": "Stati Uniti",
+      "faction": "Euroatlantica",
+      "class": "Specialisti",
+      "rarity": "Epica",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 197,
+        "def": 888,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Mason è un ex militare che, dopo una missione disastrosa, ha deciso di lavorare per una compagnia di sicurezza privata.",
+      "image": {
+        "file": "EA08.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA09",
+      "name": "Lena Vogel",
+      "country": "Germania",
+      "faction": "Euroatlantica",
+      "class": "Specialisti",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 199,
+        "def": 813,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Lena è un'ingegnera specializzata nello sviluppo di armi avanzate.",
+      "image": {
+        "file": "EA09.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA10",
+      "name": "Erik Nyström",
+      "country": "Svezia",
+      "faction": "Euroatlantica",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 189,
+        "def": 789,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Erik era un operatore specializzato nella sorveglianza di installazioni militari nell'Europa settentrionale.",
+      "image": {
+        "file": "EA10.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA11",
+      "name": "Tara Quinn",
+      "country": "Australia",
+      "faction": "Euroatlantica",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 181,
+        "def": 822,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Tara è un'ex operatrice delle forze speciali, esperta di missioni nei territori desertici australiani.",
+      "image": {
+        "file": "EA11.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA12",
+      "name": "Noah Bouchard",
+      "country": "Canada",
+      "faction": "Euroatlantica",
+      "class": "Colossi",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 312,
+        "def": 680,
+        "vel": 250,
+        "crt": 750
+      },
+      "copy": "Noah lavorava come minatore nel Québec.",
+      "image": {
+        "file": "EA12.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA13",
+      "name": "Darius King",
+      "country": "Stati Uniti",
+      "faction": "Euroatlantica",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 309,
+        "def": 639,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Darius era una superstar del wrestling, celebre per la propria forza e per le spettacolari mosse eseguite sul ring.",
+      "image": {
+        "file": "EA13.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA14",
+      "name": "Aino Korhonen",
+      "country": "Finlandia",
+      "faction": "Euroatlantica",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 209,
+        "def": 855,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "Aino è una veterana delle operazioni di soccorso nelle regioni artiche.",
+      "image": {
+        "file": "EA14.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA15",
+      "name": "Maia Rangi",
+      "country": "Nuova Zelanda",
+      "faction": "Euroatlantica",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 206,
+        "def": 864,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "Maia lavorava nelle squadre di risposta alle catastrofi naturali, specializzandosi nel recupero di persone intrappolate in edifici crollati.",
+      "image": {
+        "file": "EA15.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EA16",
+      "name": "Evelyn Brooks",
+      "country": "Canada",
+      "faction": "Euroatlantica",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 202,
+        "def": 882,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "Evelyn è un'ex guardia del corpo corporativa, specializzata nella protezione di dirigenti e ricercatori.",
+      "image": {
+        "file": "EA16.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200

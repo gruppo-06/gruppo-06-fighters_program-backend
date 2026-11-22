@@ -4,21 +4,21 @@
   "cards": [
     {
       "id": "IP01",
-      "name": "Trần Mai Anh",
-      "country": "Vietnam",
+      "name": "Amar Nair",
+      "country": "India",
       "faction": "Indo-Pacifica",
-      "class": "Assassini",
-      "rarity": "Comune",
+      "class": "Combattenti",
+      "rarity": "Epica",
       "firstDelivery": true,
       "stats": {
-        "atk": 244,
-        "def": 490,
-        "vel": 850,
-        "crt": 400
+        "atk": 250,
+        "def": 692,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Riparte dal bordo esterno e tiene il volto dietro la spalla.",
+      "copy": "Amar partecipa al torneo per comprendere fino a che punto il suo nuovo corpo possa spingersi, senza perdere la propria serenità interiore.",
       "image": {
-        "file": "IP001_ASS_Common_Trần Mai Anh.webp",
+        "file": "IP01.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -26,21 +26,21 @@
     },
     {
       "id": "IP02",
-      "name": "Lin Yu-ting",
-      "country": "Taiwan",
+      "name": "Lin Yue",
+      "country": "Cina",
       "faction": "Indo-Pacifica",
-      "class": "Assassini",
-      "rarity": "Comune",
+      "class": "Combattenti",
+      "rarity": "Rara",
       "firstDelivery": true,
       "stats": {
-        "atk": 248,
-        "def": 480,
-        "vel": 850,
-        "crt": 425
+        "atk": 242,
+        "def": 665,
+        "vel": 550,
+        "crt": 500
       },
-      "copy": "Aspetta che tu riallinei i piedi. Il colpo parte in quel momento.",
+      "copy": "Quando una corporazione ha annunciato un torneo aperto anche agli artisti marziali tradizionali, Lin ha deciso di partecipare personalmente.",
       "image": {
-        "file": "IP002_ASS_Common_Lin Yu-ting.webp",
+        "file": "IP02.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -48,21 +48,21 @@
     },
     {
       "id": "IP03",
-      "name": "Chen Wei",
-      "country": "Cina",
+      "name": "Mai Tran",
+      "country": "Vietnam",
       "faction": "Indo-Pacifica",
-      "class": "Colossi",
+      "class": "Combattenti",
       "rarity": "Comune",
       "firstDelivery": true,
       "stats": {
-        "atk": 309,
-        "def": 639,
-        "vel": 250,
-        "crt": 700
+        "atk": 226,
+        "def": 652,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Gli basta ruotare il busto per caricare il colpo.",
+      "copy": "Determinata a dimostrare il contrario, Mai ha deciso di partecipare al torneo internazionale.",
       "image": {
-        "file": "IP003_CLS_Common_Chen Wei.webp",
+        "file": "IP03.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -70,21 +70,21 @@
     },
     {
       "id": "IP04",
-      "name": "Saira Mirza",
-      "country": "Pakistan",
+      "name": "Rafael Cruz",
+      "country": "Filippine",
       "faction": "Indo-Pacifica",
-      "class": "Combattenti",
-      "rarity": "Comune",
+      "class": "Assassini",
+      "rarity": "Epica",
       "firstDelivery": true,
       "stats": {
-        "atk": 223,
-        "def": 658,
-        "vel": 550,
-        "crt": 550
+        "atk": 263,
+        "def": 535,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Quando lo scambio in piedi la sfavorisce, ti porta in presa.",
+      "copy": "Partecipa al torneo perché gli è stata promessa la cancellazione del debito in caso di vittoria.",
       "image": {
-        "file": "IP004_CMB_Common_Saira Mirza.webp",
+        "file": "IP04.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -92,21 +92,21 @@
     },
     {
       "id": "IP05",
-      "name": "Kittisak Sombat",
-      "country": "Thailandia",
+      "name": "Nur Aisyah",
+      "country": "Malesia",
       "faction": "Indo-Pacifica",
-      "class": "Combattenti",
-      "rarity": "Comune",
+      "class": "Assassini",
+      "rarity": "Rara",
       "firstDelivery": true,
       "stats": {
-        "atk": 228,
-        "def": 645,
-        "vel": 550,
-        "crt": 550
+        "atk": 255,
+        "def": 510,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Cambia lato in uscita per avere già la distanza del prossimo colpo.",
+      "copy": "Nur è stata addestrata fin dall'infanzia da una famiglia che tramanda antiche tecniche di Silat.",
       "image": {
-        "file": "IP005_CMB_Common_Kittisak Sombat.webp",
+        "file": "IP05.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -114,21 +114,21 @@
     },
     {
       "id": "IP06",
-      "name": "Maya Villanueva",
-      "country": "Filippine",
+      "name": "Chen Mei",
+      "country": "Taiwan",
       "faction": "Indo-Pacifica",
-      "class": "Sentinelle",
-      "rarity": "Comune",
+      "class": "Specialisti",
+      "rarity": "Epica",
       "firstDelivery": true,
       "stats": {
-        "atk": 213,
-        "def": 837,
-        "vel": 400,
-        "crt": 450
+        "atk": 203,
+        "def": 863,
+        "vel": 500,
+        "crt": 850
       },
-      "copy": "Ferma l’ingresso. Risponde prima di cedere un passo.",
+      "copy": "Chen sa di essere seguita, ma non conosce ancora l'identità della propria inseguitrice.",
       "image": {
-        "file": "IP006_SNT_Common_Maya Villanueva.webp",
+        "file": "IP06.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -136,21 +136,21 @@
     },
     {
       "id": "IP07",
-      "name": "Bayarmaa Enkhbat",
-      "country": "Mongolia",
+      "name": "Farid Khan",
+      "country": "Pakistan",
       "faction": "Indo-Pacifica",
-      "class": "Sentinelle",
-      "rarity": "Comune",
+      "class": "Specialisti",
+      "rarity": "Rara",
       "firstDelivery": true,
       "stats": {
-        "atk": 209,
-        "def": 855,
-        "vel": 400,
-        "crt": 450
+        "atk": 197,
+        "def": 830,
+        "vel": 500,
+        "crt": 800
       },
-      "copy": "Prova a girarle attorno. I suoi appoggi restano larghi.",
+      "copy": "Farid è un ex operatore militare specializzato nelle missioni ad alta quota nelle regioni del Karakorum.",
       "image": {
-        "file": "IP007_SNT_Common_Bayarmaa Enkhbat.webp",
+        "file": "IP07.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -158,74 +158,8 @@
     },
     {
       "id": "IP08",
-      "name": "Litia Ravono",
-      "country": "Figi",
-      "faction": "Indo-Pacifica",
-      "class": "Specialisti",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 187,
-        "def": 797,
-        "vel": 500,
-        "crt": 850
-      },
-      "copy": "Le basta il primo cambio di ritmo per trovare la risposta.",
-      "image": {
-        "file": "IP008_SPC_Common_Litia Ravono.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "IP09",
-      "name": "Nisha Gurung",
-      "country": "Nepal",
-      "faction": "Indo-Pacifica",
-      "class": "Assassini",
-      "rarity": "Rara",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 263,
-        "def": 500,
-        "vel": 850,
-        "crt": 350
-      },
-      "copy": "Entra e si sfila prima che la guardia riesca a richiudersi.",
-      "image": {
-        "file": "IP009_ASS_Rare_Nisha Gurung.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "IP10",
-      "name": "Farhan Mahmud",
-      "country": "Bangladesh",
-      "faction": "Indo-Pacifica",
-      "class": "Colossi",
-      "rarity": "Rara",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 312,
-        "def": 680,
-        "vel": 250,
-        "crt": 750
-      },
-      "copy": "Lascia che tu assorba la finta. La spinta vera arriva dopo.",
-      "image": {
-        "file": "IP010_CLS_Rare_Farhan Mahmud.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "IP11",
-      "name": "Dewi Pranata",
-      "country": "Indonesia",
+      "name": "Batsaikhan Dorj",
+      "country": "Mongolia",
       "faction": "Indo-Pacifica",
       "class": "Colossi",
       "rarity": "Rara",
@@ -236,9 +170,75 @@
         "vel": 250,
         "crt": 700
       },
-      "copy": "Tiene il contatto finché la tua postura comincia a cedere.",
+      "copy": "Dopo aver vinto numerose competizioni, è stato avvicinato da una corporazione interessata alla sua forza naturale.",
       "image": {
-        "file": "IP011_CLS_Rare_Dewi Pranata.webp",
+        "file": "IP08.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "IP09",
+      "name": "Kiet Suriya",
+      "country": "Thailandia",
+      "faction": "Indo-Pacifica",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 293,
+        "def": 673,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "La sua altezza e la sua forza sono naturali, ma un grave infortunio lo ha costretto a interrompere temporaneamente la carriera.",
+      "image": {
+        "file": "IP09.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "IP10",
+      "name": "Sari Wibowo",
+      "country": "Indonesia",
+      "faction": "Indo-Pacifica",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 299,
+        "def": 660,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Sari lavorava come operatrice specializzata in una gigantesca miniera geotermica.",
+      "image": {
+        "file": "IP10.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "IP11",
+      "name": "Mere Tawake",
+      "country": "Figi",
+      "faction": "Indo-Pacifica",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 312,
+        "def": 632,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Dopo un devastante ciclone che ha distrutto parte della sua comunità, ha iniziato a organizzare operazioni di recupero e ricostruzione.",
+      "image": {
+        "file": "IP11.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -246,21 +246,21 @@
     },
     {
       "id": "IP12",
-      "name": "Malini Perera",
-      "country": "Sri Lanka",
+      "name": "Tenzin Gurung",
+      "country": "Nepal",
       "faction": "Indo-Pacifica",
-      "class": "Specialisti",
-      "rarity": "Rara",
+      "class": "Sentinelle",
+      "rarity": "Comune",
       "firstDelivery": true,
       "stats": {
-        "atk": 199,
-        "def": 813,
-        "vel": 500,
-        "crt": 850
+        "atk": 205,
+        "def": 864,
+        "vel": 400,
+        "crt": 475
       },
-      "copy": "Colpisce durante il recupero. Le basta leggere bene un istante.",
+      "copy": "Tenzin è una guida alpina esperta, cresciuta nelle regioni himalayane del Nepal.",
       "image": {
-        "file": "IP012_SPC_Rare_Malini Perera.webp",
+        "file": "IP12.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -268,21 +268,21 @@
     },
     {
       "id": "IP13",
-      "name": "Kavya Nair",
-      "country": "India",
+      "name": "Farzana Rahman",
+      "country": "Bangladesh",
       "faction": "Indo-Pacifica",
-      "class": "Colossi",
-      "rarity": "Epica",
+      "class": "Sentinelle",
+      "rarity": "Comune",
       "firstDelivery": true,
       "stats": {
-        "atk": 328,
-        "def": 707,
-        "vel": 250,
-        "crt": 700
+        "atk": 200,
+        "def": 891,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Regola il carico scambio dopo scambio. Accelera quando la presa cede.",
+      "copy": "Farzana è un'ingegnera specializzata nello sviluppo di strutture e dispositivi per la protezione dalle inondazioni.",
       "image": {
-        "file": "IP013_CLS_Epic_Kavya Nair.webp",
+        "file": "IP13.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -290,21 +290,21 @@
     },
     {
       "id": "IP14",
-      "name": "Nadia Idris",
-      "country": "Malesia",
+      "name": "Nadeesha Perera",
+      "country": "Sri Lanka",
       "faction": "Indo-Pacifica",
-      "class": "Combattenti",
-      "rarity": "Epica",
+      "class": "Sentinelle",
+      "rarity": "Comune",
       "firstDelivery": true,
       "stats": {
-        "atk": 242,
-        "def": 712,
-        "vel": 550,
-        "crt": 550
+        "atk": 204,
+        "def": 873,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Ogni contatto finisce in guardia. Da lì riparte.",
+      "copy": "Nadeesha è un'ex istruttrice di arti marziali che ha dedicato gran parte della propria vita all'insegnamento.",
       "image": {
-        "file": "IP014_CMB_Epic_Nadia Idris.webp",
+        "file": "IP14.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -312,21 +312,21 @@
     },
     {
       "id": "IP15",
-      "name": "Phạm Minh Châu",
-      "country": "Vietnam",
+      "name": "Khamla Vong",
+      "country": "Laos",
       "faction": "Indo-Pacifica",
       "class": "Sentinelle",
-      "rarity": "Epica",
+      "rarity": "Leggendaria",
       "firstDelivery": true,
       "stats": {
-        "atk": 230,
-        "def": 909,
+        "atk": 232,
+        "def": 972,
         "vel": 400,
         "crt": 450
       },
-      "copy": "Ti toglie spazio e tiene aperta la linea della risposta.",
+      "copy": "Khamla è un ricercatore specializzato nello sviluppo di materiali biologici capaci di adattarsi alle condizioni ambientali.",
       "image": {
-        "file": "IP015_SNT_Epic_Phạm Minh Châu.webp",
+        "file": "IP15.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -334,21 +334,21 @@
     },
     {
       "id": "IP16",
-      "name": "Arjun Rao - Capitano",
-      "country": "India",
+      "name": "Dara Sok",
+      "country": "Cambogia",
       "faction": "Indo-Pacifica",
-      "class": "Specialisti",
-      "rarity": "Leggendaria",
+      "class": "Sentinelle",
+      "rarity": "Comune",
       "firstDelivery": true,
       "stats": {
         "atk": 211,
-        "def": 896,
-        "vel": 500,
-        "crt": 850
+        "def": 846,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Il capitano misura il tuo recupero. Colpisce nel varco più breve.",
+      "copy": "Dara è cresciuto in una famiglia di istruttori di arti marziali tradizionali.",
       "image": {
-        "file": "IP016_SPC_Legendary_Arjun Rao - Capitano.webp",
+        "file": "IP16.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
