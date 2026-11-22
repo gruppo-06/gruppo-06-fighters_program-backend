@@ -5,21 +5,26 @@ import java.util.List;
 import java.util.stream.Stream;
 
 /**
- * Plays a base-mode match and records it round by round. End rules still provisional until SWD_EN01 (#11): a player
- * who must replace a knocked-out card with an empty deck loses (both at once: decided by health); at the turn limit
- * the healthier player wins, equal health is a draw.
+ * Plays a match and records it round by round. End rules still provisional until SWD_EN01 (#11): a player who must
+ * replace a knocked-out card with an empty deck loses (both at once: decided by health); at the turn limit the
+ * healthier player wins, equal health is a draw.
  */
 public final class MatchEngine {
 
     private final TurnNarrator narrator = new TurnNarrator();
 
     public MatchResult play(List<FighterCard> deckOne, List<FighterCard> deckTwo, long seed, BaseRules rules) {
+        return play(deckOne, deckTwo, seed, new BaseRuleSet(rules));
+    }
+
+    public MatchResult play(List<FighterCard> deckOne, List<FighterCard> deckTwo, long seed, RuleSet ruleSet) {
+        BaseRules rules = ruleSet.rules();
         requireDeckSize(deckOne, rules, "one");
         requireDeckSize(deckTwo, rules, "two");
         DeckShuffler shuffler = new DeckShuffler(seed);
         PlayerState one = new PlayerState(PlayerSide.ONE, shuffler.shuffle(deckOne), rules.startingHealth());
         PlayerState two = new PlayerState(PlayerSide.TWO, shuffler.shuffle(deckTwo), rules.startingHealth());
-        return new Match(seed, rules, one, two).play();
+        return new Match(seed, ruleSet, one, two).play();
     }
 
     private static void requireDeckSize(List<FighterCard> deck, BaseRules rules, String player) {
@@ -32,18 +37,20 @@ public final class MatchEngine {
     private final class Match {
 
         private final long seed;
+        private final RuleSet ruleSet;
         private final BaseRules rules;
         private final PlayerState one;
         private final PlayerState two;
-        private final RoundResolver resolver;
+        private final RuleSet.Duel duel;
         private final List<TurnLog> turns = new ArrayList<>();
 
-        Match(long seed, BaseRules rules, PlayerState one, PlayerState two) {
+        Match(long seed, RuleSet ruleSet, PlayerState one, PlayerState two) {
             this.seed = seed;
-            this.rules = rules;
+            this.ruleSet = ruleSet;
+            this.rules = ruleSet.rules();
             this.one = one;
             this.two = two;
-            this.resolver = new RoundResolver(rules.factionBonusPercent());
+            this.duel = ruleSet.startMatch(seed);
         }
 
         MatchResult play() {
@@ -65,7 +72,7 @@ public final class MatchEngine {
             RoundResult round;
             do {
                 roundNumber++;
-                round = resolver.resolve(one.inPlay(), two.inPlay());
+                round = duel.resolve(one.inPlay(), two.inPlay());
                 FighterLog fighterOne = one.recordRound(round.first(), round.second(), turn);
                 FighterLog fighterTwo = two.recordRound(round.second(), round.first(), turn);
                 int healthDamage = applyHealthDamage(round);
@@ -80,16 +87,10 @@ public final class MatchEngine {
 
         private int applyHealthDamage(RoundResult round) {
             return switch (round.outcome()) {
-                case FIRST_KNOCKED_OUT -> one.takeDamage(healthDamage(round.second(), round.first()));
-                case SECOND_KNOCKED_OUT -> two.takeDamage(healthDamage(round.first(), round.second()));
+                case FIRST_KNOCKED_OUT -> one.takeDamage(duel.healthDamage(round.second(), round.first()));
+                case SECOND_KNOCKED_OUT -> two.takeDamage(duel.healthDamage(round.first(), round.second()));
                 case DOUBLE_KNOCKOUT, NO_KNOCKOUT -> 0;
             };
-        }
-
-        // Provisional convention until SWD_EN01 (#24): effective attack minus the loser's defense before the lethal
-        // hit.
-        private int healthDamage(FighterRound survivor, FighterRound loser) {
-            return Math.max(0, survivor.effectiveAttack() - loser.defenseBefore());
         }
 
         private MatchOutcome exhaustedDeckOutcome() {
@@ -112,7 +113,7 @@ public final class MatchEngine {
         private MatchResult finish(MatchOutcome outcome, MatchEndReason reason, int turnsPlayed) {
             List<CardSummary> cards = Stream.concat(one.cardSummaries(), two.cardSummaries()).toList();
             MatchSummary summary = new MatchSummary(outcome, reason, turnsPlayed, cards);
-            MatchLog log = new MatchLog(seed, GameMode.BASE, rules.rulesVersion(), one.deckOrder(), two.deckOrder(),
+            MatchLog log = new MatchLog(seed, ruleSet.mode(), rules.rulesVersion(), one.deckOrder(), two.deckOrder(),
                     turns, summary);
             return new MatchResult(outcome, reason, turnsPlayed, one.health(), two.health(), log);
         }
