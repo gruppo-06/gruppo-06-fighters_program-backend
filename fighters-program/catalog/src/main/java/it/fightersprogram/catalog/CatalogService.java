@@ -2,6 +2,9 @@ package it.fightersprogram.catalog;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,6 +18,8 @@ import it.fightersprogram.catalog.domain.CardRepository;
 import it.fightersprogram.catalog.domain.CardSpecifications;
 import it.fightersprogram.catalog.domain.Faction;
 import it.fightersprogram.catalog.domain.FactionRepository;
+import it.fightersprogram.catalog.domain.Rarity;
+import it.fightersprogram.catalog.domain.RarityRepository;
 import it.fightersprogram.common.error.NotFoundException;
 
 import lombok.RequiredArgsConstructor;
@@ -26,6 +31,7 @@ public class CatalogService {
 
     private final CardRepository cardRepository;
     private final FactionRepository factionRepository;
+    private final RarityRepository rarityRepository;
 
     public Page<CardResponse> findCards(CardFilter filter, Pageable pageable) {
         Specification<Card> specification = Specification.allOf(
@@ -52,6 +58,15 @@ public class CatalogService {
 
     public List<String> factionNames() {
         return factionRepository.findAll(Sort.by("id")).stream().map(Faction::getName).toList();
+    }
+
+    public Map<Short, String> rarityNamesById() {
+        return rarityRepository.findAll(Sort.by("id")).stream()
+                .collect(Collectors.toMap(Rarity::getId, Rarity::getName));
+    }
+
+    public Optional<Short> rarityIdByName(String name) {
+        return rarityRepository.findByName(name).map(Rarity::getId);
     }
 
     private static CatalogCard toCatalogCard(Card card) {
