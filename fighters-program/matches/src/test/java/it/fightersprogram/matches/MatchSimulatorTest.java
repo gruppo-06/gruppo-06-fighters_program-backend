@@ -9,6 +9,7 @@ import java.util.stream.IntStream;
 
 import org.junit.jupiter.api.Test;
 
+import it.fightersprogram.catalog.SubcardService;
 import it.fightersprogram.engine.BaseRules;
 import it.fightersprogram.engine.Faction;
 import it.fightersprogram.engine.GameMode;
@@ -18,7 +19,7 @@ class MatchSimulatorTest {
 
     private static final BaseRules RULES = new BaseRules(1, 500, 10, 5, 20);
 
-    private final MatchSimulator simulator = new MatchSimulator(RULES, false);
+    private final MatchSimulator simulator = new MatchSimulator(RULES, false, new SubcardService(null));
 
     @Test
     void theSameSeedReplaysTheSameMatch() {
@@ -52,7 +53,7 @@ class MatchSimulatorTest {
     void anOldSnapshotWithoutSpeedAndCriticalStillPlaysAsAdvanced() {
         List<SnapshotCard> oldDeck = IntStream.rangeClosed(1, 10)
                 .mapToObj(index -> new SnapshotCard("OLD%02d".formatted(index), "Old " + index, "Euroatlantica",
-                        "Comune", 150 + index * 7, 380 + index * 11, null, null))
+                        "Comune", 150 + index * 7, 380 + index * 11, null, null, null))
                 .toList();
 
         MatchResult result = simulator.simulate(oldDeck, deck("IP", "Indo-Pacifica"), 7L, GameMode.ADVANCED);
@@ -77,7 +78,7 @@ class MatchSimulatorTest {
     private static List<SnapshotCard> deck(String prefix, String faction) {
         return IntStream.rangeClosed(1, 10)
                 .mapToObj(index -> new SnapshotCard(prefix + "%02d".formatted(index), "Fighter " + index, faction,
-                        "Comune", 150 + index * 7, 380 + index * 11, index * 5, 100 + index))
+                        "Comune", 150 + index * 7, 380 + index * 11, index * 5, 100 + index, List.of()))
                 .toList();
     }
 }
