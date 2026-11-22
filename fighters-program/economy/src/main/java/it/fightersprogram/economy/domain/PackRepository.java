@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 public interface PackRepository extends JpaRepository<Pack, Long> {
 
@@ -12,4 +13,7 @@ public interface PackRepository extends JpaRepository<Pack, Long> {
     List<Pack> findAllByActiveTrueOrderByPriceAsc();
 
     Optional<Pack> findByIdAndActiveTrue(Long id);
+
+    @Query(value = "SELECT name FROM rarity WHERE id = :rarityId", nativeQuery = true)
+    String rarityName(@Param("rarityId") short rarityId);
 }
