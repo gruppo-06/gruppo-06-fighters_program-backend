@@ -12,5 +12,6 @@ public record CollectionEntry(
         int vel,
         int crt,
         String imageFile,
-        int quantity) {
+        int quantity,
+        String imageUrl) {
 }
