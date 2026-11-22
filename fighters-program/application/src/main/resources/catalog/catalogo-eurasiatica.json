@@ -4,21 +4,21 @@
   "cards": [
     {
       "id": "EU01",
-      "name": "Zofia Bielska",
+      "name": "Marta Kowalska",
       "country": "Polonia",
       "faction": "Eurasiatica",
-      "class": "Assassini",
-      "rarity": "Comune",
+      "class": "Combattenti",
+      "rarity": "Epica",
       "firstDelivery": true,
       "stats": {
-        "atk": 257,
-        "def": 465,
-        "vel": 850,
-        "crt": 400
+        "atk": 242,
+        "def": 712,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Avanzi con la spalla. Lei è già sul tuo lato cieco.",
+      "copy": "Nonostante le offerte ricevute, ha sempre rifiutato qualsiasi potenziamento, convinta che la vera abilità derivi dall'allenamento.",
       "image": {
-        "file": "EU001_ASS_Common_Zofia Bielska.webp",
+        "file": "EU01.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -26,21 +26,21 @@
     },
     {
       "id": "EU02",
-      "name": "Nino Beridze",
-      "country": "Georgia",
+      "name": "Arman Farhadi",
+      "country": "Iran",
       "faction": "Eurasiatica",
-      "class": "Assassini",
-      "rarity": "Comune",
+      "class": "Combattenti",
+      "rarity": "Rara",
       "firstDelivery": true,
       "stats": {
-        "atk": 252,
-        "def": 475,
-        "vel": 850,
-        "crt": 400
+        "atk": 238,
+        "def": 665,
+        "vel": 550,
+        "crt": 600
       },
-      "copy": "Ti invita a inseguire. Poi pianta il tallone.",
+      "copy": "Arman ha accettato per dimostrare che il valore di un combattente non può essere misurato soltanto attraverso le sue capacità fisiche.",
       "image": {
-        "file": "EU002_ASS_Common_Nino Beridze.webp",
+        "file": "EU02.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -48,228 +48,8 @@
     },
     {
       "id": "EU03",
-      "name": "Lev Morozov",
-      "country": "Russia",
-      "faction": "Eurasiatica",
-      "class": "Colossi",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 302,
-        "def": 653,
-        "vel": 250,
-        "crt": 700
-      },
-      "copy": "Quando entrambi i piedi sono a terra, il colpo è già carico.",
-      "image": {
-        "file": "EU003_CLS_Common_Lev Morozov.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EU04",
-      "name": "Tamar Arakelyan",
-      "country": "Armenia",
-      "faction": "Eurasiatica",
-      "class": "Combattenti",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 226,
-        "def": 652,
-        "vel": 550,
-        "crt": 550
-      },
-      "copy": "Una presa breve e lo scambio torna alla sua distanza.",
-      "image": {
-        "file": "EU004_CMB_Common_Tamar Arakelyan.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EU05",
-      "name": "Dilshod Karimov",
-      "country": "Uzbekistan",
-      "faction": "Eurasiatica",
-      "class": "Combattenti",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 229,
-        "def": 638,
-        "vel": 550,
-        "crt": 575
-      },
-      "copy": "Rivede ogni errore. Al prossimo scambio lo trasforma in una risposta.",
-      "image": {
-        "file": "EU005_CMB_Common_Dilshod Karimov.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EU06",
-      "name": "Samira Haddad",
-      "country": "Giordania",
-      "faction": "Eurasiatica",
-      "class": "Sentinelle",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 211,
-        "def": 846,
-        "vel": 400,
-        "crt": 450
-      },
-      "copy": "Tiene la linea finché il tuo piede non si sposta.",
-      "image": {
-        "file": "EU006_SNT_Common_Samira Haddad.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EU07",
-      "name": "Leyla Farhadi",
-      "country": "Iran",
-      "faction": "Eurasiatica",
-      "class": "Specialisti",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 181,
-        "def": 822,
-        "vel": 500,
-        "crt": 850
-      },
-      "copy": "Il primo assalto le dice dove guardare al secondo.",
-      "image": {
-        "file": "EU007_SPC_Common_Leyla Farhadi.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EU08",
-      "name": "Danylo Hrytsenko",
-      "country": "Ucraina",
-      "faction": "Eurasiatica",
-      "class": "Specialisti",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 185,
-        "def": 805,
-        "vel": 500,
-        "crt": 850
-      },
-      "copy": "Tra la presa e il ritorno in guardia gli basta un istante.",
-      "image": {
-        "file": "EU008_SPC_Common_Danylo Hrytsenko.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EU09",
-      "name": "Aigerim Ospanova",
-      "country": "Kazakistan",
-      "faction": "Eurasiatica",
-      "class": "Colossi",
-      "rarity": "Rara",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 321,
-        "def": 666,
-        "vel": 250,
-        "crt": 700
-      },
-      "copy": "Fissa la distanza. Tutta la spinta arriva insieme.",
-      "image": {
-        "file": "EU009_CLS_Rare_Aigerim Ospanova.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EU10",
-      "name": "Radu Ionescu",
-      "country": "Romania",
-      "faction": "Eurasiatica",
-      "class": "Combattenti",
-      "rarity": "Rara",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 242,
-        "def": 665,
-        "vel": 550,
-        "crt": 500
-      },
-      "copy": "Taglia le finte. Lo scambio si chiude in linea retta.",
-      "image": {
-        "file": "EU010_CMB_Rare_Radu Ionescu.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EU11",
-      "name": "Mina Rahimi",
-      "country": "Iran",
-      "faction": "Eurasiatica",
-      "class": "Sentinelle",
-      "rarity": "Rara",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 213,
-        "def": 900,
-        "vel": 400,
-        "crt": 500
-      },
-      "copy": "Quel mezzo passo indietro è l’invito che spera tu accetti.",
-      "image": {
-        "file": "EU011_SNT_Rare_Mina Rahimi.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EU12",
-      "name": "Emir Aydin",
-      "country": "Turchia",
-      "faction": "Eurasiatica",
-      "class": "Sentinelle",
-      "rarity": "Rara",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 211,
-        "def": 918,
-        "vel": 400,
-        "crt": 450
-      },
-      "copy": "Arretra di un passo. La guardia resta al suo posto.",
-      "image": {
-        "file": "EU012_SNT_Rare_Emir Aydin.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "EU13",
-      "name": "Yana Volkova",
-      "country": "Russia",
+      "name": "Nino Beridze",
+      "country": "Georgia",
       "faction": "Eurasiatica",
       "class": "Assassini",
       "rarity": "Epica",
@@ -280,9 +60,229 @@
         "vel": 850,
         "crt": 400
       },
-      "copy": "Se vede il primo varco, spende tutto per chiuderlo.",
+      "copy": "Nino proviene da una famiglia che tramanda da generazioni le arti marziali georgiane.",
       "image": {
-        "file": "EU013_ASS_Epic_Yana Volkova.webp",
+        "file": "EU03.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU04",
+      "name": "Samir Haddad",
+      "country": "Giordania",
+      "faction": "Eurasiatica",
+      "class": "Assassini",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 263,
+        "def": 500,
+        "vel": 850,
+        "crt": 350
+      },
+      "copy": "Samir lavorava come guida e responsabile della sicurezza per convogli commerciali che attraversavano le zone desertiche del Medio Oriente.",
+      "image": {
+        "file": "EU04.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU05",
+      "name": "Lev Morozov",
+      "country": "Russia",
+      "faction": "Eurasiatica",
+      "class": "Specialisti",
+      "rarity": "Leggendaria",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 211,
+        "def": 896,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Lev è un operatore militare conosciuto per la sua capacità di completare incarichi estremamente pericolosi senza mostrare alcuna emozione.",
+      "image": {
+        "file": "EU05.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU06",
+      "name": "Anahit Sarkisyan",
+      "country": "Armenia",
+      "faction": "Eurasiatica",
+      "class": "Specialisti",
+      "rarity": "Epica",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 209,
+        "def": 838,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Anahit è un'ex operatrice di una squadra specializzata nel recupero di persone scomparse nelle regioni montuose dell'Armenia.",
+      "image": {
+        "file": "EU06.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU07",
+      "name": "Bekzod Karimov",
+      "country": "Uzbekistan",
+      "faction": "Eurasiatica",
+      "class": "Specialisti",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 191,
+        "def": 847,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Bekzod è cresciuto in una piccola comunità dell'Uzbekistan, sviluppando fin da giovane una straordinaria capacità di concentrazione.",
+      "image": {
+        "file": "EU07.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU08",
+      "name": "Leyla Mammadova",
+      "country": "Azerbaigian",
+      "faction": "Eurasiatica",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 191,
+        "def": 780,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Leyla è un'ex ingegnera elettronica che lavorava per una corporazione impegnata nello sviluppo di tecnologie energetiche nel Mar Caspio.",
+      "image": {
+        "file": "EU08.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU09",
+      "name": "Iryna Koval",
+      "country": "Ucraina",
+      "faction": "Eurasiatica",
+      "class": "Specialisti",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 193,
+        "def": 772,
+        "vel": 500,
+        "crt": 850
+      },
+      "copy": "Iryna è un'ex operatrice militare specializzata nella gestione di sistemi senza pilota.",
+      "image": {
+        "file": "EU09.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU10",
+      "name": "Vera Sokolova",
+      "country": "Russia",
+      "faction": "Eurasiatica",
+      "class": "Colossi",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 321,
+        "def": 666,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Vera lavorava come operatrice di macchinari industriali in una grande struttura estrattiva.",
+      "image": {
+        "file": "EU10.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU11",
+      "name": "Nurlan Saparov",
+      "country": "Kazakistan",
+      "faction": "Eurasiatica",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 301,
+        "def": 653,
+        "vel": 250,
+        "crt": 725
+      },
+      "copy": "Nurlan proviene da una famiglia di lottatori e ha dedicato la propria vita alla pratica del Qazaq Kuresi.",
+      "image": {
+        "file": "EU11.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU12",
+      "name": "Baran Aksoy",
+      "country": "Turchia",
+      "faction": "Eurasiatica",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 302,
+        "def": 653,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Baran è un celebre lottatore turco, conosciuto per la sua straordinaria forza e per la capacità di sfuggire anche alle prese più difficili.",
+      "image": {
+        "file": "EU12.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "EU13",
+      "name": "Aram Vardanyan",
+      "country": "Armenia",
+      "faction": "Eurasiatica",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 200,
+        "def": 891,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "Aram è un ex soccorritore specializzato nelle operazioni in montagna.",
+      "image": {
+        "file": "EU13.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -290,21 +290,21 @@
     },
     {
       "id": "EU14",
-      "name": "Aram Petrosyan",
-      "country": "Armenia",
+      "name": "Oksana Hrytsenko",
+      "country": "Ucraina",
       "faction": "Eurasiatica",
       "class": "Sentinelle",
-      "rarity": "Epica",
+      "rarity": "Comune",
       "firstDelivery": true,
       "stats": {
-        "atk": 224,
-        "def": 936,
+        "atk": 204,
+        "def": 873,
         "vel": 400,
         "crt": 450
       },
-      "copy": "La sua guardia avanza. Le tue uscite si restringono.",
+      "copy": "Oksana accetta, sperando che i risultati delle sperimentazioni possano migliorare la sicurezza delle future squadre di soccorso.",
       "image": {
-        "file": "EU014_SNT_Epic_Aram Petrosyan.webp",
+        "file": "EU14.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -312,21 +312,21 @@
     },
     {
       "id": "EU15",
-      "name": "Daria Kovalenko",
-      "country": "Ucraina",
+      "name": "Aizada Bekova",
+      "country": "Kirghizistan",
       "faction": "Eurasiatica",
-      "class": "Specialisti",
-      "rarity": "Epica",
+      "class": "Sentinelle",
+      "rarity": "Comune",
       "firstDelivery": true,
       "stats": {
-        "atk": 197,
-        "def": 888,
-        "vel": 500,
-        "crt": 850
+        "atk": 211,
+        "def": 846,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Aspetta che tu ripeta la sequenza. Poi la spezza sotto il braccio.",
+      "copy": "Aizada è un'ex campionessa di Alysh, cresciuta nelle regioni montuose del Kirghizistan.",
       "image": {
-        "file": "EU015_SPC_Epic_Daria Kovalenko.webp",
+        "file": "EU15.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -334,21 +334,21 @@
     },
     {
       "id": "EU16",
-      "name": "Temir Saparov - Capitano",
-      "country": "Kazakistan",
+      "name": "Radu Ionescu",
+      "country": "Romania",
       "faction": "Eurasiatica",
-      "class": "Colossi",
-      "rarity": "Leggendaria",
+      "class": "Sentinelle",
+      "rarity": "Comune",
       "firstDelivery": true,
       "stats": {
-        "atk": 340,
-        "def": 734,
-        "vel": 250,
-        "crt": 700
+        "atk": 213,
+        "def": 837,
+        "vel": 400,
+        "crt": 450
       },
-      "copy": "Il capitano fissa gli appoggi. Tutta la tensione si libera in un impatto.",
+      "copy": "Radu lavorava come responsabile della sicurezza di alcune infrastrutture sotterranee nei Carpazi.",
       "image": {
-        "file": "EU016_CLS_Legendary_Temir Saparov - Capitano.webp",
+        "file": "EU16.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200

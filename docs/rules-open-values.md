@@ -40,3 +40,16 @@ them with DSG_MO01, DSG_MO02 and DSG_MO03.
 | Pacchetto Avanzato | `V9__seed_packs.sql` | 220 credits: 5 Comune, 2 Rara, 1 Epica | Provisional | |
 | Pacchetto Leggendario | `V9__seed_packs.sql` | 500 credits: 6 Comune, 2 Rara, 1 Epica, 1 Leggendaria | Provisional | |
 | Draw within a rarity | `PackOpeningService` | Uniform, with replacement, among the active cards of the rarity | Provisional | Effect cards are not in packs yet (advanced mode) |
+
+## Card roster: open values (#185)
+
+Since 22 November 2026 the catalog is the **"proposta di carte"** roster (see
+`fighters-program/application/src/main/resources/catalog/README.md`). Its documents give names, nationalities, classes
+and the legendary of each faction; everything else is provisional.
+
+| Value | Where | Provisional value | Status | Rationale |
+|---|---|---|---|---|
+| Rarity of non-legendary cards | `catalogo-*.json` | 8 Comune, 4 Rara, 3 Epica per faction; Epica and Rara spread over different classes in document order | Provisional (DSG) | Same distribution as the previous delivery, which the deck rules and packs assume |
+| Card stats | `catalogo-*.json` | Values of the previous catalog's cards with the same class and rarity | Provisional (DSG) | Keeps the balance the DSG tuned per class and rarity |
+| Card copy | `catalogo-*.json` | A sentence of the character's story | Provisional (DSG) | |
+||||||| cdfe471

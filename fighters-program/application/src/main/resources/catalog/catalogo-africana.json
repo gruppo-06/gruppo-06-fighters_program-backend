@@ -4,21 +4,21 @@
   "cards": [
     {
       "id": "AF01",
-      "name": "Lina El Mansouri",
-      "country": "Marocco",
+      "name": "Musa Bello",
+      "country": "Nigeria",
       "faction": "Africana",
-      "class": "Assassini",
-      "rarity": "Comune",
+      "class": "Combattenti",
+      "rarity": "Epica",
       "firstDelivery": true,
       "stats": {
-        "atk": 242,
-        "def": 495,
-        "vel": 850,
-        "crt": 400
+        "atk": 250,
+        "def": 692,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Rinuncia al secondo colpo pur di uscire con la guardia alta.",
+      "copy": "Musa è cresciuto in una famiglia di combattenti tradizionali, partecipando fin da giovane a competizioni locali.",
       "image": {
-        "file": "AF001_ASS_Common_Lina El Mansouri.webp",
+        "file": "AF01.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -26,162 +26,8 @@
     },
     {
       "id": "AF02",
-      "name": "Teboho Mokoena",
-      "country": "Sudafrica",
-      "faction": "Africana",
-      "class": "Assassini",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 247,
-        "def": 485,
-        "vel": 850,
-        "crt": 400
-      },
-      "copy": "Allarga la curva per rientrare dove il colpo può arrivare.",
-      "image": {
-        "file": "AF002_ASS_Common_Teboho Mokoena.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "AF03",
-      "name": "Malik Okafor",
-      "country": "Nigeria",
-      "faction": "Africana",
-      "class": "Colossi",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 312,
-        "def": 632,
-        "vel": 250,
-        "crt": 700
-      },
-      "copy": "Colpisce mentre il tuo peso cerca ancora la gamba posteriore.",
-      "image": {
-        "file": "AF003_CLS_Common_Malik Okafor.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "AF04",
-      "name": "Samira Ben Youssef",
-      "country": "Tunisia",
-      "faction": "Africana",
-      "class": "Colossi",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 306,
-        "def": 646,
-        "vel": 250,
-        "crt": 700
-      },
-      "copy": "Tiene il pugno al fianco finché la guardia si chiude troppo.",
-      "image": {
-        "file": "AF004_CLS_Common_Samira Ben Youssef.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "AF05",
-      "name": "Kwame Mensah",
-      "country": "Ghana",
-      "faction": "Africana",
-      "class": "Combattenti",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 230,
-        "def": 638,
-        "vel": 550,
-        "crt": 550
-      },
-      "copy": "I primi scambi gli dicono se lavorare in presa o a distanza.",
-      "image": {
-        "file": "AF005_CMB_Common_Kwame Mensah.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "AF06",
-      "name": "Njeri Kamau",
-      "country": "Kenya",
-      "faction": "Africana",
-      "class": "Sentinelle",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 202,
-        "def": 882,
-        "vel": 400,
-        "crt": 450
-      },
-      "copy": "Passi corti. Anche sotto una raffica, il centro resta suo.",
-      "image": {
-        "file": "AF006_SNT_Common_Njeri Kamau.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "AF07",
-      "name": "Salim Mansour",
-      "country": "Egitto",
-      "faction": "Africana",
-      "class": "Sentinelle",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 205,
-        "def": 864,
-        "vel": 400,
-        "crt": 475
-      },
-      "copy": "Il colpo tocca la guardia e gli consegna una risposta.",
-      "image": {
-        "file": "AF007_SNT_Common_Salim Mansour.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "AF08",
-      "name": "Aina Rakoto",
+      "name": "Tiana Rabe",
       "country": "Madagascar",
-      "faction": "Africana",
-      "class": "Specialisti",
-      "rarity": "Comune",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 191,
-        "def": 780,
-        "vel": 500,
-        "crt": 850
-      },
-      "copy": "Legge il cambio di peso e arriva prima della ripartenza.",
-      "image": {
-        "file": "AF008_SPC_Common_Aina Rakoto.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "AF09",
-      "name": "Inès Mbala",
-      "country": "Repubblica Democratica del Congo",
       "faction": "Africana",
       "class": "Combattenti",
       "rarity": "Rara",
@@ -192,84 +38,62 @@
         "vel": 550,
         "crt": 550
       },
-      "copy": "Apre il secondo scambio prima che tu rimetta i piedi in ordine.",
+      "copy": "Grazie alla sua agilità è diventata rapidamente una combattente molto popolare.",
       "image": {
-        "file": "AF009_CMB_Rare_Inès Mbala.webp",
+        "file": "AF02.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
       }
     },
     {
-      "id": "AF10",
-      "name": "Sefu Mtemi",
-      "country": "Tanzania",
+      "id": "AF03",
+      "name": "Kito Manuel",
+      "country": "Angola",
       "faction": "Africana",
-      "class": "Sentinelle",
-      "rarity": "Rara",
+      "class": "Combattenti",
+      "rarity": "Comune",
       "firstDelivery": true,
       "stats": {
-        "atk": 217,
-        "def": 900,
-        "vel": 400,
-        "crt": 400
+        "atk": 230,
+        "def": 638,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "La guardia è semplice. La risposta arriva ogni volta.",
+      "copy": "Kito ha accettato perché desidera conoscere altre forme di combattimento e migliorare ulteriormente la propria tecnica.",
       "image": {
-        "file": "AF010_SNT_Rare_Sefu Mtemi.webp",
+        "file": "AF03.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
       }
     },
     {
-      "id": "AF11",
-      "name": "Hana Bekele",
-      "country": "Etiopia",
+      "id": "AF04",
+      "name": "Ines Mansour",
+      "country": "Tunisia",
       "faction": "Africana",
-      "class": "Specialisti",
-      "rarity": "Rara",
+      "class": "Combattenti",
+      "rarity": "Comune",
       "firstDelivery": true,
       "stats": {
-        "atk": 193,
-        "def": 830,
-        "vel": 500,
-        "crt": 900
+        "atk": 235,
+        "def": 625,
+        "vel": 550,
+        "crt": 550
       },
-      "copy": "Prima verifica il varco. Poi ci manda un solo pugno.",
+      "copy": "Ines è una campionessa professionista che ha dedicato tutta la propria vita alla competizione sportiva.",
       "image": {
-        "file": "AF011_SPC_Rare_Hana Bekele.webp",
+        "file": "AF04.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
       }
     },
     {
-      "id": "AF12",
-      "name": "Rui Chissano",
-      "country": "Mozambico",
-      "faction": "Africana",
-      "class": "Specialisti",
-      "rarity": "Rara",
-      "firstDelivery": true,
-      "stats": {
-        "atk": 191,
-        "def": 847,
-        "vel": 500,
-        "crt": 850
-      },
-      "copy": "Allunga lo scambio finché la fatica cambia la tua guardia.",
-      "image": {
-        "file": "AF012_SPC_Rare_Rui Chissano.webp",
-        "mimeType": "image/webp",
-        "width": 900,
-        "height": 1200
-      }
-    },
-    {
-      "id": "AF13",
-      "name": "Yasmine Bensaïd",
-      "country": "Algeria",
+      "id": "AF05",
+      "name": "Yassin Amrani",
+      "country": "Marocco",
       "faction": "Africana",
       "class": "Assassini",
       "rarity": "Epica",
@@ -280,40 +104,62 @@
         "vel": 850,
         "crt": 400
       },
-      "copy": "Anche se l’ingresso si chiude, l’uscita resta veloce.",
+      "copy": "Yassin è cresciuto nei quartieri storici di Fès, dove ha iniziato a lavorare come ladro e contrabbandiere.",
       "image": {
-        "file": "AF013_ASS_Epic_Yasmine Bensaïd.webp",
+        "file": "AF05.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
       }
     },
     {
-      "id": "AF14",
-      "name": "Lúcia Domingos",
-      "country": "Angola",
+      "id": "AF06",
+      "name": "Aya Koné",
+      "country": "Costa d'Avorio",
       "faction": "Africana",
-      "class": "Colossi",
-      "rarity": "Epica",
+      "class": "Assassini",
+      "rarity": "Rara",
       "firstDelivery": true,
       "stats": {
-        "atk": 337,
-        "def": 687,
-        "vel": 250,
-        "crt": 700
+        "atk": 265,
+        "def": 490,
+        "vel": 850,
+        "crt": 400
       },
-      "copy": "Prova a fermarla di fronte. È il momento che aspettava.",
+      "copy": "Aya era una specialista nella sicurezza informatica di una grande corporazione con sede ad Abidjan.",
       "image": {
-        "file": "AF014_CLS_Epic_Lúcia Domingos.webp",
+        "file": "AF06.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
       }
     },
     {
-      "id": "AF15",
-      "name": "Aïcha Koné",
-      "country": "Costa d’Avorio",
+      "id": "AF07",
+      "name": "Nadir Belkacem",
+      "country": "Algeria",
+      "faction": "Africana",
+      "class": "Assassini",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 242,
+        "def": 495,
+        "vel": 850,
+        "crt": 400
+      },
+      "copy": "Nadir è un ex operatore di sicurezza specializzato nella protezione di installazioni energetiche nel Sahara.",
+      "image": {
+        "file": "AF07.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "AF08",
+      "name": "Salma Nasser",
+      "country": "Egitto",
       "faction": "Africana",
       "class": "Specialisti",
       "rarity": "Epica",
@@ -324,9 +170,163 @@
         "vel": 500,
         "crt": 850
       },
-      "copy": "Cambia cadenza a metà e fa partire la tua difesa in anticipo.",
+      "copy": "Salma è una fisica specializzata nello sviluppo di nuove tecnologie militari.",
       "image": {
-        "file": "AF015_SPC_Epic_Aïcha Koné.webp",
+        "file": "AF08.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "AF09",
+      "name": "Paulo Mussa",
+      "country": "Mozambico",
+      "faction": "Africana",
+      "class": "Specialisti",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 193,
+        "def": 830,
+        "vel": 500,
+        "crt": 900
+      },
+      "copy": "Paulo lavorava come tecnico specializzato nella manutenzione di grandi infrastrutture portuali.",
+      "image": {
+        "file": "AF09.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "AF10",
+      "name": "Jacob Maseko",
+      "country": "Sudafrica",
+      "faction": "Africana",
+      "class": "Colossi",
+      "rarity": "Rara",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 318,
+        "def": 680,
+        "vel": 250,
+        "crt": 650
+      },
+      "copy": "Jacob è stato successivamente invitato al torneo come rappresentante dei nuovi sistemi di potenziamento meccanico.",
+      "image": {
+        "file": "AF10.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "AF11",
+      "name": "Ama Mensah",
+      "country": "Ghana",
+      "faction": "Africana",
+      "class": "Colossi",
+      "rarity": "Leggendaria",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 340,
+        "def": 734,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Ama è una donna dalla corporatura eccezionalmente robusta, dotata di una forza naturale molto superiore alla media.",
+      "image": {
+        "file": "AF11.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "AF12",
+      "name": "Nia Kamau",
+      "country": "Kenya",
+      "faction": "Africana",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 312,
+        "def": 632,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Nia è cresciuta in una famiglia di atleti, sviluppando fin da giovane una statura eccezionale e una forza superiore alla media.",
+      "image": {
+        "file": "AF12.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "AF13",
+      "name": "Malia Kanku",
+      "country": "Repubblica Democratica del Congo",
+      "faction": "Africana",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 306,
+        "def": 646,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Malia lavorava come operatrice logistica in una grande struttura industriale.",
+      "image": {
+        "file": "AF13.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "AF14",
+      "name": "Malick Diop",
+      "country": "Senegal",
+      "faction": "Africana",
+      "class": "Colossi",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 296,
+        "def": 666,
+        "vel": 250,
+        "crt": 700
+      },
+      "copy": "Malick è nato in una famiglia di lottatori, mostrando fin dall'infanzia una crescita fisica fuori dal comune.",
+      "image": {
+        "file": "AF14.webp",
+        "mimeType": "image/webp",
+        "width": 900,
+        "height": 1200
+      }
+    },
+    {
+      "id": "AF15",
+      "name": "Neema Mushi",
+      "country": "Tanzania",
+      "faction": "Africana",
+      "class": "Sentinelle",
+      "rarity": "Comune",
+      "firstDelivery": true,
+      "stats": {
+        "atk": 202,
+        "def": 882,
+        "vel": 400,
+        "crt": 450
+      },
+      "copy": "Neema lavorava come ranger in una grande riserva naturale della Tanzania.",
+      "image": {
+        "file": "AF15.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200
@@ -334,21 +334,21 @@
     },
     {
       "id": "AF16",
-      "name": "Amara Diop - Capitana",
-      "country": "Senegal",
+      "name": "Dawit Bekele",
+      "country": "Etiopia",
       "faction": "Africana",
-      "class": "Combattenti",
-      "rarity": "Leggendaria",
+      "class": "Sentinelle",
+      "rarity": "Comune",
       "firstDelivery": true,
       "stats": {
-        "atk": 259,
-        "def": 718,
-        "vel": 550,
-        "crt": 550
+        "atk": 205,
+        "def": 864,
+        "vel": 400,
+        "crt": 475
       },
-      "copy": "La capitana passa all’attacco e torna in difesa sullo stesso appoggio.",
+      "copy": "Dopo aver abbandonato le competizioni, ha iniziato a insegnare ai giovani della propria regione.",
       "image": {
-        "file": "AF016_CMB_Legendary_Amara Diop - Capitana.webp",
+        "file": "AF16.webp",
         "mimeType": "image/webp",
         "width": 900,
         "height": 1200

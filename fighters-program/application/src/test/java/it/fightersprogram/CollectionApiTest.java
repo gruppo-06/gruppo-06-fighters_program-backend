@@ -101,7 +101,7 @@ class CollectionApiTest {
                             .header(HttpHeaders.AUTHORIZATION, token))
                     .andExpect(status().isOk())
                     .andExpect(jsonPath("$.content", hasSize(3)))
-                    .andExpect(jsonPath("$.content[0].code", is("EA01")))
+                    .andExpect(jsonPath("$.content[0].code", is(firstStarterCode("Euroatlantica"))))
                     .andExpect(jsonPath("$.content[*].faction", everyItem(is("Euroatlantica"))));
         }
 
@@ -111,7 +111,7 @@ class CollectionApiTest {
             TestUsers.registerAndLogin(mockMvc, "col_bob");
             long aliceId = jdbcTemplate.queryForObject("SELECT id FROM app_user WHERE nickname = 'col_alice'",
                     Long.class);
-            long legendaryId = jdbcTemplate.queryForObject("SELECT id FROM card WHERE code = 'EA16'", Long.class);
+            long legendaryId = TestDecks.legendaryCardId(jdbcTemplate, "Euroatlantica");
             jdbcTemplate.update("INSERT INTO user_card (user_id, card_id, quantity) VALUES (?, ?, 1)",
                     aliceId, legendaryId);
 
@@ -121,6 +121,14 @@ class CollectionApiTest {
             mockMvc.perform(get("/api/me/collection/progress").header(HttpHeaders.AUTHORIZATION, alice))
                     .andExpect(jsonPath("$[?(@.faction == 'Euroatlantica')].owned",
                             everyItem(is(cardsOfFactionAndRarity("Euroatlantica") + 1))));
+        }
+
+        private String firstStarterCode(String faction) {
+            return jdbcTemplate.queryForObject("""
+                    SELECT min(c.code) FROM card c
+                    JOIN rarity r ON r.id = c.rarity_id JOIN faction f ON f.id = c.faction_id
+                    WHERE f.name = ? AND r.name IN ('Comune', 'Rara')
+                    """, String.class, faction);
         }
 
         private int cardsOfRarity(String rarity) {

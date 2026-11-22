@@ -18,6 +18,17 @@ final class TestDecks {
                 """, Long.class, rarity, count);
     }
 
+    static long legendaryCardId(JdbcTemplate jdbcTemplate, String faction) {
+        return jdbcTemplate.queryForObject("""
+                SELECT c.id FROM card c JOIN rarity r ON r.id = c.rarity_id JOIN faction f ON f.id = c.faction_id
+                WHERE r.name = 'Leggendaria' AND f.name = ?
+                """, Long.class, faction);
+    }
+
+    static String cardName(JdbcTemplate jdbcTemplate, long cardId) {
+        return jdbcTemplate.queryForObject("SELECT name FROM card WHERE id = ?", String.class, cardId);
+    }
+
     static long cardId(JdbcTemplate jdbcTemplate, String code) {
         return jdbcTemplate.queryForObject("SELECT id FROM card WHERE code = ?", Long.class, code);
     }

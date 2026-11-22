@@ -52,13 +52,14 @@ class DeckValidationApiTest {
     @Test
     void aCardThatIsNotOwnedMakesTheDeckInvalid() throws Exception {
         List<Long> deck = new ArrayList<>(TestDecks.cardIds(jdbcTemplate, "Comune", 9));
-        deck.add(TestDecks.cardId(jdbcTemplate, "EA16"));
+        deck.add(TestDecks.legendaryCardId(jdbcTemplate, "Euroatlantica"));
 
         validate(TestDecks.body("Borrowed", deck))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.valid", is(false)))
                 .andExpect(jsonPath("$.violations[0].code", is("NOT_OWNED")))
-                .andExpect(jsonPath("$.violations[0].message", is("Ti manca 1 copia di Hana Kuroda - Capitana")));
+                .andExpect(jsonPath("$.violations[0].message", is("Ti manca 1 copia di "
+                        + TestDecks.cardName(jdbcTemplate, TestDecks.legendaryCardId(jdbcTemplate, "Euroatlantica")))));
     }
 
     @Test
