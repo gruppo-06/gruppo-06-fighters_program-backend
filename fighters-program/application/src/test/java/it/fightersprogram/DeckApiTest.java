@@ -75,7 +75,7 @@ class DeckApiTest {
     @Test
     void anInvalidDeckIsRejectedWith422AndNotSaved() throws Exception {
         List<Long> deck = new ArrayList<>(TestDecks.cardIds(jdbcTemplate, "Comune", 9));
-        deck.add(TestDecks.cardId(jdbcTemplate, "EA16"));
+        deck.add(TestDecks.legendaryCardId(jdbcTemplate, "Euroatlantica"));
 
         create(alice, TestDecks.body("Borrowed", deck))
                 .andExpect(status().isUnprocessableContent())
