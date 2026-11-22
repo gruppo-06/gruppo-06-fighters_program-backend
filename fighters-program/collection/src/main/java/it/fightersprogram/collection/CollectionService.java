@@ -1,11 +1,16 @@
 package it.fightersprogram.collection;
 
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -16,6 +21,7 @@ import org.springframework.transaction.annotation.Transactional;
 import it.fightersprogram.catalog.CardFilter;
 import it.fightersprogram.catalog.CatalogCard;
 import it.fightersprogram.catalog.CatalogService;
+import it.fightersprogram.common.error.UnprocessableException;
 import it.fightersprogram.collection.domain.UserCard;
 import it.fightersprogram.collection.domain.UserCardId;
 import it.fightersprogram.collection.domain.UserCardRepository;
@@ -62,6 +68,59 @@ public class CollectionService {
         userCardRepository.findById(new UserCardId(userId, cardId))
                 .ifPresentOrElse(owned -> owned.add(copies),
                         () -> userCardRepository.save(new UserCard(userId, cardId, copies)));
+    }
+
+    @Transactional
+    public void transfer(List<CardTransfer> transfers) {
+        if (transfers.isEmpty()) {
+            return;
+        }
+
+        Map<UserCardId, Integer> outgoing = new HashMap<>();
+        Map<UserCardId, Integer> incoming = new HashMap<>();
+        List<Long> userIds = transfers.stream()
+                .flatMap(transfer -> Stream.of(transfer.fromUserId(), transfer.toUserId()))
+                .distinct().sorted().toList();
+        for (CardTransfer transfer : transfers) {
+            if (transfer.quantity() < 1) {
+                throw new IllegalArgumentException("Transfer quantity must be at least 1");
+            }
+            outgoing.merge(new UserCardId(transfer.fromUserId(), transfer.cardId()), transfer.quantity(), Integer::sum);
+            incoming.merge(new UserCardId(transfer.toUserId(), transfer.cardId()), transfer.quantity(), Integer::sum);
+        }
+
+        Map<UserCardId, UserCard> lockedCards = userCardRepository.lockByUserIdsInOrder(userIds).stream()
+                .collect(Collectors.toMap(card -> new UserCardId(card.getUserId(), card.getCardId()),
+                        Function.identity()));
+        outgoing.forEach((key, copies) -> {
+            UserCard owned = lockedCards.get(key);
+            if (owned == null || owned.getQuantity() < copies) {
+                throw new UnprocessableException("INSUFFICIENT_CARDS",
+                        "A user no longer owns enough copies to complete this trade", List.of());
+            }
+        });
+
+        Set<UserCardId> changedCards = new TreeSet<>(Comparator.comparing(UserCardId::userId)
+                .thenComparing(UserCardId::cardId));
+        changedCards.addAll(outgoing.keySet());
+        changedCards.addAll(incoming.keySet());
+        for (UserCardId key : changedCards) {
+            int removed = outgoing.getOrDefault(key, 0);
+            int added = incoming.getOrDefault(key, 0);
+            UserCard owned = lockedCards.get(key);
+            if (owned == null) {
+                userCardRepository.addCopiesAtomically(key.userId(), key.cardId(), added);
+            } else if (added >= removed) {
+                if (added > removed) {
+                    owned.add(added - removed);
+                }
+            } else {
+                owned.remove(removed - added);
+                if (owned.getQuantity() == 0) {
+                    userCardRepository.delete(owned);
+                }
+            }
+        }
     }
 
     private List<CollectionEntry> ownedEntries(long userId) {

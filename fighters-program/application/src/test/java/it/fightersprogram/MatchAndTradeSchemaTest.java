@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.List;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +14,25 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
 
+import jakarta.persistence.EntityManager;
+
+import it.fightersprogram.trading.domain.Trade;
+import it.fightersprogram.trading.domain.TradeItem;
+import it.fightersprogram.trading.domain.TradeRepository;
+import it.fightersprogram.trading.domain.TradeSide;
+
 @SpringBootTest
 @Transactional
 class MatchAndTradeSchemaTest {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    private TradeRepository tradeRepository;
+
+    @Autowired
+    private EntityManager entityManager;
 
     private long challengerId;
     private long opponentId;
@@ -119,6 +134,24 @@ class MatchAndTradeSchemaTest {
         Integer remainingItems = jdbcTemplate.queryForObject(
                 "SELECT count(*) FROM trade_item WHERE trade_id = ?", Integer.class, tradeId);
         assertEquals(0, remainingItems);
+    }
+
+    @Test
+    void tradeAndItemsCanBePersistedAndReadBack() {
+        Trade trade = Trade.propose(challengerId, opponentId, List.of(
+                new TradeItem(cardId, 3, TradeSide.OFFERED),
+                new TradeItem(cardId, 1, TradeSide.REQUESTED)));
+
+        Trade saved = tradeRepository.saveAndFlush(trade);
+        Long tradeId = saved.getId();
+        entityManager.clear();
+
+        Trade loaded = tradeRepository.findById(tradeId).orElseThrow();
+        assertEquals(2, loaded.getItems().size());
+        assertEquals(3, loaded.getItems().stream()
+                .filter(item -> item.getSide() == TradeSide.OFFERED).findFirst().orElseThrow().getQuantity());
+        assertEquals(1, loaded.getItems().stream()
+                .filter(item -> item.getSide() == TradeSide.REQUESTED).findFirst().orElseThrow().getQuantity());
     }
 
     private long insertUser(String nickname) {

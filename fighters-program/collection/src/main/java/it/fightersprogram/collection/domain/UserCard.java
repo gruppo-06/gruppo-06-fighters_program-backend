@@ -33,6 +33,14 @@ public class UserCard {
         quantity += requirePositive(copies);
     }
 
+    public void remove(int copies) {
+        int amount = requirePositive(copies);
+        if (quantity < amount) {
+            throw new IllegalArgumentException("Cannot remove more copies than owned");
+        }
+        quantity -= amount;
+    }
+
     private static int requirePositive(int copies) {
         if (copies < 1) {
             throw new IllegalArgumentException("Copies must be at least 1, got " + copies);

@@ -207,6 +207,11 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 | `POST /api/matches/{id}/decline`, `POST /api/matches/{id}/cancel` | Rifiuta (sfidato) o annulla (sfidante) |
 | `GET /api/matches/{id}` | Replay: mazzi e log turno per turno (solo partecipanti) |
 | `GET /api/matches/history` | Storico paginato con esito `WIN`, `LOSS`, `DRAW` |
+| `POST /api/trades` | Propone uno scambio a un altro giocatore |
+| `GET /api/trades/incoming`, `GET /api/trades/outgoing` | Scambi ricevuti PENDING e scambi inviati in ogni stato |
+| `GET /api/trades/{id}` | Dettaglio dello scambio (solo partecipanti) |
+| `POST /api/trades/{id}/accept` | Accetta uno scambio e trasferisce le carte |
+| `POST /api/trades/{id}/decline`, `POST /api/trades/{id}/cancel` | Rifiuta uno scambio ricevuto o annulla uno proposto |
 
 ## 10. Test
 
