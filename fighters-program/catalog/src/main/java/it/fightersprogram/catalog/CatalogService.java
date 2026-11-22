@@ -48,6 +48,10 @@ public class CatalogService {
                 .orElseThrow(() -> new NotFoundException("Card not found: " + code));
     }
 
+    public Optional<String> imageFileOf(String code) {
+        return cardRepository.findByCode(code).flatMap(card -> Optional.ofNullable(card.getImageFile()));
+    }
+
     public List<CatalogCard> findAllCards() {
         return cardRepository.findAllByActiveTrueOrderByCodeAsc().stream().map(CatalogService::toCatalogCard).toList();
     }
@@ -69,10 +73,15 @@ public class CatalogService {
         return rarityRepository.findByName(name).map(Rarity::getId);
     }
 
+    static String imageUrlOf(String code, String imageFile) {
+        return imageFile == null ? null : "/api/cards/" + code + "/image";
+    }
+
     private static CatalogCard toCatalogCard(Card card) {
         return new CatalogCard(card.getId(), card.getCode(), card.getName(), card.getFaction().getName(),
                 card.getFighterClass().getName(), card.getRarity().getName(), card.getAtk(), card.getDef(),
-                card.getVel(), card.getCrt(), card.getImageFile());
+                card.getVel(), card.getCrt(), card.getImageFile(),
+                imageUrlOf(card.getCode(), card.getImageFile()));
     }
 
     private CardResponse toResponse(Card card) {
@@ -88,6 +97,7 @@ public class CatalogService {
                 card.getVel(),
                 card.getCrt(),
                 card.getFlavorText(),
-                card.getImageFile());
+                card.getImageFile(),
+                imageUrlOf(card.getCode(), card.getImageFile()));
     }
 }

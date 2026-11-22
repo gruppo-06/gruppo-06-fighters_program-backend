@@ -108,3 +108,7 @@ Desktop.ini
 # Misc
 .temp/
 .tmp/
+
+# Card illustrations stored at runtime (CARD_IMAGES_LOCATION)
+fighters-program/data/
+data/

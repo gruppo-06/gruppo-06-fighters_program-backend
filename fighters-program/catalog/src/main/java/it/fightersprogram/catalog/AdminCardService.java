@@ -81,6 +81,7 @@ public class AdminCardService {
     private static AdminCardResponse toResponse(Card card) {
         return new AdminCardResponse(card.getCode(), card.getName(), card.getCountry(), card.getFaction().getName(),
                 card.getFighterClass().getName(), card.getRarity().getName(), card.getAtk(), card.getDef(),
-                card.getVel(), card.getCrt(), card.getFlavorText(), card.getImageFile(), card.isActive());
+                card.getVel(), card.getCrt(), card.getFlavorText(), card.getImageFile(), card.isActive(),
+                CatalogService.imageUrlOf(card.getCode(), card.getImageFile()));
     }
 }

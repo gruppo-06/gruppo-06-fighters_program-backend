@@ -12,5 +12,6 @@ public record CardResponse(
         int vel,
         int crt,
         String flavorText,
-        String imageFile) {
+        String imageFile,
+        String imageUrl) {
 }
