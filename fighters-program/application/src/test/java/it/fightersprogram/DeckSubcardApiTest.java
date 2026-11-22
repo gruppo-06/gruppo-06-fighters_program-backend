@@ -77,8 +77,8 @@ class DeckSubcardApiTest {
         Map<String, Map<String, Object>> byCode = subcards.stream()
                 .collect(Collectors.toMap(subcard -> (String) subcard.get("code"), subcard -> subcard));
         assertSubcard(byCode.get("SC01"), "SC01", "Guanti pesanti", 12, 0, -8, 0);
-        assertSubcard(byCode.get("SC02"), "SC02", "Corazza leggera", 0, 12, -6, 0);
-        assertSubcard(byCode.get("SC03"), "SC03", "Adrenalina", 0, -8, 15, 0);
+        assertSubcard(byCode.get("SC02"), "SC02", "Corazza leggera", 0, 8, -6, 0);
+        assertSubcard(byCode.get("SC03"), "SC03", "Adrenalina", 0, -8, 0, 11);
         assertEquals(3, storedSubcards(deckId, common));
     }
 
@@ -126,7 +126,7 @@ class DeckSubcardApiTest {
         List<Map<String, Object>> subcards = subcardsOf(cardOf(updated, common));
 
         assertEquals(1, subcards.size());
-        assertSubcard(subcards.getFirst(), "SC04", "Mirino tattico", -6, 0, 0, 20);
+        assertSubcard(subcards.getFirst(), "SC04", "Mirino tattico", -6, 0, 0, 14);
         assertEquals(1, storedSubcards(deckId, common));
         assertEquals("SC04", jdbcTemplate.queryForObject("""
                 SELECT s.code FROM deck_card_subcard dcs JOIN subcard s ON s.id = dcs.subcard_id
