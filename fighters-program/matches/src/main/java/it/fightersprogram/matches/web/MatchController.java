@@ -25,6 +25,7 @@ import it.fightersprogram.matches.MatchHistoryItem;
 import it.fightersprogram.matches.MatchListItem;
 import it.fightersprogram.matches.MatchReplay;
 import it.fightersprogram.matches.MatchService;
+import it.fightersprogram.matches.QuickMatchRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
@@ -43,6 +44,13 @@ public class MatchController {
     @Operation(summary = "Challenge another player with one of your decks")
     public MatchListItem challenge(@AuthenticationPrincipal Jwt token, @Valid @RequestBody CreateMatchRequest request) {
         return matchService.challenge(CurrentUser.id(token), request);
+    }
+
+    @PostMapping("/quick")
+    @ResponseStatus(HttpStatus.CREATED)
+    @Operation(summary = "Play at once against a random player who has a valid deck, returning the finished match")
+    public MatchReplay quickMatch(@AuthenticationPrincipal Jwt token, @Valid @RequestBody QuickMatchRequest request) {
+        return matchService.quickMatch(CurrentUser.id(token), request);
     }
 
     @GetMapping("/incoming")
