@@ -36,16 +36,22 @@ public class Deck {
     @CollectionTable(name = "deck_card", joinColumns = @JoinColumn(name = "deck_id"))
     private List<DeckCard> cards = new ArrayList<>();
 
-    public Deck(long userId, String name, List<DeckCard> cards) {
+    @ElementCollection
+    @CollectionTable(name = "deck_card_subcard", joinColumns = @JoinColumn(name = "deck_id"))
+    private List<DeckSubcard> subcards = new ArrayList<>();
+
+    public Deck(long userId, String name, List<DeckCard> cards, List<DeckSubcard> subcards) {
         this.userId = userId;
         this.createdAt = OffsetDateTime.now();
-        replace(name, cards);
+        replace(name, cards, subcards);
     }
 
-    public void replace(String newName, List<DeckCard> newCards) {
+    public void replace(String newName, List<DeckCard> newCards, List<DeckSubcard> newSubcards) {
         this.name = newName;
         this.cards.clear();
         this.cards.addAll(newCards);
+        this.subcards.clear();
+        this.subcards.addAll(newSubcards);
     }
 
     public int cardCount() {
@@ -54,5 +60,9 @@ public class Deck {
 
     public List<DeckCard> getCards() {
         return List.copyOf(cards);
+    }
+
+    public List<DeckSubcard> getSubcards() {
+        return List.copyOf(subcards);
     }
 }

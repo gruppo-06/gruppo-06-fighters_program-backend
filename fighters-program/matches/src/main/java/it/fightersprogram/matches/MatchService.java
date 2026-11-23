@@ -159,7 +159,7 @@ public class MatchService {
             CatalogCard card = cards.get(entry.cardId());
             for (int copy = 0; copy < entry.copies(); copy++) {
                 deck.add(new SnapshotCard(card.code(), card.name(), card.faction(), card.rarity(), card.atk(),
-                        card.def(), card.vel(), card.crt()));
+                        card.def(), card.vel(), card.crt(), entry.subcardsOrEmpty()));
             }
         }
         return deck;

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "subcards": [
+    { "code": "SC01", "name": "Guanti pesanti", "description": "Colpi più duri, movimenti più lenti.", "modifiers": { "atk": 12, "vel": -8 } },
+    { "code": "SC02", "name": "Corazza leggera", "description": "Più protezione al prezzo di un po' di agilità.", "modifiers": { "def": 8, "vel": -6 } },
+    { "code": "SC03", "name": "Adrenalina", "description": "Più colpi critici, guardia più scoperta.", "modifiers": { "crt": 11, "def": -8 } },
+    { "code": "SC04", "name": "Mirino tattico", "description": "Molti più critici, colpi base meno potenti.", "modifiers": { "crt": 14, "atk": -6 } },
+    { "code": "SC05", "name": "Stimolante", "description": "Attacco e critico salgono, la difesa cala.", "modifiers": { "atk": 5, "crt": 5, "def": -10 } },
+    { "code": "SC06", "name": "Scudo reattivo", "description": "Difesa solida, attacco più trattenuto.", "modifiers": { "def": 11, "atk": -8 } },
+    { "code": "SC07", "name": "Colpo d'incontro", "description": "Più forza e precisione, meno rapidità.", "modifiers": { "atk": 5, "crt": 4, "vel": -6 } },
+    { "code": "SC08", "name": "Colpo caricato", "description": "Un attacco devastante che lascia esposti.", "modifiers": { "atk": 11, "def": -6, "vel": -6 } },
+    { "code": "SC09", "name": "Resistenza", "description": "Più tenuta, meno colpi critici.", "modifiers": { "def": 7, "crt": -6 } },
+    { "code": "SC10", "name": "Concentrazione", "description": "Più critici e più tenuta, meno rapidità.", "modifiers": { "crt": 8, "def": 3, "vel": -8 } },
+    { "code": "SC11", "name": "Fasce rinforzate", "description": "Più robusto e un po' più forte, meno critici.", "modifiers": { "def": 5, "atk": 3, "crt": -8 } },
+    { "code": "SC12", "name": "Allenamento totale", "description": "Attacco e difesa migliorano, velocità e critico calano.", "modifiers": { "atk": 3, "def": 3, "vel": -5, "crt": -5 } }
+  ]
+}
