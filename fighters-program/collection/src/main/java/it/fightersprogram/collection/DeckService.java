@@ -1,9 +1,12 @@
 package it.fightersprogram.collection;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -41,6 +44,21 @@ public class DeckService {
         return deckRepository.findByUserIdOrderByCreatedAtAscIdAsc(userId).stream()
                 .map(deck -> new DeckSummary(deck.getId(), deck.getName(), deck.cardCount(), deck.getCreatedAt()))
                 .toList();
+    }
+
+    public Optional<OpponentDeck> randomValidDeckExcluding(long userId) {
+        List<Long> owners = new ArrayList<>(deckRepository.findPlayerIdsWithDecksExcept(userId));
+        Collections.shuffle(owners);
+        for (long owner : owners) {
+            Optional<Long> deckId = deckRepository.findByUserIdOrderByCreatedAtDescIdDesc(owner).stream()
+                    .map(Deck::getId)
+                    .filter(id -> deckValidator.validate(owner, cardsOf(owner, id)).isEmpty())
+                    .findFirst();
+            if (deckId.isPresent()) {
+                return Optional.of(new OpponentDeck(owner, deckId.get()));
+            }
+        }
+        return Optional.empty();
     }
 
     public DeckDetail findDeck(long userId, long deckId) {

@@ -18,6 +18,7 @@ import it.fightersprogram.catalog.CatalogService;
 import it.fightersprogram.collection.DeckEntry;
 import it.fightersprogram.collection.DeckService;
 import it.fightersprogram.collection.DeckValidator;
+import it.fightersprogram.collection.OpponentDeck;
 import it.fightersprogram.collection.Violation;
 import it.fightersprogram.common.error.BadRequestException;
 import it.fightersprogram.common.error.ConflictException;
@@ -56,15 +57,19 @@ public class MatchService {
 
     @Transactional
     public MatchListItem challenge(long userId, CreateMatchRequest request) {
-        GameMode mode = request.mode() == null ? GameMode.BASE : request.mode();
-        if (mode == GameMode.ADVANCED && !advancedMode.enabled()) {
-            throw new BadRequestException("The advanced mode is not enabled");
-        }
+        GameMode mode = requestedMode(request.mode());
         long opponentId = userDirectory.findIdByNickname(request.opponentNickname())
                 .orElseThrow(() -> new NotFoundException("Player not found: " + request.opponentNickname()));
-        Match match = Match.challenge(userId, opponentId, request.deckId(), mode);
-        requireValidDeck(userId, deckService.cardsOf(userId, request.deckId()));
-        return toListItem(matchRepository.save(match));
+        return toListItem(createChallenge(userId, opponentId, request.deckId(), mode));
+    }
+
+    @Transactional
+    public MatchReplay quickMatch(long userId, QuickMatchRequest request) {
+        GameMode mode = requestedMode(request.mode());
+        OpponentDeck opponent = deckService.randomValidDeckExcluding(userId)
+                .orElseThrow(() -> new ConflictException("No opponent available right now"));
+        Match match = createChallenge(userId, opponent.userId(), request.deckId(), mode);
+        return accept(opponent.userId(), match.getId(), new AcceptMatchRequest(opponent.deckId()));
     }
 
     public List<MatchListItem> incoming(long userId) {
@@ -132,6 +137,20 @@ public class MatchService {
         return matchRepository.findById(matchId)
                 .filter(match -> match.involves(userId))
                 .orElseThrow(() -> new NotFoundException("Challenge not found: " + matchId));
+    }
+
+    private GameMode requestedMode(GameMode mode) {
+        GameMode requested = mode == null ? GameMode.BASE : mode;
+        if (requested == GameMode.ADVANCED && !advancedMode.enabled()) {
+            throw new BadRequestException("The advanced mode is not enabled");
+        }
+        return requested;
+    }
+
+    private Match createChallenge(long userId, long opponentId, long deckId, GameMode mode) {
+        Match match = Match.challenge(userId, opponentId, deckId, mode);
+        requireValidDeck(userId, deckService.cardsOf(userId, deckId));
+        return matchRepository.save(match);
     }
 
     private List<DeckEntry> challengerCards(Match match) {
