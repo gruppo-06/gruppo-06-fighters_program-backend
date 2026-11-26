@@ -60,6 +60,10 @@ public class CatalogService {
         return cardRepository.findAllByIdIn(ids).stream().map(CatalogService::toCatalogCard).toList();
     }
 
+    public List<CatalogCard> findCardsByCodes(Collection<String> codes) {
+        return cardRepository.findAllByCodeIn(codes).stream().map(CatalogService::toCatalogCard).toList();
+    }
+
     public List<String> factionNames() {
         return factionRepository.findAll(Sort.by("id")).stream().map(Faction::getName).toList();
     }
