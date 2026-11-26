@@ -201,6 +201,8 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 | `GET /api/me` | Profilo dell'utente corrente |
 | `GET /api/cards`, `GET /api/cards/{code}` | Catalogo pubblico (l'elenco mostra solo le carte attive) |
 | `GET /api/skins`, `GET /api/skins/{code}` | Catalogo pubblico delle skin attive, filtrabile per tipo e carta |
+| `POST /api/skins/{id}/purchase` | Acquista una skin con crediti |
+| `GET /api/me/skins` | Skin possedute dall'utente autenticato, con data di acquisizione |
 | `POST /api/admin/cards`, `PUT /api/admin/cards/{code}` | Crea o modifica una carta (solo ADMIN); l'importer non la sovrascrive più |
 | `DELETE /api/admin/cards/{code}` | Disattiva una carta (solo ADMIN): esce da catalogo e pacchetti, resta nelle collezioni; `PUT` con `"active": true` la riattiva |
 | `GET /api/me/collection`, `GET /api/me/collection/progress` | Carte possedute e avanzamento per fazione |
