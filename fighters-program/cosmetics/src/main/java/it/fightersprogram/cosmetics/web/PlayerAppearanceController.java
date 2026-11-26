@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/players")
 @RequiredArgsConstructor
-@Tag(name = "Cosmetics")
+@Tag(name = "Skins")
 public class PlayerAppearanceController {
 
     private final SkinService skinService;

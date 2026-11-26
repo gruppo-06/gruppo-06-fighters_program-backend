@@ -230,7 +230,7 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 
 Il frontend usa `GET /api/players/{nickname}/appearance` per aggiungere avatar e varianti grafiche a profilo, collezione
 e replay. Questi endpoint restituiscono i dati di gioco senza skin: il frontend unisce l'aspetto cosmetico alla risposta
-principale.
+principale. In Swagger tutti gli endpoint del catalogo, del possesso e dell'aspetto sono raccolti nel tag `Skins`.
 
 ## 10. Test
 

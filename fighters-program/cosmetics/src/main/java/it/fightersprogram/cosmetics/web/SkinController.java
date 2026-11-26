@@ -27,7 +27,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/skins")
 @RequiredArgsConstructor
-@Tag(name = "Cosmetics")
+@Tag(name = "Skins")
 public class SkinController {
 
     private static final int MAX_PAGE_SIZE = 100;
