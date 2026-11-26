@@ -203,6 +203,8 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 | `GET /api/skins`, `GET /api/skins/{code}` | Catalogo pubblico delle skin attive, filtrabile per tipo e carta |
 | `POST /api/skins/{id}/purchase` | Acquista una skin con crediti |
 | `GET /api/me/skins` | Skin possedute dall'utente autenticato, con data di acquisizione |
+| `PUT /api/me/skins/avatar`, `PUT /api/me/skins/cards/{cardId}` | Seleziona avatar e varianti delle carte possedute |
+| `GET /api/players/{nickname}/appearance` | Aspetto cosmetico del giocatore (solo utenti autenticati) |
 | `POST /api/admin/cards`, `PUT /api/admin/cards/{code}` | Crea o modifica una carta (solo ADMIN); l'importer non la sovrascrive più |
 | `DELETE /api/admin/cards/{code}` | Disattiva una carta (solo ADMIN): esce da catalogo e pacchetti, resta nelle collezioni; `PUT` con `"active": true` la riattiva |
 | `GET /api/me/collection`, `GET /api/me/collection/progress` | Carte possedute e avanzamento per fazione |
@@ -225,6 +227,10 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 | `GET /api/trades/{id}` | Dettaglio dello scambio (solo partecipanti) |
 | `POST /api/trades/{id}/accept` | Accetta uno scambio e trasferisce le carte |
 | `POST /api/trades/{id}/decline`, `POST /api/trades/{id}/cancel` | Rifiuta uno scambio ricevuto o annulla uno proposto |
+
+Il frontend usa `GET /api/players/{nickname}/appearance` per aggiungere avatar e varianti grafiche a profilo, collezione
+e replay. Questi endpoint restituiscono i dati di gioco senza skin: il frontend unisce l'aspetto cosmetico alla risposta
+principale.
 
 ## 10. Test
 
