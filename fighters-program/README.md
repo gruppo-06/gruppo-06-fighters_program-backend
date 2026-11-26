@@ -123,7 +123,7 @@ Il modulo `catalog` non conosce né il controller di un altro modulo, né le sue
 
 - Configurazione in `application`, package `it.fightersprogram.config` (`SecurityConfig`): è il composition root.
 - Sessione stateless, JWT come resource server OAuth2.
-- Pubblici: `GET /api/cards/**`, Swagger (`/swagger-ui/**`, `/v3/api-docs/**`), `/actuator/health`. Tutto il resto richiede autenticazione.
+- Pubblici: `GET /api/cards/**`, `GET /api/skins/**`, Swagger (`/swagger-ui/**`, `/v3/api-docs/**`), `/actuator/health`. Tutto il resto richiede autenticazione.
 - Errori di sicurezza nello stesso formato JSON di `common`.
 - CORS su `/api/**` solo per le origini in `app.cors.allowed-origins` (`CORS_ALLOWED_ORIGINS`), con gli header `Authorization`, `Content-Type` e `Idempotency-Key`.
 
@@ -200,6 +200,7 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 | `POST /api/auth/login` | Restituisce `{ accessToken, expiresIn }` |
 | `GET /api/me` | Profilo dell'utente corrente |
 | `GET /api/cards`, `GET /api/cards/{code}` | Catalogo pubblico (l'elenco mostra solo le carte attive) |
+| `GET /api/skins`, `GET /api/skins/{code}` | Catalogo pubblico delle skin attive, filtrabile per tipo e carta |
 | `POST /api/admin/cards`, `PUT /api/admin/cards/{code}` | Crea o modifica una carta (solo ADMIN); l'importer non la sovrascrive più |
 | `DELETE /api/admin/cards/{code}` | Disattiva una carta (solo ADMIN): esce da catalogo e pacchetti, resta nelle collezioni; `PUT` con `"active": true` la riattiva |
 | `GET /api/me/collection`, `GET /api/me/collection/progress` | Carte possedute e avanzamento per fazione |
