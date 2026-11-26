@@ -18,4 +18,7 @@ public interface CardRepository extends JpaRepository<Card, Long>, JpaSpecificat
 
     @EntityGraph(attributePaths = {"faction", "fighterClass", "rarity"})
     List<Card> findAllByIdIn(Collection<Long> ids);
+
+    @EntityGraph(attributePaths = {"faction", "fighterClass", "rarity"})
+    List<Card> findAllByCodeIn(Collection<String> codes);
 }

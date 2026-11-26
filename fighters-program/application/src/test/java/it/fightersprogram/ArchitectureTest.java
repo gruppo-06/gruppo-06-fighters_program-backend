@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 class ArchitectureTest {
 
     private static final String[] MODULES =
-            {"catalog", "collection", "identity", "economy", "trading", "matches"};
+            {"catalog", "collection", "identity", "economy", "trading", "cosmetics", "matches"};
 
     @ArchTest
     static final ArchRule engineIsPureJava = classes()
@@ -30,7 +30,8 @@ class ArchitectureTest {
             .should().dependOnClassesThat().resideInAnyPackage(
                     "it.fightersprogram.catalog..", "it.fightersprogram.collection..",
                     "it.fightersprogram.identity..", "it.fightersprogram.economy..",
-                    "it.fightersprogram.trading..", "it.fightersprogram.matches..");
+                    "it.fightersprogram.trading..", "it.fightersprogram.cosmetics..",
+                    "it.fightersprogram.matches..");
 
     @ArchTest
     static final ArchRule modulesAreFreeOfCycles = slices()

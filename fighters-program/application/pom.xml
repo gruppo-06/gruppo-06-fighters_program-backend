@@ -46,6 +46,10 @@
         </dependency>
         <dependency>
             <groupId>it.fightersprogram</groupId>
+            <artifactId>fighters-program-cosmetics</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>it.fightersprogram</groupId>
             <artifactId>fighters-program-matches</artifactId>
         </dependency>
 
