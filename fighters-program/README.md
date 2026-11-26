@@ -29,6 +29,7 @@ Restano un monolite (un solo processo, un solo database), quindi niente microser
 | `identity` | `fighters-program-identity` | Utenti, registrazione, login, JWT |
 | `economy` | `fighters-program-economy` | Crediti e pacchetti |
 | `trading` | `fighters-program-trading` | Scambi tra utenti |
+| `cosmetics` | `fighters-program-cosmetics` | Catalogo e proprietà delle skin cosmetiche |
 | `matches` | `fighters-program-matches` | Sfide, simulazione, replay, storico |
 | `application` | `fighters-program-application` | Main, configurazione, migrazioni. Unico avviabile |
 
@@ -42,6 +43,7 @@ collection   →  common
 identity     →  common
 economy      →  common
 trading      →  common
+cosmetics    →  common, catalog, collection, identity, economy
 matches      →  common, core
 application  →  tutti gli altri moduli
 ```
@@ -50,7 +52,7 @@ Regole di dipendenza:
 
 1. `core` non dipende da nulla dell'app: solo `java..`.
 2. `common` non dipende da nessun modulo di dominio né dal core.
-3. Un modulo di dominio dipende da `common` e, se gli serve il motore, da `core`. Mai da un altro modulo di dominio.
+3. Un modulo di dominio dipende da `common` e, se gli serve il motore, da `core`. Le dipendenze tra moduli di dominio sono esplicite nella tabella sopra e usano solo le API pubbliche nella radice del package.
 4. `application` dipende da tutti e li mette insieme.
 
 ## 3. Struttura interna di un modulo
@@ -121,7 +123,7 @@ Il modulo `catalog` non conosce né il controller di un altro modulo, né le sue
 
 - Configurazione in `application`, package `it.fightersprogram.config` (`SecurityConfig`): è il composition root.
 - Sessione stateless, JWT come resource server OAuth2.
-- Pubblici: `GET /api/cards/**`, Swagger (`/swagger-ui/**`, `/v3/api-docs/**`), `/actuator/health`. Tutto il resto richiede autenticazione.
+- Pubblici: `GET /api/cards/**`, `GET /api/skins/**`, Swagger (`/swagger-ui/**`, `/v3/api-docs/**`), `/actuator/health`. Tutto il resto richiede autenticazione.
 - Errori di sicurezza nello stesso formato JSON di `common`.
 - CORS su `/api/**` solo per le origini in `app.cors.allowed-origins` (`CORS_ALLOWED_ORIGINS`), con gli header `Authorization`, `Content-Type` e `Idempotency-Key`.
 
@@ -198,6 +200,7 @@ Tutti richiedono `Authorization: Bearer <token>`, tranne registrazione, login e 
 | `POST /api/auth/login` | Restituisce `{ accessToken, expiresIn }` |
 | `GET /api/me` | Profilo dell'utente corrente |
 | `GET /api/cards`, `GET /api/cards/{code}` | Catalogo pubblico (l'elenco mostra solo le carte attive) |
+| `GET /api/skins`, `GET /api/skins/{code}` | Catalogo pubblico delle skin attive, filtrabile per tipo e carta |
 | `POST /api/admin/cards`, `PUT /api/admin/cards/{code}` | Crea o modifica una carta (solo ADMIN); l'importer non la sovrascrive più |
 | `DELETE /api/admin/cards/{code}` | Disattiva una carta (solo ADMIN): esce da catalogo e pacchetti, resta nelle collezioni; `PUT` con `"active": true` la riattiva |
 | `GET /api/me/collection`, `GET /api/me/collection/progress` | Carte possedute e avanzamento per fazione |
