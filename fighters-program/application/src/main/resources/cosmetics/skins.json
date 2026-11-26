@@ -1,0 +1,14 @@
+{
+  "skins": [
+    { "code": "SK_AV_001", "name": "Neon Vanguard", "type": "AVATAR", "rarity": "Rara", "price": 250, "imageFile": "avatars/neon-vanguard.png" },
+    { "code": "SK_AV_002", "name": "Crimson Mask", "type": "AVATAR", "rarity": "Epica", "price": 500, "imageFile": "avatars/crimson-mask.png" },
+    { "code": "SK_AV_003", "name": "Azure Spirit", "type": "AVATAR", "rarity": "Comune", "price": 100, "imageFile": "avatars/azure-spirit.png" },
+    { "code": "SK_AV_004", "name": "Golden Champion", "type": "AVATAR", "rarity": "Leggendaria", "price": 1000, "imageFile": "avatars/golden-champion.png" },
+    { "code": "SK_CV_001", "name": "Daichi Nightfall", "type": "CARD_VARIANT", "cardCode": "EA01", "rarity": "Rara", "price": 300, "imageFile": "variants/ea01-nightfall.png" },
+    { "code": "SK_CV_002", "name": "Ines Solar Flare", "type": "CARD_VARIANT", "cardCode": "EA02", "rarity": "Epica", "price": 550, "imageFile": "variants/ea02-solar-flare.png" },
+    { "code": "SK_CV_003", "name": "Mateo Street Art", "type": "CARD_VARIANT", "cardCode": "EA03", "rarity": "Comune", "price": 150, "imageFile": "variants/ea03-street-art.png" },
+    { "code": "SK_CV_004", "name": "Klara Winter Guard", "type": "CARD_VARIANT", "cardCode": "EA04", "rarity": "Rara", "price": 325, "imageFile": "variants/ea04-winter-guard.png" },
+    { "code": "SK_CV_005", "name": "Rafael Ember", "type": "CARD_VARIANT", "cardCode": "EA05", "rarity": "Epica", "price": 600, "imageFile": "variants/ea05-ember.png" },
+    { "code": "SK_CV_006", "name": "Yuki Celestial", "type": "CARD_VARIANT", "cardCode": "EA06", "rarity": "Leggendaria", "price": 1200, "imageFile": "variants/ea06-celestial.png" }
+  ]
+}
