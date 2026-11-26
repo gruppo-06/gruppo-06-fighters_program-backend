@@ -29,6 +29,7 @@ Restano un monolite (un solo processo, un solo database), quindi niente microser
 | `identity` | `fighters-program-identity` | Utenti, registrazione, login, JWT |
 | `economy` | `fighters-program-economy` | Crediti e pacchetti |
 | `trading` | `fighters-program-trading` | Scambi tra utenti |
+| `cosmetics` | `fighters-program-cosmetics` | Catalogo e proprietà delle skin cosmetiche |
 | `matches` | `fighters-program-matches` | Sfide, simulazione, replay, storico |
 | `application` | `fighters-program-application` | Main, configurazione, migrazioni. Unico avviabile |
 
@@ -42,6 +43,7 @@ collection   →  common
 identity     →  common
 economy      →  common
 trading      →  common
+cosmetics    →  common, catalog, collection, identity, economy
 matches      →  common, core
 application  →  tutti gli altri moduli
 ```
@@ -50,7 +52,7 @@ Regole di dipendenza:
 
 1. `core` non dipende da nulla dell'app: solo `java..`.
 2. `common` non dipende da nessun modulo di dominio né dal core.
-3. Un modulo di dominio dipende da `common` e, se gli serve il motore, da `core`. Mai da un altro modulo di dominio.
+3. Un modulo di dominio dipende da `common` e, se gli serve il motore, da `core`. Le dipendenze tra moduli di dominio sono esplicite nella tabella sopra e usano solo le API pubbliche nella radice del package.
 4. `application` dipende da tutti e li mette insieme.
 
 ## 3. Struttura interna di un modulo

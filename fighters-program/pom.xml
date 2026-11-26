@@ -23,6 +23,7 @@
         <module>identity</module>
         <module>economy</module>
         <module>trading</module>
+        <module>cosmetics</module>
         <module>matches</module>
         <module>application</module>
     </modules>
@@ -69,6 +70,11 @@
             <dependency>
                 <groupId>it.fightersprogram</groupId>
                 <artifactId>fighters-program-trading</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>it.fightersprogram</groupId>
+                <artifactId>fighters-program-cosmetics</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
